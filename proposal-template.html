@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>הצעת מחיר — [שם הפרויקט]</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="shared-styles.css" />
+  <style>
+    .price-total td { font-weight: 700; font-size: 16px; background: var(--primary-light); color: var(--primary); }
+    .signature-box { border: 1.5px dashed var(--border); border-radius: 8px; padding: 16px; margin-top: 12px; min-height: 80px; }
+  </style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <img src="logo.png" alt="לוגו" class="cover-logo" />
+  <div class="cover-badge">הצעת מחיר</div>
+  <h1>[שם הפרויקט]</h1>
+  <div class="cover-sub">מוגשת ל: [שם הלקוח / החברה]</div>
+  <div class="cover-meta">נירה טל | מתודה פתרונות AI | [תאריך] | בתוקף עד [תאריך]</div>
+</div>
+
+<div class="doc-wrapper">
+
+  <!-- ===== מבוא ===== -->
+  <div class="section">
+    <div class="section-title">מבוא</div>
+    <p>תודה על הפנייה! להלן הצעת מחיר עבור <strong>[שם הפרויקט]</strong>.</p>
+    <p>[תיאור קצר של הפרויקט והבנת הצורך של הלקוח — 2-3 משפטים שמראים שהבנתם את הבעיה]</p>
+    <div class="info-box">
+      <strong>הגישה שלנו:</strong> [תיאור גישת העבודה — מה מייחד אתכם, למה כדאי לעבוד איתכם]
+    </div>
+  </div>
+
+  <!-- ===== היקף העבודה ===== -->
+  <div class="section">
+    <div class="section-title">היקף העבודה</div>
+    <h3>מה כלול בהצעה</h3>
+    <ul>
+      <li><strong>[מרכיב 1]</strong> — [תיאור קצר]</li>
+      <li><strong>[מרכיב 2]</strong> — [תיאור קצר]</li>
+      <li><strong>[מרכיב 3]</strong> — [תיאור קצר]</li>
+      <li><strong>[מרכיב 4]</strong> — [תיאור קצר]</li>
+    </ul>
+    <h3>מה לא כלול</h3>
+    <ul>
+      <li>[פריט לא כלול 1]</li>
+      <li>[פריט לא כלול 2]</li>
+    </ul>
+    <div class="tip"><strong>חשוב:</strong> כל תוספת מעבר להיקף המוגדר תמוחר בנפרד ותובא לאישור מראש.</div>
+  </div>
+
+  <!-- ===== לוח זמנים ===== -->
+  <div class="section">
+    <div class="section-title">לוח זמנים</div>
+    <table>
+      <thead>
+        <tr><th>שלב</th><th>תיאור</th><th>משך</th><th>תאריך יעד</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="badge badge-blue">שלב א׳</span></td><td>[תיאור השלב]</td><td>[X ימים]</td><td>[תאריך]</td></tr>
+        <tr><td><span class="badge badge-blue">שלב ב׳</span></td><td>[תיאור השלב]</td><td>[X ימים]</td><td>[תאריך]</td></tr>
+        <tr><td><span class="badge badge-blue">שלב ג׳</span></td><td>[תיאור השלב]</td><td>[X ימים]</td><td>[תאריך]</td></tr>
+        <tr><td><span class="badge badge-green">השקה</span></td><td>העלאה לאוויר</td><td>—</td><td>[תאריך]</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><strong>המועד מותנה</strong> בקבלת אישור ותשלום דמי הקדמה עד [תאריך].</div>
+  </div>
+
+  <!-- ===== תמחור ===== -->
+  <div class="section">
+    <div class="section-title">תמחור</div>
+    <table>
+      <thead>
+        <tr><th>רכיב</th><th>כמות / היקף</th><th>מחיר</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>[שירות / מרכיב 1]</td><td>[כמות]</td><td>₪[מחיר]</td></tr>
+        <tr><td>[שירות / מרכיב 2]</td><td>[כמות]</td><td>₪[מחיר]</td></tr>
+        <tr><td>[שירות / מרכיב 3]</td><td>[כמות]</td><td>₪[מחיר]</td></tr>
+        <tr class="price-total"><td colspan="2">סה״כ (לפני מע״מ)</td><td>₪[סכום]</td></tr>
+        <tr class="price-total"><td colspan="2">סה״כ כולל מע״מ (18%)</td><td>₪[סכום]</td></tr>
+      </tbody>
+    </table>
+
+    <h3>תנאי תשלום</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-text"><strong>[X]%</strong> דמי קדמה עם חתימת ההסכם — ₪[סכום]</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text"><strong>[X]%</strong> באמצע הפרויקט — ₪[סכום]</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text"><strong>[X]%</strong> עם מסירה — ₪[סכום]</div></div>
+  </div>
+
+  <!-- ===== מה מקבלים ===== -->
+  <div class="section">
+    <div class="section-title">מה מקבלים בסיום</div>
+    <ul>
+      <li>✅ [תוצר 1]</li>
+      <li>✅ [תוצר 2]</li>
+      <li>✅ [תוצר 3]</li>
+      <li>✅ [ימי ליווי / הדרכה]</li>
+      <li>✅ [אחריות / תמיכה למשך X ימים]</li>
+    </ul>
+  </div>
+
+  <!-- ===== תנאים כלליים ===== -->
+  <div class="section">
+    <div class="section-title">תנאים כלליים</div>
+    <ul>
+      <li>הצעה זו בתוקף עד <strong>[תאריך]</strong></li>
+      <li>שינויים בהיקף יחייבו עדכון הצעת מחיר</li>
+      <li>החומרים והתכנים מהלקוח ינתנו לנו עד [תאריך]</li>
+      <li>תקשורת שוטפת תתנהל דרך [ערוץ תקשורת — אימייל / וואטסאפ]</li>
+    </ul>
+    <div class="tip"><strong>אחריות:</strong> [תיאור תנאי האחריות שלכם]</div>
+  </div>
+
+  <!-- ===== אישור ===== -->
+  <div class="section">
+    <div class="section-title">אישור הצעה</div>
+    <p>חתימה על מסמך זה מהווה אישור לתנאים המפורטים לעיל והסכמה להתחיל את הפרויקט.</p>
+    <table>
+      <tbody>
+        <tr>
+          <td style="width:50%">
+            <strong>מוגשת על ידי:</strong><br/>
+            נירה טל | מתודה פתרונות AI<br/>
+            <div class="signature-box"></div>
+            <small>חתימה ותאריך</small>
+          </td>
+          <td style="width:50%">
+            <strong>מאושר על ידי:</strong><br/>
+            [שם הלקוח / נציג החברה]<br/>
+            <div class="signature-box"></div>
+            <small>חתימה ותאריך</small>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <img src="logo.png" alt="מתודה AI" class="footer-logo" onerror="this.style.display='none'" />
+  <div class="footer-name">נירה טל | מתודה פתרונות AI</div>
+  <div class="footer-links">
+    <span>© כל הזכויות שמורות</span>
+    <span class="footer-sep">|</span>
+    <a href="tel:0542215222">054-2215222</a>
+    <span class="footer-sep">|</span>
+    <a href="mailto:nira.tal@metoda.ai">nira.tal@metoda.ai</a>
+  </div>
+</div>
+
+</body>
+</html>
