@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אפיון — מערכת דיווח תקלות | פלטפורמת סיון</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="shared-styles.css" />
+  <style>
+    .status-flow {
+      display: flex;
+      flex-direction: row;
+      direction: ltr;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+      margin: 16px 0;
+    }
+    .status-chip {
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .status-inbox     { background: #f1f5f9; color: #475569; }
+    .status-invest    { background: #fef3c7; color: #92400e; }
+    .status-progress  { background: #dbeafe; color: #1d4ed8; }
+    .status-resolved  { background: #f0fdf4; color: #16a34a; }
+    .status-arrow     { color: #9ca3af; padding: 0 8px; font-size: 18px; }
+
+    .screenshot-placeholder {
+      background: #f8faff;
+      border: 2px dashed #c7d2fe;
+      border-radius: 10px;
+      padding: 28px 16px;
+      text-align: center;
+      color: #818cf8;
+      font-size: 13px;
+      margin: 16px 0;
+    }
+    .screenshot-placeholder strong { display: block; font-size: 14px; margin-bottom: 4px; color: #6366f1; }
+
+    .field-type {
+      display: inline-block;
+      background: #eef0ff;
+      color: #4361EE;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    .tech-icon {
+      font-size: 18px;
+      margin-left: 6px;
+    }
+
+    .process-header {
+      background: linear-gradient(135deg, #4361EE 0%, #7c3aed 100%);
+      color: white;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .process-header span {
+      display: inline-block;
+      background: rgba(255,255,255,0.25);
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <img src="logo.png" alt="לוגו" class="cover-logo" onerror="this.style.display='none'" />
+  <div class="cover-badge">מסמך אפיון</div>
+  <h1>מערכת דיווח תקלות וניהול טיפול</h1>
+  <div class="cover-sub">פלטפורמת הקורסים והלמידה של סיון</div>
+  <div class="cover-meta">נירה טל | מתודה פתרונות AI | יוני 2026 | גרסה 1.0</div>
+</div>
+
+<div class="doc-wrapper">
+
+  <!-- ===== סיכום מנהלים ===== -->
+  <div class="section">
+    <div class="section-title">סיכום מנהלים</div>
+    <p>
+      מערכת דיווח התקלות מאפשרת לסיון, מנהלת פלטפורמת הקורסים, לדווח על בעיות טכניות בצורה מובנית ומהירה.
+      כל דיווח נקלט אוטומטית ב-Notion, מעדכן את צוות התמיכה (מתודה AI) בזמן אמת, וכאשר התקלה נסגרת —
+      נשלח ללקוח עדכון אוטומטי. המערכת מבוססת לחלוטין על כלים ללא-קוד.
+    </p>
+    <div class="info-box">
+      <strong>מטרת הפרויקט:</strong> צמצום תקשורת ידנית בתהליך דיווח תקלות, תוך שמירה על תיעוד מסודר וחווית לקוח רציפה לאורך כל מחזור הטיפול.
+    </div>
+  </div>
+
+  <!-- ===== פרטי הפרויקט ===== -->
+  <div class="section">
+    <div class="section-title">פרטי הפרויקט</div>
+    <table>
+      <tbody>
+        <tr><td><strong>לקוח</strong></td><td>סיון — פלטפורמת קורסים ולמידה</td></tr>
+        <tr><td><strong>מגיש האפיון</strong></td><td>נירה טל | מתודה פתרונות AI</td></tr>
+        <tr><td><strong>תאריך</strong></td><td>יוני 2026</td></tr>
+        <tr><td><strong>גרסה</strong></td><td>1.0</td></tr>
+        <tr><td><strong>סטטוס</strong></td><td><span class="badge badge-green">הועבר ללקוח</span></td></tr>
+        <tr><td><strong>טכנולוגיות</strong></td><td>Fillout · Make.com · Notion · Gmail</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== קהל יעד ===== -->
+  <div class="section">
+    <div class="section-title">קהל יעד</div>
+    <h3>משתמש ראשי — סיון (מנהלת הפלטפורמה)</h3>
+    <p>
+      מנהלת פלטפורמת קורסים עם ידע טכנולוגי בסיסי-בינוני. נדרשת לדווח על תקלות כאשר הן מתרחשות,
+      לעיתים תוך כדי הפעלת שיעור חי, ללא זמן לתהליך מסורבל. צריכה ממשק מהיר, ברור וזמין בכל מכשיר.
+    </p>
+    <h3>משתמש משני — נירה טל (צוות התמיכה, מתודה AI)</h3>
+    <p>
+      מנהלת את הטיפול בתקלות דרך Notion. מעדכנת סטטוסים, מצרפת פתרונות ומסמנת "Resolved" בסיום.
+      הפעולה הזו לבדה מפעילה את עדכון הלקוח — ללא צורך בשליחה ידנית.
+    </p>
+    <div class="tip">
+      <strong>כאב מרכזי:</strong> לפני המערכת, כל דיווח תקלה התנהל דרך וואטסאפ ומייל חופשי — ללא תיעוד מסודר, ללא מעקב סטטוס וללא עדכון אוטומטי ללקוח עם סיום הטיפול.
+    </div>
+  </div>
+
+  <!-- ===== תהליכים ופונקציונליות ===== -->
+  <div class="section">
+    <div class="section-title">תהליכים ופונקציונליות</div>
+
+    <!-- תהליך א' -->
+    <div class="process-header">
+      <span>תהליך א׳</span>
+      קליטת דיווח תקלה
+    </div>
+
+    <h3>קלט — טופס דיווח ב-Fillout</h3>
+    <p>סיון ממלאת טופס הכולל את השדות הבאים:</p>
+    <ul>
+      <li>שם מלא + כתובת דוא"ל</li>
+      <li>שם הארגון</li>
+      <li>אזור במערכת שבו התרחשה התקלה</li>
+      <li>רמת דחיפות (רגיל / דחוף)</li>
+      <li>כותרת קצרה — "מה השתבש?"</li>
+      <li>תיאור ההתנהגות בפועל</li>
+      <li>ההתנהגות הצפויה</li>
+      <li>שלבי שחזור התקלה</li>
+      <li>עד שלושה קבצי מדיה — צילום מסך / סרטון (אופציונלי)</li>
+    </ul>
+
+    <div class="info-box" style="margin-top:14px;">
+      <strong>גישה לטופס:</strong><br/>
+      <a href="https://forms.fillout.com/t/wqnUSgsxvjus" target="_blank" style="color:#4361EE;">טופס דיווח תקלות</a>
+      &nbsp;|&nbsp;
+      <a href="https://sivan-courses.vercel.app/dashboard/admin/bugs" target="_blank" style="color:#4361EE;">טופס דיווח תקלות בתוך מערכת הלמידה</a>
+    </div>
+
+    <hr class="divider" />
+
+    <h3>עיבוד אוטומטי — Make.com</h3>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <strong>יצירת כרטיס ב-Notion</strong> — הנתונים מהטופס נשמרים אוטומטית כרשומה חדשה במסד הנתונים "דיווח תקלות". הסטטוס ההתחלתי: <span class="badge badge-blue">Inbox</span>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <strong>טיפול בקבצי מדיה</strong> — Make.com בודקת האם צורפו קבצים. אם כן — קישורי הקבצים נשמרים בשדה Media/Attachments ומאפשרים פתיחה ישירה מתוך Notion. אם לא — הכרטיס נוצר ללא שדה מדיה (מניעת שגיאות).
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <strong>התראת מייל לצוות התמיכה</strong> — נשלח מייל אוטומטי לנירה עם פרטי התקלה וקישור ישיר ל-Notion. כאשר הדחיפות "דחוף", נושא המייל כולל התראה בולטת.
+      </div>
+    </div>
+
+    <div class="screenshot-placeholder">
+      <strong>צילום מסך — תרשים הסנריו ב-Make.com (תהליך א׳)</strong>
+      הכניסי כאן screenshot של ה-scenario
+    </div>
+
+    <hr class="divider" />
+
+    <!-- תהליך ב' -->
+    <div class="process-header">
+      <span>תהליך ב׳</span>
+      עדכון הלקוח לאחר פתרון התקלה
+    </div>
+
+    <h3>טריגר</h3>
+    <p>
+      Make.com מנטרת את מסד הנתונים ב-Notion ברציפות.
+      בכל עדכון בכרטיס תקלה מופעל תהליך בדיקה.
+    </p>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <strong>בדיקת תנאי</strong> — האוטומציה פועלת <em>רק</em> כאשר הסטטוס שונה ל-<span class="badge badge-green">Resolved</span>. כל שינוי אחר בכרטיס (עדכון תיאור, שינוי שדה) אינו מפעיל שליחת מייל.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <strong>שליחת מייל עדכון ללקוח</strong> — נשלח מייל HTML מעוצב ישירות לדוא"ל שהוזן בטופס. המייל כולל פנייה אישית, שם התקלה, אישור טיפול ובקשה לוידוא שהמערכת פועלת. עיצוב RTL מלא, חתימה בשם Metoda AI.
+      </div>
+    </div>
+
+    <div class="screenshot-placeholder">
+      <strong>צילום מסך — תצוגת מייל העדכון (HTML) ותרשים Make לתהליך ב׳</strong>
+      הכניסי כאן screenshot של המייל ו/או הסנריו
+    </div>
+
+  </div>
+
+  <!-- ===== ממשק ניהול Notion ===== -->
+  <div class="section">
+    <div class="section-title">ממשק ניהול — Notion Database</div>
+    <p>
+      Notion משמש כמרכז הניהול של כל התקלות. צוות התמיכה (נירה) עובד ישירות מהדאטאבייס —
+      מעדכן סטטוסים, בוחן קבצים ומנהל את מחזור חיי כל תקלה.
+    </p>
+
+    <h3>שדות הדאטאבייס</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>שם השדה</th>
+          <th>סוג</th>
+          <th>מקור / הערה</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>כותרת התקלה</td><td><span class="field-type">Title</span></td><td>ממולא אוטומטית מהטופס</td></tr>
+        <tr><td>שם המדווח</td><td><span class="field-type">Text</span></td><td>ממולא אוטומטית מהטופס</td></tr>
+        <tr><td>דוא"ל</td><td><span class="field-type">Email</span></td><td>ממולא אוטומטית — משמש לעדכון הלקוח</td></tr>
+        <tr><td>ארגון</td><td><span class="field-type">Text</span></td><td>ממולא אוטומטית מהטופס</td></tr>
+        <tr><td>אזור במערכת</td><td><span class="field-type">Select</span></td><td>ממולא אוטומטית מהטופס</td></tr>
+        <tr><td>רמת דחיפות</td><td><span class="field-type">Select</span></td><td>רגיל / דחוף — משפיע על נושא מייל ההתראה</td></tr>
+        <tr><td>תיאור התקלה</td><td><span class="field-type">Long Text</span></td><td>ממולא אוטומטית מהטופס</td></tr>
+        <tr><td>התנהגות צפויה</td><td><span class="field-type">Long Text</span></td><td>ממולא אוטומטית מהטופס</td></tr>
+        <tr><td>שלבי שחזור</td><td><span class="field-type">Long Text</span></td><td>ממולא אוטומטית מהטופס</td></tr>
+        <tr><td>קבצי מדיה</td><td><span class="field-type">Files & Media</span></td><td>מוזן רק כאשר הועלו קבצים בטופס</td></tr>
+        <tr><td>סטטוס</td><td><span class="field-type">Select</span></td><td>מעודכן ידנית — Resolved מפעיל מייל עדכון</td></tr>
+      </tbody>
+    </table>
+
+    <h3>מחזור חיי תקלה</h3>
+    <div class="status-flow">
+      <span class="status-chip status-inbox">Inbox</span>
+      <span class="status-arrow">→</span>
+      <span class="status-chip status-invest">Under Investigation</span>
+      <span class="status-arrow">→</span>
+      <span class="status-chip status-progress">In Progress</span>
+      <span class="status-arrow">→</span>
+      <span class="status-chip status-resolved">Resolved ✓</span>
+    </div>
+    <p>עדכון הסטטוס מתבצע ידנית על ידי צוות התמיכה. מעבר ל-Resolved בלבד מפעיל את תהליך ב׳.</p>
+
+    <div class="screenshot-placeholder">
+      <strong>צילום מסך — תצוגת הדאטאבייס ב-Notion (רשימת תקלות / כרטיס תקלה לדוגמה)</strong>
+      הכניסי כאן screenshot של Notion עם כרטיס תקלה לדוגמה
+    </div>
+
+    <div class="note">
+      <strong>המלצה לתצוגה:</strong> הגדירי תצוגת Board לפי שדה הסטטוס — כך מנהלת התמיכה רואה בבת-אחת את כל התקלות לפי שלב הטיפול.
+    </div>
+  </div>
+
+  <!-- ===== דרישות טכניות ===== -->
+  <div class="section">
+    <div class="section-title">רכיבי המערכת</div>
+    <table>
+      <thead>
+        <tr><th>רכיב</th><th>כלי</th><th>תפקיד במערכת</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>טופס דיווח</strong></td>
+          <td>Fillout</td>
+          <td>ממשק קלט למשתמש — אוסף מובנה של כל פרטי התקלה כולל העלאת קבצים</td>
+        </tr>
+        <tr>
+          <td><strong>מנוע אוטומציה</strong></td>
+          <td>Make.com</td>
+          <td>מחבר בין Fillout, Notion ו-Gmail — מנהל את שני תהליכי האוטומציה</td>
+        </tr>
+        <tr>
+          <td><strong>ניהול תקלות</strong></td>
+          <td>Notion</td>
+          <td>מסד נתונים מרכזי — תיעוד, מעקב ועדכון סטטוס ידני</td>
+        </tr>
+        <tr>
+          <td><strong>מערכת הודעות</strong></td>
+          <td>Gmail</td>
+          <td>שליחת התראות לצוות + מיילי עדכון ללקוח (HTML, RTL)</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="tip">
+      <strong>ארכיטקטורה:</strong> המערכת כולה ללא-קוד (No-Code). אין שרת, אין בסיס נתונים עצמאי — הכל מנוהל דרך ממשקי הכלים הקיימים.
+    </div>
+  </div>
+
+  <!-- ===== לא בסקופ ===== -->
+  <div class="section">
+    <div class="section-title">מה לא כלול בשלב זה (Out of Scope)</div>
+    <ul>
+      <li>פורטל לקוח עצמאי — היסטוריית תקלות, חיפוש וסינון עצמאי</li>
+      <li>תגובה אוטומטית מבוססת AI לתכני התקלה</li>
+      <li>דשבורד ניתוח נתונים וסטטיסטיקות (זמני טיפול ממוצעים, כמות תקלות לפי קטגוריה)</li>
+      <li>מערכת SLA — תזכורות אוטומטיות אם תקלה לא טופלה תוך X שעות</li>
+      <li>תמיכה במשתמשים מרובים (כרגע מוגדר לסיון כמשתמשת יחידה)</li>
+    </ul>
+    <div class="tip">
+      <strong>שלב הבא:</strong> כל הסעיפים לעיל ניתנים להוספה בגרסה הבאה — Make.com מאפשר הרחבה מבלי לשנות את הבסיס הקיים.
+    </div>
+  </div>
+
+  <!-- ===== שלבי הפיתוח ===== -->
+  <div class="section">
+    <div class="section-title">שלבי הפיתוח שבוצעו</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <strong>שלב א׳ — הקמת מסד הנתונים ב-Notion:</strong> יצירת דאטאבייס "דיווח תקלות" עם כל השדות, הגדרת ערכי Select לסטטוסים ולדחיפות.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <strong>שלב ב׳ — בניית טופס הדיווח ב-Fillout:</strong> עיצוב הטופס, הגדרת שדות חובה ושדה העלאת קבצים (עד 3 קבצים).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <strong>שלב ג׳ — אוטומציית תהליך א׳ ב-Make.com:</strong> חיבור Fillout ← Make ← Notion + Gmail, כולל לוגיקת הפרדת קבצים ומייל דחוף.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text">
+        <strong>שלב ד׳ — אוטומציית תהליך ב׳ ב-Make.com:</strong> טריגר מ-Notion לפי שינוי סטטוס + עיצוב מייל HTML ב-RTL לעדכון הלקוח.
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== יתרונות ===== -->
+  <div class="section">
+    <div class="section-title">יתרונות הפתרון</div>
+    <ul>
+      <li><strong>קליטה מובנית:</strong> כל התקלות מגיעות בפורמט אחיד — ללא מידע חסר</li>
+      <li><strong>מרכוז:</strong> ריכוז כל הדיווחים במסד נתונים אחד עם היסטוריה מלאה</li>
+      <li><strong>מדיה:</strong> אפשרות לצרף תמונות וסרטוני מסך ישירות לכרטיס</li>
+      <li><strong>מעקב:</strong> ניהול סטטוסים לאורך כל חיי התקלה</li>
+      <li><strong>מיידיות:</strong> התראה אוטומטית לצוות עם קבלת כל דיווח</li>
+      <li><strong>סגירת לולאה:</strong> עדכון אוטומטי ללקוח עם סיום הטיפול</li>
+      <li><strong>חיסכון:</strong> אפס עבודה ידנית לאחר הפעלת המערכת</li>
+    </ul>
+  </div>
+
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <img src="logo.png" alt="מתודה AI" class="footer-logo" onerror="this.style.display='none'" />
+  <div class="footer-name">נירה טל | מתודה פתרונות AI</div>
+  <div class="footer-links">
+    <span>© כל הזכויות שמורות</span>
+    <span class="footer-sep">|</span>
+    <a href="tel:0542215222">054-2215222</a>
+    <span class="footer-sep">|</span>
+    <a href="mailto:nira.tal@metoda.ai">nira.tal@metoda.ai</a>
+  </div>
+</div>
+
+</body>
+</html>
