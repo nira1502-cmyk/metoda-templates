@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/spec-gali-agent-public.html" }
+  ]
+}

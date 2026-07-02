@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אפיון — פלטפורמת למידת קורסים מבוססת AI</title>
+  <link rel="icon" href="favicon.png" />
+  <link rel="stylesheet" href="shared-styles.css" />
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <img src="logo.png" alt="לוגו" class="cover-logo" onerror="this.style.display='none'" />
+  <div class="cover-badge">מסמך אפיון</div>
+  <h1>פלטפורמת למידת קורסים מבוססת AI</h1>
+  <div class="cover-sub">LMS חכמה עם עוזר AI מותאם לתוכן — Human-in-the-loop Validation</div>
+  <div class="cover-meta">הוכן על ידי נירה טל | מתודה פתרונות AI | יולי 2026 | גרסה 1.0</div>
+</div>
+
+<div class="doc-wrapper">
+
+  <!-- ===== סיכום מנהלים ===== -->
+  <div class="section">
+    <div class="section-title">סיכום מנהלים</div>
+    <p>המערכת היא פלטפורמת למידה דיגיטלית (LMS) מודרנית המשלבת יצירת תוכן באמצעות AI גנרטיבי עם אימות אנושי (Human-in-the-loop). המטרה — לייצר חווית לימוד אישית ועמוקה יותר לכל לומד, ובמקביל לתת לבעל התוכן כלים חכמים לניהול ועריכה קלה של החומרים.</p>
+    <p>הפלטפורמה בנויה על Next.js App Router ו-Supabase, ומגדירה שני תפקידים מרכזיים: <strong>לומד/ת</strong> — שצופה בשיעורים ומשוחח עם עוזר AI מבוסס תוכן הקורס; ו<strong>אדמין/בעל ידע</strong> — שמנהל תכנים, עורך תמלולים ומזין מאגר ידע גלובלי.</p>
+    <div class="info-box">
+      <strong>עקרון מרכזי:</strong> עוזר ה-AI מבוסס אך ורק על מה שהוזן לו — תמליל השיעור ומאגר הידע הגלובלי. הוא לא ממציא, לא מנחש, ולא חורג מהידע המאושר על ידי בעל הפלטפורמה.
+    </div>
+  </div>
+
+  <!-- ===== פרטי הפרויקט ===== -->
+  <div class="section">
+    <div class="section-title">פרטי הפרויקט</div>
+    <table>
+      <tbody>
+        <tr><td><strong>מגישה</strong></td><td>נירה טל | מתודה פתרונות AI</td></tr>
+        <tr><td><strong>תאריך</strong></td><td>יולי 2026</td></tr>
+        <tr><td><strong>גרסה</strong></td><td>1.0</td></tr>
+        <tr><td><strong>סטאק טכנולוגי</strong></td><td>Next.js App Router, Supabase (Auth + DB + Storage + Realtime), OpenAI API</td></tr>
+        <tr><td><strong>ניהול הרשאות</strong></td><td>Server-Side Routing + Row Level Security (RLS)</td></tr>
+        <tr><td><strong>סטטוס</strong></td><td><span class="badge badge-amber">באפיון</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== קהל יעד ===== -->
+  <div class="section">
+    <div class="section-title">קהל יעד ותפקידים</div>
+
+    <h3>לומד/ת (Learner)</h3>
+    <p>משתמש שנרשם לקורס ורוצה ללמוד את החומר בקצב שלו. הפלטפורמה מציעה לו חווית צפייה בשיעורים וגישה לעוזר AI אישי שיכול לענות על שאלות — אך רק מתוך תוכן הקורס שצפה בו.</p>
+    <div class="tip"><strong>מגבלה מכוונת:</strong> הלומד לא רואה שום לשונית ניהול. אין לו גישה ל-<code>/dashboard/admin</code> ולא לתכנים של לומדים אחרים — כולל שיחות ה-AI שלהם.</div>
+
+    <hr class="divider" />
+
+    <h3>אדמין / בעל ידע (Admin)</h3>
+    <p>בעל הפלטפורמה או מנהל התוכן. אחראי על יצירת הקורסים, העלאת שיעורים, עריכת תמלולים ואחזקת מאגר הידע הגלובלי שממנו ה-AI שואב מידע.</p>
+    <div class="tip"><strong>יתרון מרכזי:</strong> האדמין יכול לצפות בשיחת ה-AI של כל לומד (Admin View Mode) — כדי להבין מה עובד, מה לא, ואיפה התוכן דורש שיפור.</div>
+  </div>
+
+  <!-- ===== ממשק הלמידה ===== -->
+  <div class="section">
+    <div class="section-title">מודול 1 — ממשק צפיית הקורס (Course View)</div>
+
+    <h3>פריסת מסך — Flex Split Layout</h3>
+    <p>המסך מחולק לשני אזורים שחיים זה לצד זה ומשתמשים בכל ה-Viewport. בצד שמאל — נגן הוידאו ותוכן השיעור. בצד ימין — חלון עוזר ה-AI.</p>
+    <p>כאשר חלון ה-AI נפתח במסך קטן, הנגן עובר למצב Overlay עם טשטוש קל, כך שהשיחה ממוקדת אך אפשר לחזור לצפייה בקליק אחד.</p>
+
+    <hr class="divider" />
+
+    <h3>מטריצת ברכת הכניסה (Welcome Copy)</h3>
+    <p>הכותרת שהלומד רואה בכניסה לקורס מותאמת למצב שלו:</p>
+    <table>
+      <thead>
+        <tr><th>מצב הלומד</th><th>כותרת ראשית</th><th>תת-כותרת</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>כניסה ראשונה לקורס</td>
+          <td>"ברוך הבא לקורס של..."</td>
+          <td>"שמחים שהצטרפת — בואו נתחיל"</td>
+        </tr>
+        <tr>
+          <td>חזרה לקורס (ביקורים נוספים)</td>
+          <td>"ממשיכים מאיפה שעצרנו"</td>
+          <td>"בפעם שעברת הגעת עד..."</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="divider" />
+
+    <h3>תצוגת תוכן שיעור</h3>
+    <p>מתחת לנגן הוידאו מוצג תיאור השיעור והשיעורים הקרובים בסדרה, עם ניווט ישיר לכל שיעור. ניתן להגדיר אורך מקסימלי לתיאור (טקסט חתוך עם "קרא עוד").</p>
+  </div>
+
+  <!-- ===== עוזר AI ===== -->
+  <div class="section">
+    <div class="section-title">מודול 2 — עוזר ה-AI (AI Assistant Panel)</div>
+
+    <h3>חדרים מבודדים למשתמש (User-Isolated Rooms)</h3>
+    <p>כל שיחה עם ה-AI מזוהה לפי שילוב ייחודי של <code>lesson_id + user_id</code>. לומד אחד לא רואה את השיחה של אחר — אפילו באותו שיעור. ההיסטוריה נשמרת ונטענת אוטומטית בכל כניסה חוזרת לאותו שיעור.</p>
+
+    <hr class="divider" />
+
+    <h3>מצב ריק חכם (Smart Empty State)</h3>
+    <p>כאשר השיחה ריקה לחלוטין, הממשק לא מציג דף ריק אלא מציע פתיחה טבעית: <em>"שלום ושלום! מה אתה רוצה ללמוד על השיעור הזה?"</em> — בנוסח שמשקף את אופי הקורס. בנוסף, מוצגות 2–3 שאלות הצעה שמבוססות על תוכן השיעור הנוכחי.</p>
+
+    <hr class="divider" />
+
+    <h3>עיבוד Markdown נקי</h3>
+    <p>תשובות ה-AI מעובדות ומוצגות עם עיצוב מלא: טקסט מודגש (<strong>bold</strong>), רשימות, כותרות משנה וקטעי קוד — בביצוע <code>react-markdown</code> עם סגנון מותאם לפלטפורמה. אין JSON גולמי ואין תגיות HTML חשופות בתצוגה.</p>
+
+    <hr class="divider" />
+
+    <h3>העלאת קבצים</h3>
+    <p>לומד יכול לצרף קבצים לשיחה (תמונות, מסמכים) — הם עולים ל-Supabase Storage ומשולבים בהקשר ה-AI של אותה שיחה ספציפית.</p>
+  </div>
+
+  <!-- ===== לוח ניהול ===== -->
+  <div class="section">
+    <div class="section-title">מודול 3 — לוח הניהול (Admin Control Center)</div>
+
+    <h3>ניהול קורסים ושיעורים</h3>
+    <p>ממשק ויזואלי ליצירה ועריכה של קורסים ושיעורים. כל שיעור מכיל: כותרת, תיאור, וידאו (יחס 16:9 קבוע) ותמליל. סדר השיעורים בתוך הקורס נשלט ב-Drag &amp; Drop עם שמירה אוטומטית של ה-<code>sort_order</code> ב-DB.</p>
+
+    <hr class="divider" />
+
+    <h3>עורך תמלילים (Transcript Editor)</h3>
+    <p>לכל שיעור ניתן להדביק תמליל (טקסט חופשי) שמשמש כבסיס הידע המרכזי של ה-AI לאותו שיעור. המנהל יכול לערוך, לתקן שגיאות ולעדכן את התמליל בכל עת — השינוי מיידי ומשפיע על כל שיחות ה-AI הבאות בשיעור זה.</p>
+    <div class="note"><strong>הבחנה חשובה:</strong> העורך עובד גם ליצירת קורס חדש מאפס וגם לעדכון תמליל של שיעור קיים — אותו ממשק, שתי פעולות.</div>
+
+    <hr class="divider" />
+
+    <h3>מנהל מאגר הידע הגלובלי (Global Knowledge Base)</h3>
+    <p>מאגר מרכזי של מידע שה-AI יכול לשאוב ממנו בכל שיחה, בכל קורס — מעבר לתמליל השיעור הספציפי. מתאים להוסיף: מדיניות חברה, מסמכי FAQ, מונחון, חומרי עיון נוספים.</p>
+
+    <div class="step">
+      <div class="step-num">+</div>
+      <div class="step-text">
+        <strong>הוספת פריט חדש:</strong> כפתור "+ הוסף מקור ידע ל-AI" פותח Dialog עם שדה כותרת ו-Textarea גדול להדבקת הטקסט. אין לכתוב — רק להדביק תוכן קיים (מסמכים, נהלים, טקסטים מוכנים).
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">!</div>
+      <div class="step-text">
+        <strong>כללי UI לטקסטים ארוכים:</strong> גובה ה-Dialog מוגבל ל-<code>max-h-[85vh]</code> עם גלילה פנימית (<code>overflow-y-auto</code>). מניעת גלישת טקסט — כל שורה ניתנת לקריאה ואין קטיעות לא צפויות.
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h3>מצב צפייה כאדמין (Admin View Mode)</h3>
+    <p>כאשר האדמין נכנס לצפות בשיעור (Preview Mode), מופיע בצד ה-AI Dropdown לבחירת תפקיד: אפשר לבחור להציג את שיחת ה-AI של כל לומד רשום בפלטפורמה. כך האדמין רואה בדיוק מה הלומד ראה — כולל ההיסטוריה המלאה של שיחתו — מבלי שיוצר שיחה חדשה ומבלי שה-AI מגיב למצב ניהולי זה.</p>
+    <div class="tip">זהו כלי עוצמתי לשיפור תוכן: האדמין רואה היכן הלומדים נתקעים, מה הם שואלים, ואיפה ה-AI נותן תשובות חלשות — ועורך את התמליל בהתאם.</div>
+  </div>
+
+  <!-- ===== ארכיטקטורת RAG ===== -->
+  <div class="section">
+    <div class="section-title">ארכיטקטורת ה-AI — לוגיקת RAG</div>
+    <p>המערכת מממשת Retrieval-Augmented Generation (RAG) מבוסס-הקשר. לפני כל תשובה, ה-Server Action בונה את ה-System Prompt של ה-LLM משלוש שכבות מקוננות:</p>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <strong>הקשר מקומי (Local Context)</strong><br>
+        תמליל השיעור הנוכחי שהלומד צופה בו. זה הידע הרלוונטי ביותר ותמיד נטען ראשון.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <strong>הקשר גלובלי (Global Context)</strong><br>
+        כלל הפריטים שנשמרו ב-<code>global_knowledge_base</code> — מידע חוצה-קורסים שהאדמין הגדיר כידע בסיסי לכל שיחה.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <strong>כללי System Prompt</strong><br>
+        הוראות קבועות המגדירות את גבולות ה-AI: לענות רק על מה שידוע, לא להמציא, לא לחרוג מהחומר, להגיב בשפה מקצועית וממוקדת.
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h3>כללי System Prompt — מה ה-AI אסור לו לעשות</h3>
+    <ul>
+      <li>לא לענות על שאלות שאין להן בסיס בחומר הקורס או במאגר הגלובלי</li>
+      <li>לא להמציא עובדות, מחקרים, מספרים או ציטוטים שאינם בחומר</li>
+      <li>לא לחוות דעה על נושאים שחורגים מתוכן הפלטפורמה</li>
+      <li>לענות בשפה שבה הלומד פנה — עברית כברירת מחדל</li>
+    </ul>
+  </div>
+
+  <!-- ===== סכמת נתונים ===== -->
+  <div class="section">
+    <div class="section-title">ארכיטקטורת נתונים — Supabase Schema</div>
+
+    <h3>טבלת קורסים — <code>courses</code></h3>
+    <table>
+      <thead>
+        <tr><th>שדה</th><th>טיפוס</th><th>תיאור</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>uuid, PK</td><td>מזהה ייחודי</td></tr>
+        <tr><td><code>title</code></td><td>text</td><td>שם הקורס</td></tr>
+        <tr><td><code>description</code></td><td>text</td><td>תיאור הקורס</td></tr>
+        <tr><td><code>image_url</code></td><td>text</td><td>תמונת שער</td></tr>
+        <tr><td><code>created_at</code></td><td>timestamp</td><td>תאריך יצירה</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="divider" />
+
+    <h3>טבלת שיעורים — <code>lessons</code></h3>
+    <table>
+      <thead>
+        <tr><th>שדה</th><th>טיפוס</th><th>תיאור</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>uuid, PK</td><td>מזהה ייחודי</td></tr>
+        <tr><td><code>course_id</code></td><td>uuid, FK ← courses</td><td>קשר לקורס האב, On Delete Cascade</td></tr>
+        <tr><td><code>title</code></td><td>text</td><td>שם השיעור</td></tr>
+        <tr><td><code>description</code></td><td>text</td><td>תיאור קצר</td></tr>
+        <tr><td><code>video_url</code></td><td>text</td><td>קישור לוידאו</td></tr>
+        <tr><td><code>transcript</code></td><td>text, Nullable</td><td>תמליל מלא — בסיס הידע של ה-AI</td></tr>
+        <tr><td><code>sort_order</code></td><td>integer</td><td>סדר תצוגה (Drag &amp; Drop)</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="divider" />
+
+    <h3>טבלת מאגר ידע גלובלי — <code>global_knowledge_base</code></h3>
+    <table>
+      <thead>
+        <tr><th>שדה</th><th>טיפוס</th><th>תיאור</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>uuid, PK</td><td>מזהה ייחודי</td></tr>
+        <tr><td><code>title</code></td><td>text</td><td>שם הפריט (לניהול פנימי)</td></tr>
+        <tr><td><code>content</code></td><td>text</td><td>תוכן הידע — הטקסט שה-AI קורא</td></tr>
+        <tr><td><code>created_at</code></td><td>timestamp</td><td>תאריך הוספה</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="divider" />
+
+    <h3>טבלת הודעות צ'אט — <code>chat_messages</code></h3>
+    <table>
+      <thead>
+        <tr><th>שדה</th><th>טיפוס</th><th>תיאור</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>uuid, PK</td><td>מזהה ייחודי</td></tr>
+        <tr><td><code>lesson_id</code></td><td>uuid, FK ← lessons</td><td>השיעור שאליו שייכת ההודעה</td></tr>
+        <tr><td><code>user_id</code></td><td>uuid, FK ← auth.users</td><td>הלומד שיצר את ההודעה — בסיס ל-RLS</td></tr>
+        <tr><td><code>sender_role</code></td><td>text</td><td><code>user</code> או <code>ai-assistant</code></td></tr>
+        <tr><td><code>message_text</code></td><td>text</td><td>תוכן ההודעה</td></tr>
+        <tr><td><code>attachments</code></td><td>jsonb, Nullable</td><td>קבצים מצורפים מ-Supabase Storage</td></tr>
+        <tr><td><code>created_at</code></td><td>timestamp</td><td>זמן שליחה</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== כללי ארכיטקטורה ===== -->
+  <div class="section">
+    <div class="section-title">כללי ארכיטקטורה וטיפול בבעיות נפוצות</div>
+
+    <h3>תנאי גזע Realtime — ותיקונו</h3>
+    <p>ה-AI שולח תשובה ← נשמרת ב-DB ← Supabase Realtime (WebSockets) מקבל את האירוע ← עלולה להיווצר הכפלת הודעות אם הרכיב גם קורא מה-DB וגם מאזין ל-Realtime בו-זמנית.</p>
+    <p><strong>הפתרון המאושר — 4 כללים:</strong></p>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        שימוש ב-<code>useRef(createClient()).current</code> — Reference יציב לקליינט Supabase שלא נוצר מחדש בכל Render.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        פונקציית <code>loadMessages</code> עטופה ב-<code>useCallback</code> — מניעת קריאות כפולות מיותרות.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        עם קבלת <code>success</code> מה-Server Action של שליחת ההודעה, המערכת מפעילה מיד טעינת הודעות עדכנית — ולא מחכה לאירוע Realtime.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text">
+        הוספת מנגנון Deduplication: בדיקת ID לפני הוספת הודעה למערך — כדי שאירוע Realtime שמגיע אחרי הטעינה לא יציג הודעה כפולה.
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h3>Server Components לעומת Client Components</h3>
+    <p>ברירת המחדל במערכת היא Server Components (RSC) על פי Next.js App Router. עוברים ל-Client Component (עם <code>"use client"</code>) רק כאשר:</p>
+    <ul>
+      <li>נדרש Hook אינטראקטיבי כגון <code>useState</code>, <code>useEffect</code></li>
+      <li>רכיב מבצע פעולות Realtime (כגון <code>KnowledgeBaseManager</code>)</li>
+      <li>יש אינטראקציה ישירה של המשתמש שמשנה מצב מקומי</li>
+    </ul>
+    <div class="note"><strong>כלל אצבע:</strong> להכניס את <code>"use client"</code> כמה שיותר עמוק בעץ הרכיבים — כדי לא להפסיד SSR על הורים שאינם זקוקים לו.</div>
+
+    <hr class="divider" />
+
+    <h3>בעיות נסתרות בנגישות — Accessibility Nesting</h3>
+    <p>אסור לקנן אלמנט ניווט (כגון <code>&lt;Link&gt;</code> של Next.js) בתוך כפתור (<code>&lt;Button&gt;</code>) של ספריית UI כגון Radix או Base UI — אלא אם מוגדר <code>nativeButton={false}</code>. קינון כזה יוצר HTML לא תקין ושובר ניגשות מסך.</p>
+  </div>
+
+  <!-- ===== חבילת בדיקות ===== -->
+  <div class="section">
+    <div class="section-title">חבילת בדיקות — Master Test Suite</div>
+    <p>לפני שהמערכת עולה לאוויר יש לסמן V על כל הסעיפים הבאים:</p>
+
+    <h3>בדיקות UI/UX</h3>
+    <table>
+      <thead>
+        <tr><th>#</th><th>בדיקה</th><th>תנאי הצלחה</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>כותרת ברכה — ביקור ראשון</td>
+          <td>לומד חדש שנכנס לראשונה רואה את הגרסה "ברוך הבא ל..." — לא "ממשיכים מאיפה שעצרנו"</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>כותרת ברכה — ביקור חוזר</td>
+          <td>לאחר התנתקות והתחברות מחדש עם אותו משתמש, הכותרת עוברת לגרסת החזרה</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>פרטיות שיחות</td>
+          <td>התחברות עם שני משתמשים שונים בדפדפנים שונים — כל אחד רואה רק את שיחתו שלו</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>הוספת ידע גלובלי — טקסט ארוך</td>
+          <td>הדבקת טקסט של מעל 5,000 תווים: ה-Dialog לא קורס, יש גלילה, כפתור השמירה עובד</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Admin View Mode</td>
+          <td>מנהל שנכנס עם דרופדאון לומד רואה בדיוק את שיחת ה-AI של אותו לומד — ה-AI לא מגיב מחדש</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="divider" />
+
+    <h3>בדיקות שלמות נתונים</h3>
+    <table>
+      <thead>
+        <tr><th>#</th><th>בדיקה</th><th>תנאי הצלחה</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>שמירת <code>global_knowledge_base</code></td>
+          <td>פריט שנוסף בממשק מופיע מיד בשורה חדשה בטבלה בסופבייס</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>עדכון תמליל</td>
+          <td>שמירת תמליל מעודכן לשיעור מתעדכנת מיד בשדה <code>transcript</code> בטבלת <code>lessons</code></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Cascade Delete</td>
+          <td>מחיקת קורס מוחקת גם את כל השיעורים המשויכים אליו (בדיקת Foreign Keys)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== מה לא כלול ===== -->
+  <div class="section">
+    <div class="section-title">מה לא כלול בשלב זה (Out of Scope)</div>
+    <ul>
+      <li><strong>מנוע המלצות</strong> — אין המלצה אוטומטית על שיעור הבא לפי התנהגות הלומד</li>
+      <li><strong>מעקב התקדמות</strong> — אין גרף השלמה, אחוזי צפייה או מדדי engagement</li>
+      <li><strong>אנליטיקה מתקדמת</strong> — אין Dashboard שמציג שאלות נפוצות, זמן ממוצע בשיעור או שיעורי נטישה</li>
+      <li><strong>תשלומים ומנויים</strong> — אין Paywall, קופונים או שכבת מסחר</li>
+      <li><strong>תעודות וסיום קורס</strong> — אין Certificate generation אוטומטי</li>
+      <li><strong>מולטי-לשוניות</strong> — הפלטפורמה מוגדרת לעברית בלבד בשלב זה</li>
+      <li><strong>אפליקציה ניידת</strong> — Web בלבד, ללא אפליקציה ל-iOS / Android</li>
+    </ul>
+    <div class="tip"><strong>לגרסה 2.0:</strong> אנליטיקה על בסיס שיחות ה-AI, מנוע המלצות, ומעקב התקדמות חכם שמזהה פערי ידע אוטומטית.</div>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <img src="logo.png" alt="מתודה AI" class="footer-logo" onerror="this.style.display='none'" />
+  <div class="footer-name">נירה טל | מתודה פתרונות AI</div>
+  <div class="footer-links">
+    <span>© כל הזכויות שמורות</span>
+    <span class="footer-sep">|</span>
+    <a href="tel:0542215222">054-2215222</a>
+    <span class="footer-sep">|</span>
+    <a href="mailto:nira.tal@metoda.ai">nira.tal@metoda.ai</a>
+  </div>
+</div>
+
+</body>
+</html>
