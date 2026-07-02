@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אפיון — מרחב הלמידה של סיון מזר</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="shared-styles.css" />
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <img src="logo.png" alt="לוגו" class="cover-logo" onerror="this.style.display='none'" />
+  <div class="cover-badge">מסמך אפיון</div>
+  <h1>מרחב הלמידה של סיון מזר</h1>
+  <div class="cover-sub">פלטפורמת למידה אישית עם AI Assistant מבוסס שיטה — קהילה, קורסים, סדנאות ומרחבים פרטיים</div>
+  <div class="cover-meta">הוכן על ידי נירה טל | מתודה פתרונות AI | יולי 2026 | גרסה 1.0</div>
+</div>
+
+<div class="doc-wrapper">
+
+  <!-- ===== סיכום מנהלים ===== -->
+  <div class="section">
+    <div class="section-title">סיכום מנהלים</div>
+    <p>"מרחב הלמידה של סיון" הוא פלטפורמת למידה דיגיטלית (LMS) מותאמת אישית שנבנתה עבור סיון מזר — מאמנת ומנחה קהילה. הפלטפורמה מרכזת בצורה אחת קורסים ציבוריים לכלל הקהילה, מרחבים פרטיים לליווי אישי של לקוחות, וקבוצות פרטיות — ולכל אלה משולב עוזר AI שמבוסס אך ורק על תוכן השיעורים ושיטת העבודה של סיון.</p>
+    <p>כל לומד/ת רואה את המרחב שלו בלבד, מסמן/ת שיעורים שהושלמו ושואל/ת את ה-AI שאלות — ומקבל/ת תשובות שמבוססות על מה שסיון לימדה, לא על מידע גנרי מהאינטרנט.</p>
+    <div class="info-box">
+      <strong>עקרון מנחה:</strong> ה-AI ידע רק מה שסיון לימדה אותו — תמלול השיעורים ומאגר הידע הגלובלי שמזינה סיון. הוא לא ממציא, לא מנחש ולא חורג מהשיטה.
+    </div>
+  </div>
+
+  <!-- ===== פרטי הפרויקט ===== -->
+  <div class="section">
+    <div class="section-title">פרטי הפרויקט</div>
+    <table>
+      <tbody>
+        <tr><td><strong>לקוחה</strong></td><td>סיון מזר</td></tr>
+        <tr><td><strong>מגישה</strong></td><td>נירה טל | מתודה פתרונות AI</td></tr>
+        <tr><td><strong>תאריך</strong></td><td>יולי 2026</td></tr>
+        <tr><td><strong>גרסה</strong></td><td>1.0</td></tr>
+        <tr><td><strong>סטאק טכנולוגי</strong></td><td>Next.js App Router, Supabase (Auth + DB + Realtime + Storage), Anthropic Claude API, Vercel</td></tr>
+        <tr><td><strong>ניהול הרשאות</strong></td><td>Row Level Security (RLS) + Server-Side Routing</td></tr>
+        <tr><td><strong>מודל AI</strong></td><td>Claude Sonnet (Anthropic) — מוגדר בסביבה</td></tr>
+        <tr><td><strong>סטטוס</strong></td><td><span class="badge badge-green">פעיל בפרודקשן</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== קהל יעד ===== -->
+  <div class="section">
+    <div class="section-title">קהל יעד ותפקידים במערכת</div>
+
+    <h3>לומד/ת (Student)</h3>
+    <p>חברי ולקוחות של סיון — נשים ואנשים שמגיעים ללמוד, לצפות בהרצאות ולהתפתח. כל לומד/ת רואה בדשבורד שלו/ה רק את התכנים שרלוונטיים אליו/ה: קורסים ציבוריים של הקהילה, ואם רלוונטי — מרחב אישי שנוצר עבורו/ה או קבוצה פרטית שהוא/היא חלק ממנה.</p>
+    <div class="tip"><strong>חוויה מותאמת:</strong> בביקור ראשון — "איזה כיף שהצטרפת", בביקורים חוזרים — "יופי ששבת". שם הלומד/ת מופיע בכותרת ("מרחב הלמידה של [שם פרטי]").</div>
+
+    <hr class="divider" />
+
+    <h3>מנהלת / סיון (Admin)</h3>
+    <p>סיון עצמה — ורק היא — בעלת גישה מלאה לניהול התכנים, צפייה בשיחות AI של לומדים, ולדשבורד הקהילה. זיהוי הרשאת אדמין מתבצע לפי שדה <code>role = "admin"</code> בטבלת <code>profiles</code>.</p>
+    <div class="tip"><strong>Preview Mode:</strong> סיון יכולה לגלוש כלומדת ולראות את הפלטפורמה כפי שהלומדים רואים אותה — ללא יכולת שינוי, רק עם תווית "תצוגה מקדימה של מנהל".</div>
+  </div>
+
+  <!-- ===== ארכיטקטורת המסכים ===== -->
+  <div class="section">
+    <div class="section-title">מסך 1 — דף הנחיתה (עמוד ראשי)</div>
+    <p>עמוד פתיחה בעיצוב מותאם לסיון: רקע כתום בהיר (<code>#fbc694</code>), לוגו עגול של סיון מזר על רקע לבן עם מסגרת ירוקה (<code>#38676d</code>), וכותרת "ברוכים הבאים לקהילת הלמידה של סיון" עם תת-כותרת "מרחב חיבור, צמיחה וליווי אישי".</p>
+    <ul>
+      <li><strong>כפתור התחברות</strong> — צבע ירוק כהה, מוביל לטופס כניסה</li>
+      <li><strong>כפתור "כניסה ראשונה"</strong> — גבול ירוק, רקע שקוף, מוביל להרשמה</li>
+    </ul>
+    <div class="note"><strong>ניתוב חכם:</strong> לומד שמחובר כבר עובר אוטומטית לדשבורד. אדמין מועבר ל-<code>/dashboard/admin</code>, כל שאר הלומדים ל-<code>/dashboard/courses</code>.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">מסך 2 — מרחב הלמידה (דשבורד לומד)</div>
+    <p>דף הבית של הלומד/ת לאחר כניסה. מציג בצורה מאורגנת את כל התכנים הזמינים עבור אותו משתמש/ת בלבד.</p>
+
+    <h3>מבנה סעיפי התוכן</h3>
+    <ul>
+      <li><strong>מרחב אישי</strong> — מוצג ראשון אם קיים: קורסים וסדנאות שנוצרו ספציפית עבור לקוח/ה זו (הקלטות, אימונים מותאמים אישית)</li>
+      <li><strong>קורסים וסדנאות הקהילה</strong> — תכנים ציבוריים שפתוחים לכל חברי הקהילה</li>
+    </ul>
+
+    <h3>חלוקה בתוך כל סעיף</h3>
+    <p>בכל קטגוריה, אם קיימים גם קורסים וגם סדנאות — הם מופרדים עם כותרת משנה "סדנאות" ו"קורסים". הכרטיסיות מוצגות ב-Grid רספונסיבי: עמודה אחת (מובייל), 2 עמודות (טאבלט), 3 עמודות (דסקטופ).</p>
+
+    <h3>כרטיס קורס (Course Card)</h3>
+    <ul>
+      <li>תמונת כריכה (thumbnail) — אוטומטי מיוטיוב או מועלה ידנית</li>
+      <li>שם הקורס / סדנה</li>
+      <li>תווית סוג המרחב ("מרחב האישי שלי", "המרחב של [שם קבוצה]")</li>
+      <li>Progress bar עם אחוז השלמה ומספר שיעורים שהושלמו מתוך סך הכל</li>
+      <li>כפתור "התחל" / "המשך" — מוביל ישירות לשיעור</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">מסך 3 — דף השיעור (מרחב הלמידה)</div>
+    <p>הלב של הפלטפורמה — המסך שבו הלומד/ת צופה בשיעור, מסמן/ת השלמה ומשוחח/ת עם ה-AI.</p>
+
+    <h3>פריסת דסקטופ — ResizablePanelGroup</h3>
+    <p>בקורס מתמשך (multi-lesson), המסך מחולק לשני פאנלים הניתנים לשינוי גודל: <strong>פאנל ראשי (75%)</strong> עם תוכן השיעור, ו<strong>פאנל צד (25%)</strong> עם רשימת כל שיעורי הקורס. קו ה-Handle ניתן לגרירה ידנית.</p>
+    <p>בסדנה (workshop) — מסך שלם ללא פאנל צד, תצוגה מלאה.</p>
+
+    <h3>פריסת מובייל</h3>
+    <p>מבנה אנכי: תוכן השיעור למעלה (גבול מסגרת), רשימת השיעורים מתחת (גלילה מוגבלת לגובה מקסימלי). ה-AI Assistant נפתח כ-Bottom Sheet עם כיסוי חצי-מסך ופקק גרירה.</p>
+
+    <h3>תוכן פאנל ראשי</h3>
+    <ul>
+      <li><strong>נגן וידאו</strong> — יחס 16:9 קבוע, תומך YouTube ו-Vimeo ו-URL ישיר</li>
+      <li><strong>כותרת השיעור / הסדנה</strong> — מתחת לנגן</li>
+      <li><strong>תיאור</strong> — אם קיים, מוצג כ-Muted text</li>
+      <li><strong>כפתור "לשיעור הקודם"</strong> — מוצג רק אם קיים שיעור לפני (לא בסדנה)</li>
+      <li><strong>כפתור "סמן כהושלם / הושלם"</strong> — שולח ל-DB ומנווט אוטומטית לשיעור הבא</li>
+      <li><strong>כפתור AI Assistant</strong> — פותח / סוגר את פאנל הצ'אט</li>
+    </ul>
+    <div class="note"><strong>לאדמין:</strong> כפתור "סמן כהושלם" מוחלף בתווית "תצוגה מקדימה של מנהל" — כדי שסיון לא תיצור התקדמות מלאכותית.</div>
+
+    <h3>Sidebar — רשימת שיעורים</h3>
+    <ul>
+      <li>כותרת הקורס בראש</li>
+      <li>רשימת שיעורים מסודרת לפי <code>position</code></li>
+      <li>שיעור נוכחי — מסומן בצבע פעיל</li>
+      <li>שיעורים שהושלמו — V ירוק</li>
+      <li>כל שיעור — קליקבל, מנווט לשיעור המתאים</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">מסך 4 — AI Assistant (פאנל הצ'אט)</div>
+    <p>עוזר AI ייחודי שפועל בהקשר של השיעור הנוכחי. נפתח כפאנל צדדי בדסקטופ (רוחב 360px) או Bottom Sheet במובייל.</p>
+
+    <h3>חדרים מבודדים למשתמש</h3>
+    <p>כל שיחה מזוהה לפי <code>lesson_id + user_id</code> — חדר ייחודי לכל שילוב. לומד אחד לא רואה שיחות של אחר. ההיסטוריה נשמרת ב-DB ונטענת בכל כניסה חוזרת לשיעור.</p>
+
+    <h3>Empty State חכם</h3>
+    <p>כשהשיחה ריקה: איקון Sparkles, הסבר קצר, וכפתור "שאלה לדוגמה: מה הנושא המרכזי בשיעור הזה?" — שבלחיצה שולח את השאלה ומפעיל את השיחה.</p>
+
+    <h3>עיבוד תשובות AI</h3>
+    <p>תשובות ה-AI מוצגות עם Markdown מעובד: טקסט מודגש, רשימות, כותרות משנה, קטעי קוד — באמצעות <code>react-markdown</code> עם עיצוב מותאם (בועה כחולה בהירה). הודעות הלומד מוצגות ב-Muted background.</p>
+
+    <h3>ממשק שליחת הודעה</h3>
+    <ul>
+      <li>שדה טקסט חופשי, Enter שולח (Shift+Enter ירידת שורה)</li>
+      <li>כפתור שליחה — מושבת בזמן המתנה לתשובה</li>
+      <li>Paperclip icon — מסומן כ"בקרוב", לא פעיל בינתיים</li>
+      <li>תווית "AI Assistant חושב..." בזמן המתנה</li>
+    </ul>
+
+    <h3>צפייה של סיון בשיחות הלומדים (Admin View)</h3>
+    <p>כאשר סיון נכנסת לשיעור בתור אדמין, ה-AI Panel מציג Dropdown לבחירת לומד: "בחרי תלמיד מהרשימה למעלה כדי לצפות בשיחה שלו". לחיצה על שם לומד/ת טוענת את ההיסטוריה המלאה של שיחתם עם ה-AI. שדה הקלדה מוסתר — סיון קוראת בלבד, לא כותבת.</p>
+    <div class="tip"><strong>שימוש מומלץ:</strong> לאחר צפייה בשיחות לומדים, סיון יכולה לשפר את תמלול השיעור כדי שה-AI ייתן תשובות טובות יותר בפעמים הבאות.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">מסך 5 — לוח הניהול (Admin Control Center)</div>
+    <p>זמין לסיון בלבד בכתובת <code>/dashboard/admin</code>. מורכב מארבעה בלוקים עיקריים.</p>
+
+    <h3>בלוק 1 — יצירת קורס / סדנה חדשה</h3>
+    <table>
+      <thead><tr><th>שדה</th><th>תיאור</th></tr></thead>
+      <tbody>
+        <tr><td>שם הקורס</td><td>טקסט חופשי, חובה</td></tr>
+        <tr><td>תיאור</td><td>Textarea, אופציונלי</td></tr>
+        <tr><td>תמונת כריכה</td><td>העלאת קובץ ידנית — או אוטומטי מהסרטון הראשון ביוטיוב</td></tr>
+        <tr><td>סוג</td><td>"קורס מתמשך" | "סדנה / וובינר (שיעור יחיד)"</td></tr>
+        <tr><td>סוג מרחב</td><td>"ציבורי לכל הקהילה" | "מרחב אישי ללקוח" | "קורס / קבוצה פרטית"</td></tr>
+        <tr><td>בחירת לקוח</td><td>Dropdown מרשימת הלומדים (מופיע רק ב"מרחב אישי")</td></tr>
+        <tr><td>שם קבוצה + חברים</td><td>שם + Checkboxes לבחירת חברי הקבוצה (מופיע רק ב"קבוצה פרטית")</td></tr>
+        <tr><td>פרטי קשר / מאמן</td><td>Textarea — מוצג רק במרחב אישי / קבוצה (לשימוש פנימי)</td></tr>
+        <tr><td>קישורי וידאו</td><td>Textarea — שורה לכל סרטון, כל שורה הופכת לשיעור אוטומטית</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="divider" />
+
+    <h3>בלוק 2 — תוכן קיים (עריכת קורסים ושיעורים)</h3>
+    <ul>
+      <li>רשימת כל הקורסים עם Drag &amp; Drop לשינוי סדר (<code>position</code> נשמר ב-DB)</li>
+      <li>לכל קורס — כפתור עריכה (שם, תיאור, תמונה, סוג מרחב) ומחיקה</li>
+      <li>פתיחת שיעורי הקורס — גם הם עם Drag &amp; Drop לסדר</li>
+      <li>עריכת שיעור: Dialog עם שדות כותרת, קישור וידאו, תמלול (Textarea גדול), thumbnail</li>
+      <li>מחיקת שיעור — עם אישור</li>
+    </ul>
+    <div class="note"><strong>Auto-thumbnail:</strong> שינוי קישור וידאו ביוטיוב מעדכן אוטומטית את ה-thumbnail של השיעור.</div>
+
+    <hr class="divider" />
+
+    <h3>בלוק 3 — ניהול ידע ה-AI</h3>
+    <p>מאגר מרכזי של מידע שה-AI יכול לשאוב ממנו בכל שיחה, בכל קורס — מעבר לתמליל השיעור הספציפי. מתאים לשיטת העבודה של סיון, מונחון, FAQ, נהלים.</p>
+    <ul>
+      <li>רשימת כל פריטי הידע הגלובלי</li>
+      <li>כפתור "הוסף מקור ידע לAI" — פותח Dialog עם שדה כותרת ו-Textarea</li>
+      <li>עריכה ומחיקה של פריטים קיימים</li>
+    </ul>
+
+    <hr class="divider" />
+
+    <h3>בלוק 4 — דשבורד הקהילה</h3>
+    <p>מעקב אחר התקדמות כלל הלומדים בפלטפורמה.</p>
+    <ul>
+      <li><strong>התראת "לומדים תקועים"</strong> — כרטיס אדום עם שמות לומדים שלא הייתה להם פעילות מעל 7 ימים</li>
+      <li><strong>טבלת לומדים</strong> — שם, אימייל, שיעורים שהושלמו, אחוז השלמה, סטטוס (פעיל/ה / תקוע/ה)</li>
+    </ul>
+    <div class="tip"><strong>ערך עסקי:</strong> סיון יודעת בדיוק מי צריך מגע אישי לפני שמישהו נופל מהקורס.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">מסך 6 — דיווח תקלות</div>
+    <p>עמוד פשוט עם טופס Fillout מוטמע (iframe) — מוצג רק לאדמין בתפריט הניווט. הלומדים לא רואים עמוד זה. הטופס מאפשר לדווח על בעיות טכניות, והוא מוסתר בלי progress bar ובלי כותרות של Fillout.</p>
+  </div>
+
+  <!-- ===== ארכיטקטורת AI ===== -->
+  <div class="section">
+    <div class="section-title">ארכיטקטורת ה-AI — בניית System Prompt (RAG)</div>
+    <p>לפני כל תשובת AI, ה-Server Action בונה System Prompt מדויק משלוש שכבות:</p>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <strong>זהות ושפה</strong><br>
+        "אתה AI Assistant רשמי במרחב הלמידה של סיון. תפקידך לענות לתלמידים בעברית טבעית, בצורה ממוקדת ומועילה. אל תמציא נתונים שאינם מופיעים במקורות שסופקו."
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <strong>הקשר מקומי (Local Context)</strong><br>
+        שם הקורס + שם השיעור + תמלול השיעור הנוכחי (שדה <code>transcript</code> של השיעור). אם אין תמלול — "(לא קיים תמלול לשיעור זה)".
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <strong>הקשר גלובלי (Global Knowledge Base)</strong><br>
+        כל הפריטים מטבלת <code>global_knowledge_base</code> — מוזרמים בסדר כרונולוגי. כל פריט מוצג כ-<code>## כותרת הפריט</code> + הטקסט שלו.
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h3>כיצד AI Tutor מיוצג ב-DB</h3>
+    <p>ה-AI Tutor הוא "משתמש" פנימי של Supabase Auth עם כתובת <code>ai-tutor@system.internal</code> ושם "AI Assistant". כל תשובה שלו נשמרת ב-<code>chat_messages</code> תחת <code>user_id</code> של פרופיל זה — מה שמאפשר הצגה עקבית בממשק ושמירת היסטוריה.</p>
+
+    <hr class="divider" />
+
+    <h3>Realtime — WebSockets ו-Deduplication</h3>
+    <p>כאשר הודעה חדשה נכנסת ל-DB, Supabase Realtime מפרסם אותה דרך WebSocket לכל הלקוחות שמאזינים לחדר. כדי למנוע הכפלת הודעות (Race Condition בין טעינה ישירה ל-Realtime):</p>
+    <ul>
+      <li>לאחר שליחת הודעה — טעינה מפורשת מה-DB (לא מחכים ל-Realtime)</li>
+      <li>Deduplication לפי <code>message.id</code> לפני הוספה למערך ה-State</li>
+      <li>Supabase Client יציב ב-<code>useRef</code> — לא נוצר מחדש בכל Render</li>
+    </ul>
+  </div>
+
+  <!-- ===== ארכיטקטורת נתונים ===== -->
+  <div class="section">
+    <div class="section-title">ארכיטקטורת נתונים — Supabase Schema</div>
+
+    <h3>טבלת משתמשים — <code>profiles</code></h3>
+    <table>
+      <thead><tr><th>שדה</th><th>טיפוס</th><th>תיאור</th></tr></thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>uuid, PK</td><td>מזהה זהה ל-<code>auth.users.id</code></td></tr>
+        <tr><td><code>full_name</code></td><td>text, Nullable</td><td>שם מלא — מוצג בכותרת הדשבורד</td></tr>
+        <tr><td><code>email</code></td><td>text, Nullable</td><td>אימייל</td></tr>
+        <tr><td><code>role</code></td><td>text</td><td><code>"admin"</code> | <code>"student"</code></td></tr>
+        <tr><td><code>created_at</code></td><td>timestamp</td><td>תאריך הרשמה</td></tr>
+        <tr><td><code>updated_at</code></td><td>timestamp</td><td>תאריך עדכון אחרון</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="divider" />
+
+    <h3>טבלת קורסים — <code>courses</code></h3>
+    <table>
+      <thead><tr><th>שדה</th><th>טיפוס</th><th>תיאור</th></tr></thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>uuid, PK</td><td>מזהה ייחודי</td></tr>
+        <tr><td><code>title</code></td><td>text</td><td>שם הקורס / הסדנה</td></tr>
+        <tr><td><code>description</code></td><td>text, Nullable</td><td>תיאור</td></tr>
+        <tr><td><code>thumbnail_url</code></td><td>text, Nullable</td><td>תמונת כריכה — יוטיוב אוטומטי או העלאה ידנית</td></tr>
+        <tr><td><code>type</code></td><td>text</td><td><code>"course"</code> (מתמשך) | <code>"workshop"</code> (שיעור יחיד)</td></tr>
+        <tr><td><code>position</code></td><td>integer</td><td>סדר תצוגה (Drag &amp; Drop)</td></tr>
+        <tr><td><code>client_id</code></td><td>uuid, FK → profiles, Nullable</td><td>מרחב אישי — מזהה הלקוח</td></tr>
+        <tr><td><code>group_name</code></td><td>text, Nullable</td><td>שם קבוצה פרטית</td></tr>
+        <tr><td><code>contact_info</code></td><td>text, Nullable</td><td>פרטי קשר (לשימוש פנימי של סיון)</td></tr>
+        <tr><td><code>created_at</code></td><td>timestamp</td><td>תאריך יצירה</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="divider" />
+
+    <h3>טבלת חברי קבוצה — <code>course_members</code></h3>
+    <table>
+      <thead><tr><th>שדה</th><th>טיפוס</th><th>תיאור</th></tr></thead>
+      <tbody>
+        <tr><td><code>course_id</code></td><td>uuid, FK → courses</td><td>קורס / קבוצה</td></tr>
+        <tr><td><code>user_id</code></td><td>uuid, FK → profiles</td><td>לומד/ת שהוא/ה חלק מהקבוצה</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="divider" />
+
+    <h3>טבלת שיעורים — <code>lessons</code></h3>
+    <table>
+      <thead><tr><th>שדה</th><th>טיפוס</th><th>תיאור</th></tr></thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>uuid, PK</td><td>מזהה ייחודי</td></tr>
+        <tr><td><code>course_id</code></td><td>uuid, FK → courses</td><td>קורס אב — On Delete Cascade</td></tr>
+        <tr><td><code>title</code></td><td>text</td><td>שם השיעור</td></tr>
+        <tr><td><code>description</code></td><td>text, Nullable</td><td>תיאור קצר</td></tr>
+        <tr><td><code>video_url</code></td><td>text, Nullable</td><td>קישור לוידאו (יוטיוב / Vimeo / URL ישיר)</td></tr>
+        <tr><td><code>position</code></td><td>integer</td><td>סדר תצוגה בתוך הקורס</td></tr>
+        <tr><td><code>transcript</code></td><td>text, Nullable</td><td>תמלול מלא — בסיס הידע המרכזי של ה-AI לשיעור</td></tr>
+        <tr><td><code>duration</code></td><td>integer, Nullable</td><td>אורך בשניות</td></tr>
+        <tr><td><code>thumbnail_url</code></td><td>text, Nullable</td><td>תמונה ממוזערת לשיעור</td></tr>
+        <tr><td><code>created_at</code></td><td>timestamp</td><td>תאריך יצירה</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="divider" />
+
+    <h3>טבלת התקדמות — <code>user_progress</code></h3>
+    <table>
+      <thead><tr><th>שדה</th><th>טיפוס</th><th>תיאור</th></tr></thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>uuid, PK</td><td>מזהה ייחודי</td></tr>
+        <tr><td><code>user_id</code></td><td>uuid, FK → profiles</td><td>הלומד/ת</td></tr>
+        <tr><td><code>lesson_id</code></td><td>uuid, FK → lessons</td><td>השיעור</td></tr>
+        <tr><td><code>is_completed</code></td><td>boolean</td><td>האם סומן כהושלם</td></tr>
+        <tr><td><code>updated_at</code></td><td>timestamp</td><td>תאריך עדכון אחרון — בסיס לזיהוי "תקועים"</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="divider" />
+
+    <h3>טבלת מאגר ידע גלובלי — <code>global_knowledge_base</code></h3>
+    <table>
+      <thead><tr><th>שדה</th><th>טיפוס</th><th>תיאור</th></tr></thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>uuid, PK</td><td>מזהה ייחודי</td></tr>
+        <tr><td><code>title</code></td><td>text</td><td>שם הפריט (לניהול פנימי)</td></tr>
+        <tr><td><code>content</code></td><td>text</td><td>תוכן הידע שה-AI קורא</td></tr>
+        <tr><td><code>created_at</code></td><td>timestamp</td><td>תאריך הוספה</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="divider" />
+
+    <h3>טבלת חדרי צ'אט — <code>chat_rooms</code></h3>
+    <table>
+      <thead><tr><th>שדה</th><th>טיפוס</th><th>תיאור</th></tr></thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>uuid, PK</td><td>מזהה ייחודי</td></tr>
+        <tr><td><code>name</code></td><td>text</td><td>שם החדר (פנימי)</td></tr>
+        <tr><td><code>is_private</code></td><td>boolean</td><td>האם חדר פרטי</td></tr>
+        <tr><td><code>course_id</code></td><td>uuid, FK → courses, Nullable</td><td>הקורס המשויך</td></tr>
+        <tr><td><code>created_at</code></td><td>timestamp</td><td>תאריך יצירה</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="divider" />
+
+    <h3>טבלת הודעות צ'אט — <code>chat_messages</code></h3>
+    <table>
+      <thead><tr><th>שדה</th><th>טיפוס</th><th>תיאור</th></tr></thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>uuid, PK</td><td>מזהה ייחודי</td></tr>
+        <tr><td><code>room_id</code></td><td>uuid, FK → chat_rooms</td><td>החדר שאליו שייכת ההודעה</td></tr>
+        <tr><td><code>user_id</code></td><td>uuid, FK → profiles</td><td>הלומד/ת (או AI Tutor) — בסיס ל-RLS</td></tr>
+        <tr><td><code>content</code></td><td>text, Nullable</td><td>תוכן ההודעה</td></tr>
+        <tr><td><code>attachments</code></td><td>jsonb, Nullable</td><td>קבצים מצורפים: path, name, type, size</td></tr>
+        <tr><td><code>created_at</code></td><td>timestamp</td><td>זמן שליחה</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== דרישות טכניות ===== -->
+  <div class="section">
+    <div class="section-title">דרישות טכניות ומשתני סביבה</div>
+    <table>
+      <thead><tr><th>רכיב</th><th>טכנולוגיה</th><th>הערות</th></tr></thead>
+      <tbody>
+        <tr><td>Frontend</td><td>Next.js App Router (React 19)</td><td>Server Components כברירת מחדל</td></tr>
+        <tr><td>UI Library</td><td>shadcn/ui + Radix + Tailwind CSS</td><td>עיצוב RTL מותאם</td></tr>
+        <tr><td>Auth + DB</td><td>Supabase (2026 API)</td><td>RLS על כל הטבלאות</td></tr>
+        <tr><td>Realtime</td><td>Supabase Realtime (WebSockets)</td><td>צ'אט חי לכל לומד</td></tr>
+        <tr><td>Storage</td><td>Supabase Storage</td><td>Bucket <code>chat-attachments</code> ו-<code>course-thumbnails</code></td></tr>
+        <tr><td>AI Engine</td><td>Anthropic Claude API</td><td>מודל מוגדר ב-<code>ANTHROPIC_MODEL</code></td></tr>
+        <tr><td>Hosting</td><td>Vercel</td><td>CI/CD אוטומטי ב-push לגיטהאב</td></tr>
+        <tr><td>Video</td><td>YouTube / Vimeo / URL ישיר</td><td>עטיפת iframe עם יחס 16:9</td></tr>
+        <tr><td>Bug Reporting</td><td>Fillout (iframe)</td><td>טופס חיצוני מוטמע</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="divider" />
+
+    <h3>משתני סביבה נדרשים</h3>
+    <table>
+      <thead><tr><th>משתנה</th><th>תיאור</th></tr></thead>
+      <tbody>
+        <tr><td><code>NEXT_PUBLIC_SUPABASE_URL</code></td><td>כתובת פרויקט Supabase</td></tr>
+        <tr><td><code>NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY</code></td><td>מפתח ציבורי (sb_publishable_...)</td></tr>
+        <tr><td><code>SUPABASE_SECRET_KEY</code></td><td>מפתח סודי לצד-שרת (sb_secret_...)</td></tr>
+        <tr><td><code>ANTHROPIC_API_KEY</code></td><td>מפתח API של Anthropic</td></tr>
+        <tr><td><code>ANTHROPIC_MODEL</code></td><td>שם המודל (אופציונלי, ברירת מחדל: claude-sonnet-4-6)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== כללים ארכיטקטוניים ===== -->
+  <div class="section">
+    <div class="section-title">כללים ארכיטקטוניים חשובים</div>
+
+    <div class="step">
+      <div class="step-num">!</div>
+      <div class="step-text">
+        <strong>אין middleware.ts</strong> — המערכת משתמשת ב-<code>proxy.ts</code> בשורש הפרויקט. אין ליצור <code>middleware.ts</code> בשום שלב.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">!</div>
+      <div class="step-text">
+        <strong>Supabase Keys 2026</strong> — <code>NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY</code> (לא <code>ANON_KEY</code>) ו-<code>SUPABASE_SECRET_KEY</code> (לא <code>SERVICE_ROLE_KEY</code>).
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">!</div>
+      <div class="step-text">
+        <strong>כניסת אדמין נפרדת ב-Supabase</strong> — <code>createAdminClient()</code> עם <code>SUPABASE_SECRET_KEY</code> נדרש לכל פעולה שמשתמשת בנתוני לומדים שאינם שייכים למשתמש הנוכחי (RLS עוקף עבור אדמין בלבד).
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">!</div>
+      <div class="step-text">
+        <strong>Client Components רק כשצריך</strong> — <code>"use client"</code> רק ל-Hooks אינטראקטיביים, Realtime, ומצב מקומי. להכניס כמה שיותר עמוק בעץ הרכיבים.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">!</div>
+      <div class="step-text">
+        <strong>Accessibility Nesting</strong> — אסור לקנן <code>&lt;Link&gt;</code> בתוך <code>&lt;Button&gt;</code> של Radix. להשתמש ב-<code>nativeButton={false}</code> עם prop <code>render</code>.
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ניווט ===== -->
+  <div class="section">
+    <div class="section-title">מבנה הניווט</div>
+    <p>Sidebar צדדי (קולפסיבל במובייל) שמוצג בכל עמודי הדשבורד.</p>
+    <table>
+      <thead><tr><th>פריט תפריט</th><th>כתובת</th><th>גישה</th></tr></thead>
+      <tbody>
+        <tr><td>קורסים</td><td><code>/dashboard/courses</code></td><td>כולם</td></tr>
+        <tr><td>ניהול</td><td><code>/dashboard/admin</code></td><td>אדמין בלבד</td></tr>
+        <tr><td>דיווח תקלות</td><td><code>/dashboard/admin/bugs</code></td><td>אדמין בלבד</td></tr>
+        <tr><td>מדריך מתעדכן</td><td>לינק חיצוני (חדון חדש)</td><td>כולם</td></tr>
+      </tbody>
+    </table>
+    <div class="note">שם המשתמש, תפקיד, כפתור יציאה, ו-Theme Toggle (Light/Dark) — מוצגים בתחתית ה-Sidebar.</div>
+  </div>
+
+  <!-- ===== זרימות משתמש ===== -->
+  <div class="section">
+    <div class="section-title">זרימות משתמש מרכזיות</div>
+
+    <h3>זרימה 1 — לומד/ת חדשה</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-text">נחיתה בדף הראשי → לחיצה על "כניסה ראשונה"</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">מילוי טופס הרשמה (שם + אימייל + סיסמה) → אימות אימייל</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">הכניסה האוטומטית מביאה לדשבורד — כותרת "איזה כיף שהצטרפת"</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text">לחיצה על קורס → מועבר לשיעור הראשון</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-text">צפייה → לחיצה "AI Assistant" → שאלה → תשובה מבוססת תמלול</div></div>
+    <div class="step"><div class="step-num">6</div><div class="step-text">לחיצה "סמן כהושלם" → מועבר לשיעור הבא אוטומטית</div></div>
+
+    <hr class="divider" />
+
+    <h3>זרימה 2 — סיון מוסיפה קורס חדש</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-text">כניסה לניהול → "קורס / סדנה חדשה"</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">מילוי שם, בחירת סוג (קורס / סדנה), בחירת מרחב (ציבורי / אישי / קבוצה)</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">הדבקת קישורי יוטיוב — שורה אחת לכל שיעור</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text">לחיצה "יצירת קורס" → כל שורה הופכת לשיעור אוטומטית עם thumbnail מיוטיוב</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-text">עריכת שיעורים — הוספת תמלולים לכל שיעור</div></div>
+
+    <hr class="divider" />
+
+    <h3>זרימה 3 — סיון מזינה ידע ל-AI</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-text">כניסה לניהול → "ניהול ידע ה-AI" → "+ הוסף מקור ידע"</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">הדבקת מסמך שיטה / FAQ / מונחון עם כותרת ותוכן</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">שמירה — הפריט מיידית חלק מה-Context של כל שיחת AI בפלטפורמה</div></div>
+  </div>
+
+  <!-- ===== Out of Scope ===== -->
+  <div class="section">
+    <div class="section-title">מה לא כלול בגרסה הנוכחית (Out of Scope)</div>
+    <ul>
+      <li><strong>תשלומים ומנויים</strong> — אין Paywall, קופונים, שכבת מסחר או מנגנון קנייה</li>
+      <li><strong>תעודות סיום</strong> — אין Certificate generation אוטומטי</li>
+      <li><strong>אנליטיקה מתקדמת</strong> — אין גרף זמן צפייה, שאלות נפוצות אוטומטיות, או Funnel</li>
+      <li><strong>מנוע המלצות</strong> — אין המלצה אוטומטית על שיעור/קורס הבא לפי התנהגות</li>
+      <li><strong>העלאת קבצים לשיחת AI</strong> — הממשק קיים אך מסומן "בקרוב", לא פעיל</li>
+      <li><strong>מולטי-לשוניות</strong> — הפלטפורמה עברית בלבד</li>
+      <li><strong>אפליקציה ניידת</strong> — Web בלבד, ללא אפליקציה ל-iOS/Android</li>
+      <li><strong>Forum / קהילה</strong> — אין דיונים פתוחים בין לומדים</li>
+    </ul>
+    <div class="tip"><strong>לגרסה הבאה:</strong> צירוף קבצים לצ'אט AI, אנליטיקה על בסיס שיחות הלומדים, ומנוע המלצות המבוסס על היסטוריית הצפייה.</div>
+  </div>
+
+  <!-- ===== אישור ===== -->
+  <div class="section">
+    <div class="section-title">אישור מסמך</div>
+    <p>מסמך זה מתאר את המערכת כפי שנבנתה ופועלת. עדכונים לסקופ או שינויי ארכיטקטורה מהותיים ידרשו עדכון גרסה.</p>
+    <table>
+      <tbody>
+        <tr><td><strong>הוכן על ידי</strong></td><td>נירה טל | מתודה פתרונות AI</td><td><strong>תאריך:</strong> יולי 2026</td></tr>
+        <tr><td><strong>אושר על ידי</strong></td><td>סיון מזר</td><td><strong>תאריך:</strong> ___________</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <img src="logo.png" alt="מתודה AI" class="footer-logo" onerror="this.style.display='none'" />
+  <div class="footer-name">נירה טל | מתודה פתרונות AI</div>
+  <div class="footer-links">
+    <span>© כל הזכויות שמורות</span>
+    <span class="footer-sep">|</span>
+    <a href="tel:0542215222">054-2215222</a>
+    <span class="footer-sep">|</span>
+    <a href="mailto:nira.tal@metoda.ai">nira.tal@metoda.ai</a>
+  </div>
+</div>
+
+</body>
+</html>
