@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אפיון מוצר — יומן הרגשות שלי</title>
+  <link rel="icon" href="Metoda Fabicon (2).png" type="image/png" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: #f5f7ff;
+      color: #2d2d2d;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    /* ── Cover ── */
+    .cover {
+      text-align: center;
+      padding: 36px 28px 30px;
+      background: linear-gradient(135deg, #4361EE 0%, #7c3aed 100%);
+      border-radius: 20px;
+      color: white;
+      margin-bottom: 40px;
+    }
+    .cover-logo {
+      height: 86px;
+      margin: 0 auto 18px;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
+    .cover h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .cover .subtitle { font-size: 17px; font-weight: 500; color: #e0e7ff; margin-bottom: 12px; }
+    .cover-meta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .cover-meta span {
+      background: rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* ── Section ── */
+    section {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 28px 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #4361EE;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      border-bottom: 2px solid #eef0ff;
+      padding-bottom: 12px;
+    }
+    .section-title .icon { font-size: 22px; }
+
+    .section-num {
+      background: #4361EE;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #2d2d2d;
+      margin: 20px 0 7px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    h3::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 16px;
+      background: #4361EE;
+      border-radius: 2px;
+    }
+
+    h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #4361EE;
+      margin: 14px 0 6px;
+    }
+
+    p { margin-bottom: 10px; color: #444; font-size: 15px; }
+
+    ul, ol {
+      padding-right: 22px;
+      margin-bottom: 10px;
+    }
+    li {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+
+    /* ── Steps ── */
+    .steps { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #f8f9ff;
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .step-num {
+      min-width: 28px;
+      height: 28px;
+      background: #4361EE;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .step-text { font-size: 14.5px; color: #333; line-height: 1.55; }
+    .step-text strong { color: #4361EE; }
+
+    /* ── Badges ── */
+    .badge {
+      display: inline-block;
+      background: #eef0ff;
+      color: #4361EE;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 13px;
+      font-weight: 600;
+      margin: 0 2px;
+    }
+    .badge-purple {
+      background: #f3f0ff;
+      color: #6366f1;
+    }
+    .badge-green {
+      background: #f0fdf4;
+      color: #16a34a;
+    }
+    .badge-orange {
+      background: #fff7ed;
+      color: #c2410c;
+    }
+
+    /* ── Info boxes ── */
+    .tip {
+      background: #fff8e6;
+      border-right: 4px solid #f59e0b;
+      border-radius: 8px;
+      padding: 11px 14px;
+      font-size: 14px;
+      color: #555;
+      margin-top: 12px;
+      line-height: 1.65;
+    }
+    .tip strong { color: #b45309; }
+
+    .info {
+      background: #eff6ff;
+      border-right: 4px solid #4361EE;
+      border-radius: 8px;
+      padding: 11px 14px;
+      font-size: 14px;
+      color: #1e40af;
+      margin-top: 12px;
+      line-height: 1.65;
+    }
+    .info strong { color: #1e3a8a; }
+
+    .privacy {
+      background: #f0fdf4;
+      border-right: 4px solid #22c55e;
+      border-radius: 8px;
+      padding: 11px 14px;
+      font-size: 14px;
+      color: #15803d;
+      margin-top: 12px;
+      line-height: 1.65;
+    }
+    .privacy strong { color: #166534; }
+
+    .warning {
+      background: #fef2f2;
+      border-right: 4px solid #ef4444;
+      border-radius: 8px;
+      padding: 11px 14px;
+      font-size: 14px;
+      color: #b91c1c;
+      margin-top: 12px;
+    }
+
+    /* ── Table ── */
+    .table-wrap { overflow-x: auto; margin-top: 12px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th {
+      background: #eef0ff;
+      color: #4361EE;
+      font-weight: 700;
+      padding: 10px 12px;
+      text-align: right;
+      border: 1px solid #e0e4f8;
+    }
+    td {
+      padding: 9px 12px;
+      border: 1px solid #eef0ff;
+      color: #333;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #fafbff; }
+
+    /* ── Code block ── */
+    .code-block {
+      background: #1e2235;
+      color: #c9d1d9;
+      border-radius: 10px;
+      padding: 16px 18px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      margin-top: 10px;
+      direction: ltr;
+      text-align: left;
+      overflow-x: auto;
+    }
+    .code-block .c-key  { color: #79c0ff; }
+    .code-block .c-val  { color: #a5d6ff; }
+    .code-block .c-com  { color: #8b949e; }
+    .code-block .c-str  { color: #a8d8a8; }
+
+    /* ── Two-col grid ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .col-box {
+      background: #f8f9ff;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .col-box h4 { margin-top: 0; }
+
+    /* ── Wizard grid ── */
+    .wizard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .wizard-card {
+      background: #f8f9ff;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 14px;
+      color: #333;
+      border-right: 3px solid #4361EE;
+    }
+    .wizard-card .step-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #4361EE;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Theme swatches ── */
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .theme-swatch {
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      border: 2px solid rgba(0,0,0,0.08);
+    }
+    .theme-dot {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    /* ── Checklist ── */
+    .checklist { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14.5px;
+      color: #333;
+      line-height: 1.5;
+    }
+    .check-icon { flex-shrink: 0; font-size: 17px; }
+
+    /* ── Backlog table ── */
+    .backlog-priority {
+      display: inline-block;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .p-urgent { background: #fee2e2; color: #b91c1c; }
+    .p-high   { background: #fef3c7; color: #92400e; }
+    .p-mid    { background: #dbeafe; color: #1e40af; }
+    .p-low    { background: #f3f4f6; color: #6b7280; }
+
+    /* ── Quote box ── */
+    .quote-box {
+      background: #f0f4ff;
+      border-right: 4px solid #4361EE;
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 15px;
+      font-style: italic;
+      color: #1e3a8a;
+      margin: 12px 0;
+      line-height: 1.7;
+    }
+
+    /* ── Closing / Signature ── */
+    .signature-box {
+      background: linear-gradient(135deg, #f0f4ff 0%, #f5f3ff 100%);
+      border-radius: 16px;
+      padding: 28px 32px;
+      text-align: center;
+      border: 1px solid #e0e7ff;
+      margin-top: 8px;
+    }
+    .signature-box .sig-row {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .sig-item { text-align: center; }
+    .sig-label { font-size: 12px; color: #888; font-weight: 600; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .sig-value { font-size: 15px; font-weight: 700; color: #2d2d2d; }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      margin-top: 36px;
+      padding: 28px 20px;
+      background: #1a1f3c;
+      border-radius: 16px;
+      color: #a0a8c8;
+      font-size: 13.5px;
+      line-height: 2;
+    }
+    .footer-logo {
+      height: 64px;
+      margin: 0 auto 12px;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
+    .footer-name { font-size: 15px; font-weight: 600; color: #ffffff; margin-bottom: 4px; }
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .footer-links a { color: #7c8fc7; text-decoration: none; font-size: 13px; }
+    .footer-links a:hover { color: #aab4e0; }
+    .footer-sep { color: #3a4060; }
+
+    /* ── TOC ── */
+    .toc {
+      background: #f8f9ff;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 28px;
+    }
+    .toc h2 { font-size: 15px; font-weight: 700; color: #4361EE; margin-bottom: 12px; }
+    .toc ol { padding-right: 18px; }
+    .toc li { font-size: 14px; color: #555; margin-bottom: 5px; }
+    .toc li a { color: #4361EE; text-decoration: none; }
+    .toc li a:hover { text-decoration: underline; }
+
+    @media (max-width: 580px) {
+      .two-col, .wizard-grid, .theme-grid { grid-template-columns: 1fr; }
+      section { padding: 20px 16px; }
+      .signature-box .sig-row { gap: 20px; }
+      .cover h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══ COVER ══ -->
+  <div class="cover">
+    <img src="Method Logo (1).png" alt="מתודה AI" class="cover-logo" onerror="this.style.display='none'" />
+    <h1>יומן הרגשות שלי</h1>
+    <div class="subtitle">אפיון מוצר מלא | נירה טל | מתודה פתרונות AI</div>
+    <div class="cover-meta">
+      <span>📅 יוני 2026</span>
+      <span>📄 גרסה 1.1</span>
+    </div>
+  </div>
+
+  <!-- ══ TOC ══ -->
+  <div class="toc">
+    <h2>תוכן עניינים</h2>
+    <ol>
+      <li><a href="#s1">רקע ומטרות המוצר</a></li>
+      <li><a href="#s2">קהל יעד</a></li>
+      <li><a href="#s3">ארכיטקטורה טכנולוגית</a></li>
+      <li><a href="#s4">מודל הנתונים</a></li>
+      <li><a href="#s5">אימות ואבטחה</a></li>
+      <li><a href="#s6">מסכי המערכת</a></li>
+      <li><a href="#s7">עיצוב ומערכת הצבעים</a></li>
+      <li><a href="#s8">גיימיפיקציה</a></li>
+      <li><a href="#s9">הקלטה קולית (Voice Input)</a></li>
+      <li><a href="#s10">PWA</a></li>
+      <li><a href="#s11">כללי שפה ולשון</a></li>
+      <li><a href="#s12">כללי קידוד</a></li>
+      <li><a href="#s13">Backlog — פיצ׳רים ממתינים</a></li>
+      <li><a href="#s14">פרטי Deployment</a></li>
+      <li><a href="#s15">מצב מימוש</a></li>
+      <li><a href="#s16">חתימה</a></li>
+    </ol>
+  </div>
+
+
+  <!-- ══ 1. רקע ומטרות ══ -->
+  <section id="s1">
+    <div class="section-title">
+      <span class="section-num">1</span>
+      <span class="icon">📖</span> רקע ומטרות המוצר
+    </div>
+
+    <h3>מקור הרעיון</h3>
+    <p>יומן הרגשות שלי הוא גרסה דיגיטלית של <strong>מחברת הרגשות הפיזית</strong> שמורן מילר, מטפלת רגשית, פיתחה ומשתמשת בה בעבודתה הקלינית. המחברת הפיזית כוללת 5 שאלות מובנות המבוססות על עקרונות <strong>CBT (טיפול קוגניטיבי-התנהגותי) לילדים</strong>. הפיכתה לדיגיטלית נועדה להנגישה ולעודד שימוש — <strong>לא לשנות את הערך הטיפולי המקורי</strong>.</p>
+
+    <div class="info">
+      <strong>על מורן מילר:</strong> פסיכותרפיסטית מוסמכת (M.A) המטפלת בילדים, מתבגרים ומבוגרים. מתמחה בטיפול רגשי באמצעות אמנויות (בדגש על פסיכודרמה), טיפול במשחק, הנחיית קבוצות, ייעוץ תעסוקתי וטיפול התנהגותי קוגניטיבי (CBT).
+    </div>
+
+    <h3>הצורך בפתרון דיגיטלי</h3>
+    <p>מעבר לנוחות הטכנולוגית, למעבר לדיגיטל יש ערך טיפולי ייחודי:</p>
+    <ul>
+      <li>ילדים רבים בגילאי 8–13 <strong>אינם אוהבים לכתוב</strong> — כתיבה בכתב יד נחווית כמאמץ</li>
+      <li>חלקם <strong>מתקשים בכתיבה</strong> עצמה</li>
+      <li>ילדים מרגישים <strong>לא נוח להוציא מחברת טיפולית</strong> בנוכחות ילדים אחרים — בבית ספר, בחוגים, בטיול</li>
+      <li>הפלאפון הוא כלי שגרתי ולא מסגיר — <strong>לא ייתפס כ"מחברת של טיפול"</strong></li>
+      <li><strong>הקלטה קולית</strong> — פיצ׳ר שאפשרי רק בדיגיטל</li>
+    </ul>
+
+    <h3>עקרון זמן האמת</h3>
+    <div class="quote-box">
+      "כאשר קורה אירוע משמעותי — הילד פותח את האפליקציה וממלא את המחברת. לא בסוף היום. לא פעם בשבוע. לא שחזור בדיעבד."
+    </div>
+    <p>השלכה על UX: הנגישות חייבת להיות מיידית — פתיחה מהירה, מינימום friction לפני שלב 1 של האשף. PWA על מסך הבית מסייע לכך ישירות.</p>
+
+    <h3>מטרות המוצר — לפי סדר עדיפות של מורן</h3>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text"><strong>זיהוי רגשות</strong> — הילד לומד לזהות ולשמש את הרגש</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><strong>מודעות למחשבות</strong> — חיבור בין מה שקרה למה שחשב</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><strong>תיעוד אירועים</strong> — ארכיון שניתן לדיון בפגישה</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text"><strong>הכנה לטיפול</strong> — הילד מגיע עם חומר</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text"><strong>ויסות רגשי</strong> — כתיבה עצמה כפעולה מווסתת</div></div>
+    </div>
+
+    <h3>שימוש ביחס לפגישה הטיפולית</h3>
+    <div class="table-wrap">
+      <table>
+        <tr><th>מתי</th><th>מה קורה</th></tr>
+        <tr><td>בין פגישות</td><td>הילד כותב עצמאית כשמתרחשים אירועים רגשיים</td></tr>
+        <tr><td>בזמן הפגישה</td><td>מורן והילד עוברים <strong>יחד</strong> על הרגעים שנכתבו</td></tr>
+        <tr><td>הערך שחשוב למורן</td><td>"סיכום של המידע הכתוב בפרק הזמן שלא נפגשנו, עם חיבור תיאורטי וחשיבה על כיוונים להמשך הטיפול"</td></tr>
+      </table>
+    </div>
+
+    <h3>פרטיות ושיתוף</h3>
+    <p>המחברת <strong>משותפת עם מורן</strong> — המטפלת יכולה לצפות בכל הרגעים. הילד יודע מראש שמורן רואה — זה חלק מהמסגרת הטיפולית.</p>
+
+    <h3>עמדת מורן — עריכת רשומות</h3>
+    <div class="quote-box">
+      "אני מעדיפה שלא. ישנה נטייה לעדן את התכנים ולכן אני מעדיפה שהרשומה תינעל לעריכה."
+    </div>
+    <p style="margin-top:8px;"><strong>יישום טכני:</strong> <span class="badge">ENTRY_LOCK_MINUTES = 60</span> — חלון עריכה של שעה מרגע הכתיבה.</p>
+
+    <h3>המסר לילד — ערכי הליבה</h3>
+    <div class="privacy">
+      <strong>1. "יש לך מקום בטוח להסביר את עצמך כמו שאתה"</strong><br/>
+      <strong>2. "מה שאתה כותב הוא פרטי ואישי — הכל אפשרי. אין אסור ואין מותר"</strong>
+    </div>
+  </section>
+
+
+  <!-- ══ 2. קהל יעד ══ -->
+  <section id="s2">
+    <div class="section-title">
+      <span class="section-num">2</span>
+      <span class="icon">👥</span> קהל יעד
+    </div>
+
+    <div class="two-col">
+      <div class="col-box">
+        <h4>🧒 ילדים — המשתמש הראשי</h4>
+        <ul>
+          <li><strong>גיל:</strong> 8–13</li>
+          <li><strong>מגדר:</strong> בנים ובנות</li>
+          <li><strong>מכשיר:</strong> מובייל (טלפון נייד אישי/של ההורה)</li>
+          <li><strong>רקע:</strong> ילדים בטיפול רגשי, לעיתים עם קשיי ביטוי מילולי</li>
+          <li><strong>יכולת טכנולוגית:</strong> גבוהה — מורגלים בגיימינג, סרטונים, סנאפצ׳ט</li>
+        </ul>
+        <div class="warning"><strong>מה לא יעבוד:</strong> טפסים ארוכים, שפה בוגרת, עיצוב ילדותי, ממשק מורכב</div>
+      </div>
+      <div class="col-box">
+        <h4>👩‍⚕️ מורן מילר — מנהלת המערכת</h4>
+        <p style="font-size:13.5px;color:#444;margin-bottom:8px;">פסיכותרפיסטית מוסמכת (M.A), מתמחה בטיפול רגשי באמצעות אמנויות (פסיכודרמה), טיפול במשחק, הנחיית קבוצות וCBT.</p>
+        <ul>
+          <li><strong>תפקיד:</strong> מטפלת רגשית, אחראית יחידה על המערכת</li>
+          <li><strong>מכשיר:</strong> בעיקר דסקטופ/לפטופ, גם מובייל</li>
+          <li><strong>צרכים:</strong> לראות מה כתבו הילדים, לנהל פרופילים, לשלוח קוד כניסה, לנתח מגמות (יתאפשר בעתיד על ידי סוכן AI)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 3. ארכיטקטורה ══ -->
+  <section id="s3">
+    <div class="section-title">
+      <span class="section-num">3</span>
+      <span class="icon">🏗️</span> ארכיטקטורה טכנולוגית
+    </div>
+
+    <h3>Stack מרכזי</h3>
+    <div class="table-wrap">
+      <table>
+        <tr><th>שכבה</th><th>טכנולוגיה</th><th>גרסה</th></tr>
+        <tr><td>Frontend</td><td>Next.js App Router</td><td>16+</td></tr>
+        <tr><td>UI Styling</td><td>Tailwind CSS</td><td>v4</td></tr>
+        <tr><td>Animation</td><td>Framer Motion</td><td>עדכני</td></tr>
+        <tr><td>Language</td><td>TypeScript strict mode</td><td>—</td></tr>
+        <tr><td>Backend / DB</td><td>Supabase (PostgreSQL)</td><td>2026</td></tr>
+        <tr><td>Auth</td><td>Supabase Auth (GoTrue)</td><td>2026</td></tr>
+        <tr><td>Hosting</td><td>Vercel — Fluid Compute</td><td>—</td></tr>
+        <tr><td>AI Voice</td><td>Whisper (audio transcription)</td><td>—</td></tr>
+        <tr><td>Validation</td><td>Zod</td><td>—</td></tr>
+      </table>
+    </div>
+
+    <h3>Supabase — מודל מפתחות</h3>
+    <div class="code-block">
+<span class="c-com"># ציבורי — hardcoded ב-lib/supabase/config.ts</span>
+<span class="c-key">NEXT_PUBLIC_SUPABASE_URL</span>               = <span class="c-str">https://ssgxacfkqhyzfqwwxaub.supabase.co</span>
+<span class="c-key">NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY</span>   = <span class="c-str">sb_publishable_...</span>
+
+<span class="c-com"># סודי — Vercel env בלבד, לעולם לא בקוד</span>
+<span class="c-key">SUPABASE_SECRET_KEY</span>                    = <span class="c-str">sb_secret_...</span>
+    </div>
+
+    <h3>מבנה Routing</h3>
+    <div class="two-col">
+      <div class="col-box">
+        <h4>🧒 ממשק ילד</h4>
+        <div class="code-block" style="font-size:12px;">
+/              → דשבורד
+/welcome       → כניסה עם קוד
+/pin-login     → כניסה עם PIN
+/safe-space    → "המקום הבטוח"
+/profile-setup → אווטאר + צבע
+/set-pin       → הגדרת PIN
+/new-entry     → אשף 7 שלבים
+/notebook      → כל הרגעים
+/notebook/[id] → רגע בודד
+/saved-quotes  → ציטוטים
+/about         → מידע
+/settings      → הגדרות
+        </div>
+      </div>
+      <div class="col-box">
+        <h4>👩‍⚕️ ממשק מטפלת</h4>
+        <div class="code-block" style="font-size:12px;">
+/login           → כניסת מורן
+/forgot-password → שחזור סיסמה
+/reset-password  → callback
+/profiles        → רשימת ילדים
+/profiles/[id]   → פרופיל + ציר זמן
+/new-profile     → יצירת ילד
+        </div>
+      </div>
+    </div>
+
+    <div class="info"><strong>כלל מוחלט:</strong> אין <code>middleware.ts</code> בפרויקט. משתמשים ב-<code>proxy.ts</code> בלבד. בדיקת נתיב: <code>pathname === p || pathname.startsWith(p + '/')</code></div>
+  </section>
+
+
+  <!-- ══ 4. מודל נתונים ══ -->
+  <section id="s4">
+    <div class="section-title">
+      <span class="section-num">4</span>
+      <span class="icon">🗄️</span> מודל הנתונים
+    </div>
+
+    <h3>טבלת profiles</h3>
+    <div class="table-wrap">
+      <table>
+        <tr><th>עמודה</th><th>סוג</th><th>תיאור</th></tr>
+        <tr><td>id</td><td>UUID</td><td>מזהה = auth.user.id</td></tr>
+        <tr><td>first_name</td><td>text</td><td>שם (הילד רואה רק שם פרטי)</td></tr>
+        <tr><td>gender</td><td>'boy'|'girl'|null</td><td>מגדר — משפיע על כל הטקסטים</td></tr>
+        <tr><td>role</td><td>'trainee'|'therapist'</td><td>תפקיד במערכת</td></tr>
+        <tr><td>notebook_code</td><td>text</td><td>קוד 6 תווים — שולחת מורן לילד</td></tr>
+        <tr><td>pin_code</td><td>text|null</td><td>קוד PIN 4 ספרות — בוחר הילד</td></tr>
+        <tr><td>avatar_id</td><td>text</td><td>מזהה אווטאר נבחר</td></tr>
+        <tr><td>current_theme</td><td>enum</td><td>light|dark|blue|green|pink|lightblue</td></tr>
+        <tr><td>current_streak</td><td>int</td><td>ימי רצף נוכחי</td></tr>
+        <tr><td>highest_streak</td><td>int</td><td>שיא רצף אישי</td></tr>
+        <tr><td>creature_collect_score</td><td>int</td><td>ניקוד כוכבים</td></tr>
+        <tr><td>last_entry_date</td><td>date|null</td><td>תאריך רגע אחרון</td></tr>
+        <tr><td>is_active</td><td>boolean</td><td>פרופיל פעיל</td></tr>
+        <tr><td>onboarding_done</td><td>boolean</td><td>האם השלים הגדרה ראשונית</td></tr>
+      </table>
+    </div>
+
+    <h3>טבלת entries</h3>
+    <div class="table-wrap">
+      <table>
+        <tr><th>עמודה</th><th>תיאור</th></tr>
+        <tr><td>id, profile_id</td><td>UUID, FK → profiles</td></tr>
+        <tr><td>created_at, updated_at</td><td>נשמרים אוטומטית</td></tr>
+        <tr><td>what_happened</td><td>מה קרה? (שלב 1)</td></tr>
+        <tr><td>what_thought</td><td>מה חשבתי? (שלב 3)</td></tr>
+        <tr><td>what_did</td><td>מה עשיתי? (שלב 4)</td></tr>
+        <tr><td>what_can_help</td><td>מה יכול לעזור? (שלב 5)</td></tr>
+        <tr><td>emotion_notes</td><td>פרוט חופשי על הרגשות</td></tr>
+        <tr><td>time_of_day</td><td>morning|noon|afternoon|evening</td></tr>
+        <tr><td>location_context</td><td>home|school|friends|family|class|other</td></tr>
+      </table>
+    </div>
+
+    <h3>טבלאות נוספות</h3>
+    <div class="two-col">
+      <div class="col-box">
+        <h4>entry_emotions</h4>
+        <p style="font-size:14px;">יחס many-to-many בין entry לרגשות. מכיל: <code>entry_id</code>, <code>emotion_key</code>.</p>
+      </div>
+      <div class="col-box">
+        <h4>emotions_definition</h4>
+        <p style="font-size:14px;"><code>emotion_key</code>, <code>display_text</code> (שם בעברית), <code>image_url</code> (תמונת יצור). כל query שמציג רגשות חייב JOIN לטבלה זו.</p>
+      </div>
+    </div>
+    <div class="tip"><strong>אינדקסים:</strong> כל עמודת <code>profile_id / user_id</code> מסוג UUID REFERENCES auth.users(id) חייבת <code>CREATE INDEX</code>.</div>
+  </section>
+
+
+  <!-- ══ 5. אימות ואבטחה ══ -->
+  <section id="s5">
+    <div class="section-title">
+      <span class="section-num">5</span>
+      <span class="icon">🔐</span> אימות ואבטחה
+    </div>
+
+    <h3>עקרונות אבטחה</h3>
+    <div class="privacy">
+      המוצר שומר מידע רגשי רגיש של קטינים. עקרונות הליבה:<br/>
+      ✅ ילד לא יוכל לגשת לאפליקציה של ילד אחר<br/>
+      ✅ קוד כניסה ייחודי לכל ילד — נשמר אצל מורן<br/>
+      ✅ קוד PIN אישי שהילד בוחר — שכבת זיהוי שרק הוא יודע<br/>
+      ✅ מורן מחזיקה את כל הפרטים — אם ילד שכח קוד, מורן שולחת מחדש
+    </div>
+
+    <h3>Auth — ילד (כניסה ראשונה עם קוד יומן)</h3>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">ילד מקבל קוד 6 תווים ממורן (דוגמה: <strong>ABC123</strong>) — או קישור ישיר עם <code>?key=CODE</code></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">מזין בדף /welcome. Server Action <strong>verifyNotebookKey()</strong> מאמת מול Supabase</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Admin client מביא auth.user לפי UUID → <code>signInWithPassword(email, profileId)</code></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">localStorage שומר: <code>feelings_notebook_key</code> + <code>feelings_notebook_gender</code></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text">המשך ל-onboarding אם טרם הושלם, אחרת ישירות ל-/</div></div>
+    </div>
+
+    <h3>Auth — ילד (כניסה חוזרת עם PIN)</h3>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">הילד לוחץ "יש לי קוד אישי ←" → /pin-login, מזין PIN 4 ספרות</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><strong>loginWithPin()</strong> — admin client מחפש לפי pin_code ב-profiles</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">אם התאמה אחת → כניסה ישירה. כמה התאמות → בחירה ויזואלית עם אווטארים</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text"><strong>signInKidById()</strong> → חיבור Supabase + שמירה ב-localStorage</div></div>
+    </div>
+
+    <h3>Auth — מטפלת</h3>
+    <p>email + password דרך Supabase Auth. role='therapist' בטבלת profiles. אין signup פתוח — חשבון נוצר ישירות ב-DB.</p>
+
+    <h3>RLS — הגנת נתונים ברמת ה-DB</h3>
+    <p>ילד רואה ומשנה <strong>רק את הנתונים שלו</strong>. מטפלת רואה הכל דרך sub-SELECT:</p>
+    <div class="code-block">
+<span class="c-com">-- ✅ נכון — sub-SELECT, לא EXISTS (גורם רקורסיה)</span>
+USING (
+  (SELECT <span class="c-key">role</span> FROM profiles WHERE id = (SELECT <span class="c-key">auth.uid()</span>)) = <span class="c-str">'therapist'</span>
+)
+    </div>
+  </section>
+
+
+  <!-- ══ 6. מסכים ══ -->
+  <section id="s6">
+    <div class="section-title">
+      <span class="section-num">6</span>
+      <span class="icon">📱</span> מסכי המערכת
+    </div>
+
+    <h3>Onboarding — ילד</h3>
+    <div class="steps">
+      <div class="step"><div class="step-num">/welcome</div><div class="step-text"><strong>כניסה ראשונה:</strong> לוגו + שדה קוד (auto-uppercase) + כפתור "בואו נתחיל". קישורים: "יש לי קוד אישי ←" ו"מטפלת? כניסה ←"</div></div>
+      <div class="step"><div class="step-num">/safe-space</div><div class="step-text"><strong>המקום הבטוח:</strong> מסך חד-פעמי עם מסר: "הגעת למקום הבטוח שלך. כאן אפשר לכתוב הכל..."</div></div>
+      <div class="step"><div class="step-num">/profile-setup</div><div class="step-text"><strong>התאמה אישית:</strong> בחירת אווטאר מ-28 אפשרויות + בחירת אחד מ-6 צבעי יומן</div></div>
+      <div class="step"><div class="step-num">/set-pin</div><div class="step-text"><strong>קוד אישי:</strong> לוח מקשים נומרי. הילד בוחר PIN 4 ספרות. מורן יכולה לראות אותו בפרופיל לשליחה מחדש</div></div>
+    </div>
+
+    <h3>דשבורד ראשי ( / )</h3>
+    <ul>
+      <li><strong>Header:</strong> אווטאר (לחיץ ← /settings) + "שלום [שם פרטי] 👋" + תת-כותרת מגדרית + <span class="badge">🔥 רצף</span> + <span class="badge">⭐ כוכבים</span></li>
+      <li><strong>תוכן:</strong> 3 רגעים אחרונים + כפתור FAB "רגע חדש +" (כחול, עגול)</li>
+    </ul>
+
+    <h3>אשף 7 שלבים — /new-entry</h3>
+    <p>הליבה הפונקציונלית. Header sticky עם כפתור "חזרה" ו-progress bar אנימטיבי.</p>
+    <div class="wizard-grid">
+      <div class="wizard-card">
+        <div class="step-label">שלב 1</div>
+        מה קרה לך? — כתיבה / הקלטה
+      </div>
+      <div class="wizard-card">
+        <div class="step-label">שלב 2</div>
+        מה הרגשת? — בחירת יצורי רגשות + פרוט חופשי
+      </div>
+      <div class="wizard-card">
+        <div class="step-label">שלב 3</div>
+        מה חשבת? — כתיבה / הקלטה
+      </div>
+      <div class="wizard-card">
+        <div class="step-label">שלב 4</div>
+        מה עשית? — כתיבה / הקלטה
+      </div>
+      <div class="wizard-card">
+        <div class="step-label">שלב 5</div>
+        מה יכול לעזור? — כתיבה / הקלטה
+      </div>
+      <div class="wizard-card">
+        <div class="step-label">שלב 6 — אופציונלי</div>
+        מתי זה קרה? 🌅 בוקר | ☀️ צהריים | 🌤️ אחה"צ | 🌙 ערב
+      </div>
+      <div class="wizard-card">
+        <div class="step-label">שלב 7 — אופציונלי</div>
+        איפה זה קרה? 🏠 בית | 🏫 בי"ס | 👫 חברים | 👨‍👩‍👧 משפחה | 🎒 כיתה | 📍 אחר
+      </div>
+    </div>
+    <div class="tip" style="margin-top:14px;"><strong>מצב עריכה:</strong> /new-entry?edit=[id] — טוען נתונים קיימים. Header מציג "עריכת רגע". ניתן לערוך עד שעה מרגע הכתיבה.</div>
+
+    <h3>ניווט ילד — BottomNav</h3>
+    <div class="code-block" style="text-align:center; direction:rtl;">
+🏠 בית | 📓 רגעים | 💬 ציטוטים | 📖 היומן | ☰ הגדרות | 🚪 סגירה
+    </div>
+    <ul style="margin-top:10px;">
+      <li>גובה: 60px + pb-safe (iOS safe area)</li>
+      <li>Indicator: קו כחול תחתי לפריט פעיל (layoutId animation)</li>
+      <li>נסתר ב-/new-entry — חוויה full-screen</li>
+      <li>כפתור יציאה: "סגירה" (לא "יציאה")</li>
+    </ul>
+
+    <h3>ממשק מטפלת — /profiles</h3>
+    <ul>
+      <li>כותרת "הילדים שלי" בסגול + כפתור "יומן חדש +"</li>
+      <li><strong>שדה חיפוש</strong> בשם — client-side, מיידי</li>
+      <li><strong>דסקטופ:</strong> טבלה — שם | רצף | כוכבים | כניסה אחרונה | קוד | "צפי ביומן ‹"</li>
+      <li><strong>מובייל:</strong> כרטיסייה לכל ילד — שם+מגדר, מדדים, קוד (copy), "צפי ביומן ‹"</li>
+    </ul>
+
+    <h3>ממשק מטפלת — /profiles/[id]</h3>
+    <ul>
+      <li><strong>Header:</strong> אווטאר מגדרי + שם + רצף + כוכבים</li>
+      <li><strong>קוד יומן (notebook_code):</strong> עם CopyWelcomeLinkButton — לשיתוף עם ילד/הורה</li>
+      <li><strong>קוד PIN:</strong> גלוי למורן בלבד — לשליחה מחדש אם הילד שוכח</li>
+      <li><strong>EntriesTimeline:</strong> ציר זמן חודשי — 2 חודשים פתוחים, ישנים מקופלים. לחיצה על רגע: פירוט 4 שדות. <span class="badge badge-orange">נערך</span> אם עודכן אחרי 60 שניות</li>
+    </ul>
+
+    <h3>ממשק מטפלת — /new-profile</h3>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">שם הילד/ה + בחירת מגדר 👦/👧</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">לחיצה על "צרי יומן" → נוצר קוד ייחודי</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">📋 העתקת קוד + 🔗 העתקת קישור ישיר לשליחה</div></div>
+    </div>
+  </section>
+
+
+  <!-- ══ 7. עיצוב ══ -->
+  <section id="s7">
+    <div class="section-title">
+      <span class="section-num">7</span>
+      <span class="icon">🎨</span> עיצוב ומערכת הצבעים
+    </div>
+
+    <h3>פונטים</h3>
+    <div class="table-wrap">
+      <table>
+        <tr><th>פונט</th><th>שימוש</th><th>משקלים</th></tr>
+        <tr><td><strong>Rubik</strong></td><td>כותרות, לוגו</td><td>700–800</td></tr>
+        <tr><td><strong>Heebo</strong></td><td>גוף, כפתורים, תוויות</td><td>400, 500, 600</td></tr>
+      </table>
+    </div>
+    <p style="margin-top:8px;">Rubik ו-Heebo — הפונטים הסטנדרטיים לעברית. תמיכה מלאה ב-RTL, קריאים, נקיים, מתאימים לגיל 8–13 מבלי להיות ילדותיים. <strong>Fredoka Font נדחה</strong> — נראה ילדותי מדי.</p>
+
+    <h3>Brand Colors</h3>
+    <div class="two-col">
+      <div class="col-box">
+        <h4>🔵 ממשק ילד — Blue Indigo</h4>
+        <div class="code-block" style="font-size:12.5px;">
+<span class="c-key">Accent Primary</span>: <span class="c-str">#4361EE</span>
+<span class="c-key">Accent Dark</span>:    <span class="c-str">#2D43C5</span>
+<span class="c-key">Focus ring</span>:     <span class="c-str">rgba(67,97,238,0.2)</span>
+        </div>
+        <p style="font-size:13px;margin-top:8px;">כחול-אינדיגו עמוק — מעורר ביטחון ורוגע, מתאים לגיל 8–13 ולשני המגדרים.</p>
+      </div>
+      <div class="col-box">
+        <h4>🟣 ממשק מטפלת — Indigo Purple</h4>
+        <div class="code-block" style="font-size:12.5px;">
+<span class="c-key">Accent</span>: <span class="c-str">#6366f1</span>
+<span class="c-key">Light</span>:  <span class="c-str">#ede9fe</span>
+<span class="c-key">Dark</span>:   <span class="c-str">#4338ca</span>
+        </div>
+        <p style="font-size:13px;margin-top:8px;">גוון נפרד מהכחול של הילד — הפרדה ויזואלית ברורה בין שני הממשקים.</p>
+      </div>
+    </div>
+
+    <h3>שש ערכות צבע — ילד</h3>
+    <div class="theme-grid">
+      <div class="theme-swatch" style="background:#ffffff;color:#1a1a1a;">
+        <span class="theme-dot" style="background:#6366f1;"></span>לבן
+        <div style="font-size:11px;font-weight:400;color:#555;margin-top:4px;">#ffffff</div>
+      </div>
+      <div class="theme-swatch" style="background:#0D0D1A;color:#F0EAFF;">
+        <span class="theme-dot" style="background:#A78BFA;"></span>שחור
+        <div style="font-size:11px;font-weight:400;color:#aaa;margin-top:4px;">#0D0D1A</div>
+      </div>
+      <div class="theme-swatch" style="background:#03080F;color:#DBEAFE;">
+        <span class="theme-dot" style="background:#38BDF8;"></span>כחול
+        <div style="font-size:11px;font-weight:400;color:#7DB8E8;margin-top:4px;">#03080F</div>
+      </div>
+      <div class="theme-swatch" style="background:#F0FDF4;color:#14532D;">
+        <span class="theme-dot" style="background:#16A34A;"></span>ירוק
+        <div style="font-size:11px;font-weight:400;color:#1A6B42;margin-top:4px;">#F0FDF4</div>
+      </div>
+      <div class="theme-swatch" style="background:#FFF0F6;color:#3D0020;">
+        <span class="theme-dot" style="background:#EC4899;"></span>ורוד
+        <div style="font-size:11px;font-weight:400;color:#7B1040;margin-top:4px;">#FFF0F6</div>
+      </div>
+      <div class="theme-swatch" style="background:#EFF6FF;color:#0C1A33;">
+        <span class="theme-dot" style="background:#3B82F6;"></span>תכלת
+        <div style="font-size:11px;font-weight:400;color:#1E3A6E;margin-top:4px;">#EFF6FF</div>
+      </div>
+    </div>
+
+    <h3>שפת עיצוב — Game-GUI</h3>
+    <p>המוצר מאמץ שפת עיצוב של <strong>Game-GUI מודרני</strong> — חי, מגיב, מחובר לעולם ילדים — אך מאופק מספיק כדי לא להפוך לצעצוע.</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>משחק השראה</th><th>מה לוקחים ממנו</th></tr>
+        <tr><td><strong>Brawl Stars</strong></td><td>כפתורים גדולים, פינות "בשרניות", Glow effects, Spring animations על כל לחיצה</td></tr>
+        <tr><td><strong>Pokémon GO</strong></td><td>אווטאר + מדדי התקדמות + Badges</td></tr>
+        <tr><td><strong>Among Us</strong></td><td>דמויות קו פשוטות, ניטרליות, צבעוניות — ביטוי ברור. לא אימוג'י סטנדרטי</td></tr>
+      </table>
+    </div>
+
+    <h3>יצורי הרגשות</h3>
+    <p>כל רגש מיוצג על ידי <strong>איור ייחודי</strong> שילדים יכולים לזהות — לא אימוג'י סטנדרטי. כל יצור: תמונה + שם הרגש בעברית. ניתן לבחור <strong>יותר מרגש אחד</strong> בכל רגע. ניתן להוסיף רגשות חדשים בכל עת לפי בקשת מורן דרך טבלת <code>emotions_definition</code>.</p>
+    <div class="info"><strong>רשימת הרגשות הנוכחית (לפי מורן):</strong> שמחה | כעס | עצב | בלבול | חוסר אונים | חרדה | אכזבה | התרגשות | בדידות | ייאוש | בושה | אשמה</div>
+
+    <h3>BTN-DUO — כפתור הפעולה הראשית</h3>
+    <div class="code-block">
+<span class="c-com">/* Duolingo-inspired 3D button */</span>
+.<span class="c-key">btn-duo</span> {
+  background: <span class="c-str">#4361EE</span>;
+  border-bottom: <span class="c-str">4px</span> solid <span class="c-str">#2a3eb1</span>; <span class="c-com">/* אפקט 3D */</span>
+  border-radius: <span class="c-str">16px</span>;
+  color: <span class="c-str">white</span>;
+  font-weight: <span class="c-str">700</span>;
+}
+.<span class="c-key">btn-duo</span>:active {
+  transform: <span class="c-str">translateY(2px)</span>;
+  border-bottom-width: <span class="c-str">2px</span>; <span class="c-com">/* "לחיצה" פיזית */</span>
+}
+    </div>
+
+    <h3>אנימציות</h3>
+    <ul>
+      <li><strong>ספרינג אחיד:</strong> <code>{ type: 'spring', stiffness: 300–400, damping: 20–25 }</code></li>
+      <li>מסך חדש: <code>opacity 0→1</code>, <code>y: 24→0</code> / <code>x: ±24→0</code></li>
+      <li>שלבי wizard: AnimatePresence עם x transitions</li>
+      <li>Progress bar: spring על width</li>
+      <li>כפתורי בחירה: <code>whileTap={{ scale: 0.88–0.97 }}</code></li>
+      <li>BottomNav: <code>scale: 1.15</code> לפריט פעיל + <code>layoutId</code> לקו תחתי</li>
+    </ul>
+
+    <h3>כלל נגישות צבע — מוחלט</h3>
+    <div class="warning">
+      <strong>אסור:</strong> #afafaf, #c0c0c0, text-gray-300/400, opacity /40–/60 על רקע בהיר<br/>
+      <strong>מינימום על רקע לבן:</strong> #555555 (7:1 contrast — WCAG AAA)<br/>
+      <strong>WCAG AA:</strong> 4.5:1 לטקסט רגיל | 3:1 לטקסט גדול
+    </div>
+  </section>
+
+
+  <!-- ══ 8. גיימיפיקציה ══ -->
+  <section id="s8">
+    <div class="section-title">
+      <span class="section-num">8</span>
+      <span class="icon">🎮</span> גיימיפיקציה
+    </div>
+
+    <div class="quote-box">
+      "המטרה אינה להפוך את המחברת למשחק. המטרה היא לעודד התמדה."
+    </div>
+
+    <h3>מדד הרצף (Streak) 🔥</h3>
+    <ul>
+      <li><code>current_streak</code> — ימי שימוש רצופים. <code>highest_streak</code> — שיא אישי</li>
+      <li><strong>לוגיקה:</strong> כל יום עם רגע אחד לפחות → רצף גדל. יום ללא כתיבה → רצף מתאפס</li>
+      <li><strong>תצוגה:</strong> 🔥N בדשבורד ובכרטיס המטפלת</li>
+    </ul>
+
+    <h3>ניקוד כוכבים ⭐</h3>
+    <ul>
+      <li><code>creature_collect_score</code> — ניקוד מצטבר</li>
+      <li><strong>+10 נקודות</strong> לכל רגע שנשמר (<code>CREATURE_SCORE_PER_ENTRY = 10</code>)</li>
+      <li><strong>תצוגה:</strong> ⭐N בדשבורד ובכרטיס המטפלת</li>
+    </ul>
+
+    <h3>CompletionOverlay — אחרי שמירת רגע</h3>
+    <p>אנימציה של <strong>כוכב וזיקוקים</strong> עם:</p>
+    <ul>
+      <li>הודעה על הרצף המצטבר</li>
+      <li>"+10 נקודות יצורים"</li>
+      <li>משפט חיזוק מגדרי: "כל הכבוד ששיתפת" / "כל הכבוד ששיתפת"</li>
+    </ul>
+
+    <h3>Roadmap גיימיפיקציה — V2</h3>
+    <div class="checklist">
+      <div class="check-item"><span class="check-icon">📦</span> אביזרים לאווטאר (אקססוריס)</div>
+      <div class="check-item"><span class="check-icon">🖼️</span> רקעים לדף הבית</div>
+      <div class="check-item"><span class="check-icon">🏆</span> מדבקות והישגים</div>
+    </div>
+  </section>
+
+
+  <!-- ══ 9. Voice Input ══ -->
+  <section id="s9">
+    <div class="section-title">
+      <span class="section-num">9</span>
+      <span class="icon">🎤</span> הקלטה קולית — Voice Input
+    </div>
+
+    <p>ילדים שאינם אוהבים לכתוב יכולים להקליט — הטקסט מומר אוטומטית על ידי <strong>Whisper AI</strong>.</p>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>פרמטר</th><th>ערך</th></tr>
+        <tr><td>Hook</td><td><code>useAudioTranscription</code></td></tr>
+        <tr><td>זמן מקסימלי</td><td>60 שניות</td></tr>
+        <tr><td>זמינות</td><td>רק אם הדפדפן תומך ב-MediaRecorder API</td></tr>
+        <tr><td>קבועה</td><td><code>WHISPER_MAX_DURATION_MS = 60_000</code></td></tr>
+      </table>
+    </div>
+
+    <h3>UX בזמן הקלטה</h3>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">כפתור 🎤 → לחיצה → מתחיל הקלטה. כפתור הופך אדום ומאוזן</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Pulsing glow</strong> סביב ה-textarea — "האפליקציה מקשיבה לך"</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">לחיצה חוזרת → עצירה. Spinner + "מעבד הקלטה..."</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">התוצאה מוכנסת אוטומטית לשדה הכתיבה</div></div>
+    </div>
+  </section>
+
+
+  <!-- ══ 10. PWA ══ -->
+  <section id="s10">
+    <div class="section-title">
+      <span class="section-num">10</span>
+      <span class="icon">📲</span> PWA — Progressive Web App
+    </div>
+
+    <p>ה-PWA מאפשר לילד לפתוח את האפליקציה ממסך הבית כמו אפליקציה רגילה — ללא דפדפן, בלחיצה אחת. זה תומך ישירות ב<strong>עקרון זמן האמת</strong> — תיעוד מיידי של אירוע.</p>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>פרמטר</th><th>ערך</th></tr>
+        <tr><td>manifest.json</td><td>metadata מלא</td></tr>
+        <tr><td>iOS</td><td><code>appleWebApp: { capable: true }</code> — "הוסף למסך הבית"</td></tr>
+        <tr><td>אייקון PWA</td><td>/PWA for Feeling App.png</td></tr>
+        <tr><td>OG Image</td><td>/OG Feeling App.png (1200×630)</td></tr>
+        <tr><td>themeColor</td><td>#4361EE</td></tr>
+        <tr><td>Service Worker</td><td>PwaRegister component</td></tr>
+      </table>
+    </div>
+
+    <div class="info"><strong>iOS:</strong> חובה Safari. Chrome ב-iOS לא תומך בהתקנה.<br/><strong>Android:</strong> Chrome → תפריט ⋮ → "הוספה למסך הבית"</div>
+  </section>
+
+
+  <!-- ══ 11. שפה ולשון ══ -->
+  <section id="s11">
+    <div class="section-title">
+      <span class="section-num">11</span>
+      <span class="icon">📝</span> כללי שפה ולשון
+    </div>
+
+    <div class="checklist">
+      <div class="check-item">
+        <span class="check-icon">✅</span>
+        <div><strong>"יומן" בלבד — אסור "מחברת"</strong> בכל מקום בממשק, בכל מסך ובכל רכיב</div>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✅</span>
+        <div><strong>חץ שמאלה אחרי המילה תמיד:</strong> "המשך ←", "שמירה ←", "סגירה ←", "חזרה ←". לעולם לא "← המשך" ולא "→"</div>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✅</span>
+        <div>
+          <strong>פנייה מגדרית — נדרשת בכל מסך:</strong> כל טקסט בממשק הילד חייב להיות מגדרי לפי profile.gender<br/>
+          ילדה: "המשיכי", "כתבי", "שמרת", "הרגשת" | ילד: "המשך", "כתוב", "שמרת", "הרגשת"<br/>
+          <em>יישום: תמיד getInflection(gender, ...) או ternary. לעולם לא "כתבי/כתוב"</em>
+        </div>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✅</span>
+        <div><strong>"אווטאר"</strong> — ו"ו כפולה. לא "אוטאר"</div>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✅</span>
+        <div><strong>ללא סימני קריאה (!):</strong> אסור ! בסיומי משפטים בממשק — טון רגוע ולא מלחיץ</div>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✅</span>
+        <div><strong>"סגירה ←"</strong> — לא "יציאה" בממשק הילד</div>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✅</span>
+        <div><strong>שם פרטי בלבד</strong> בממשק הילד. שם + משפחה רק בממשק המטפלת</div>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✅</span>
+        <div><strong>אפור בהיר — אסור:</strong> מינימום #555555 על רקע לבן (7:1 contrast). אסור: #afafaf, text-gray-400, /40, /50, /60</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 12. כללי קידוד ══ -->
+  <section id="s12">
+    <div class="section-title">
+      <span class="section-num">12</span>
+      <span class="icon">⚙️</span> כללי קידוד — Data Integrity
+    </div>
+
+    <h3>מפתחות Map — תמיד ISO</h3>
+    <div class="code-block">
+<span class="c-com">// ❌ אסור — "9 יוני" כמפתח שובר sort ומונע lookups</span>
+map.set(format(date, <span class="c-str">'d MMMM'</span>, { locale: he }), value)
+
+<span class="c-com">// ✅ מותר — YYYY-MM-DD לפרוקסינג, פורמט רק ב-render</span>
+map.set(format(date, <span class="c-str">'yyyy-MM-dd'</span>), value)
+    </div>
+
+    <h3>ערכי DB לגרפים — ?? 0</h3>
+    <div class="code-block">
+<span class="c-com">// כל שדה נומרי מ-DB חייב fallback</span>
+data.map(row => ({ date: row.date, count: row.count <span class="c-key">?? 0</span> }))
+    </div>
+
+    <h3>Layout Absolute — הורה relative</h3>
+    <div class="code-block">
+<span class="c-com">// ✅ הורה: position:relative + padding לפי גובה ה-absolute child</span>
+&lt;div className=<span class="c-str">"relative pb-16"</span>&gt;
+  &lt;div className=<span class="c-str">"absolute bottom-4 right-4"</span>&gt;...&lt;/div&gt;
+&lt;/div&gt;
+    </div>
+
+    <h3>Supabase — תמיד join לפרופיל</h3>
+    <div class="code-block">
+<span class="c-com">// ❌ אסור — user_id בלבד, שם ריק ב-UI</span>
+.select(<span class="c-str">'id, content, user_id'</span>)
+
+<span class="c-com">// ✅ מותר — join מביא שדות תצוגה</span>
+.select(<span class="c-str">'id, content, profiles(full_name, role)'</span>)
+    </div>
+  </section>
+
+
+  <!-- ══ 13. Backlog ══ -->
+  <section id="s13">
+    <div class="section-title">
+      <span class="section-num">13</span>
+      <span class="icon">📋</span> Backlog — פיצ׳רים ממתינים
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>#</th><th>פיצ׳ר</th><th>תיאור</th><th>עדיפות</th></tr>
+        <tr>
+          <td>1</td>
+          <td>ציטוטים — מקור</td>
+          <td>החלטה: AI / מאגר מוכן / מורן מזינה</td>
+          <td><span class="backlog-priority p-high">גבוהה</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>אנליטיקות מטפלת</td>
+          <td>גרף רגשות, מגמות, טריגרים, התפלגות לפי מסגרת</td>
+          <td><span class="backlog-priority p-mid">בינונית</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>סוכן AI — ניתוח מגמות</td>
+          <td>סוכן AI שינתח: רגשות החוזרים על עצמם, מגמות לאורך זמן, אירועים החוזרים בסביבות מסוימות, סיכומי תקופה</td>
+          <td><span class="backlog-priority p-mid">בינונית</span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>סוכן AI — חיבור תיאורטי</td>
+          <td>סוכן AI שיבצע חיבור לתיאוריות טיפוליות וחשיבה על כיוונים להמשך הטיפול — לפני כל פגישה</td>
+          <td><span class="backlog-priority p-mid">בינונית</span></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>פילטרים — מטפלת</td>
+          <td>סינון לפי רגש / תאריך / זמן ביום / מסגרת</td>
+          <td><span class="backlog-priority p-mid">בינונית</span></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Soft Delete</td>
+          <td>לפני מחיקה: "רוצה לספר למה?" — שמירה ב-DB. כרגע מורן אינה מעוניינת באפשרות מחיקה</td>
+          <td><span class="backlog-priority p-low">נמוכה</span></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>גיימיפיקציה V2</td>
+          <td>אביזרים לאווטאר, רקעים, הישגים</td>
+          <td><span class="backlog-priority p-low">נמוכה</span></td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+
+  <!-- ══ 14. Deployment ══ -->
+  <section id="s14">
+    <div class="section-title">
+      <span class="section-num">14</span>
+      <span class="icon">🚀</span> פרטי Deployment
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>פרמטר</th><th>ערך</th></tr>
+        <tr><td>Platform</td><td>Vercel — Fluid Compute</td></tr>
+        <tr><td>Production URL</td><td><a href="https://my-feelings-notebook-moran.vercel.app" style="color:#4361EE;">my-feelings-notebook-moran.vercel.app</a></td></tr>
+        <tr><td>Branch</td><td>main</td></tr>
+        <tr><td>Supabase Project</td><td>ssgxacfkqhyzfqwwxaub.supabase.co</td></tr>
+        <tr><td>Framework</td><td>Next.js 16 (Auto-detect)</td></tr>
+        <tr><td>Node.js</td><td>24 LTS</td></tr>
+        <tr><td>Build Command</td><td>next build</td></tr>
+        <tr><td>Fonts</td><td>Rubik + Heebo (Google Fonts — hebrew subset)</td></tr>
+      </table>
+    </div>
+
+    <h3>Environment Variables</h3>
+    <div class="code-block">
+<span class="c-com"># Vercel Dashboard — Environment Variables</span>
+<span class="c-com"># (שאר המפתחות hardcoded ב-lib/supabase/config.ts)</span>
+<span class="c-key">SUPABASE_SECRET_KEY</span>=<span class="c-str">sb_secret_...</span>
+    </div>
+  </section>
+
+
+  <!-- ══ 15. מצב מימוש ══ -->
+  <section id="s15">
+    <div class="section-title">
+      <span class="section-num">15</span>
+      <span class="icon">📊</span> מצב מימוש
+    </div>
+
+    <h3>קיים ופועל ב-Production ✅</h3>
+    <div class="checklist">
+      <div class="check-item"><span class="check-icon">✅</span>אשף 7 שלבים עם Spring animations + AnimatePresence</div>
+      <div class="check-item"><span class="check-icon">✅</span>Voice input (Whisper) בכל שלב TextAudio ובבחירת רגשות</div>
+      <div class="check-item"><span class="check-icon">✅</span>יצורי רגשות עם בחירה מרובה</div>
+      <div class="check-item"><span class="check-icon">✅</span>BTN-DUO (3D Duolingo-style)</div>
+      <div class="check-item"><span class="check-icon">✅</span>CompletionOverlay עם אנימציית כוכב וזיקוקים</div>
+      <div class="check-item"><span class="check-icon">✅</span>6 ערכות צבע + 28 אווטארים</div>
+      <div class="check-item"><span class="check-icon">✅</span>נעילת עריכה — ENTRY_LOCK_MINUTES = 60 נאכף ב-UI, כפתור עריכה מוסתר אחרי שעה</div>
+      <div class="check-item"><span class="check-icon">✅</span>BottomNav מלא עם indicator animation</div>
+      <div class="check-item"><span class="check-icon">✅</span>ממשק מטפלת: רשימה + חיפוש + ציר זמן חודשי + תגיות רגשות</div>
+      <div class="check-item"><span class="check-icon">✅</span>קוד PIN אישי — הילד בוחר, מורן רואה בפרופיל</div>
+      <div class="check-item"><span class="check-icon">✅</span>לינק שיתוף ישיר עם קוד מוטמע</div>
+      <div class="check-item"><span class="check-icon">✅</span>PWA — הוסף למסך הבית</div>
+      <div class="check-item"><span class="check-icon">✅</span>פנייה מגדרית בכל הממשק</div>
+      <div class="check-item"><span class="check-icon">✅</span>OG Tags + metadata מלא</div>
+    </div>
+
+    <h3>מוגדר — נדרש בדיקה / השלמה ⚠️</h3>
+    <div class="checklist">
+      <div class="check-item"><span class="check-icon">⚠️</span><div><strong>Streak animation:</strong> מדד הלהבה כרגע 🔥N פשוט — אנימציה מלאה טרם ממומשת</div></div>
+    </div>
+  </section>
+
+
+  <!-- ══ 16. חתימה ══ -->
+  <section id="s16">
+    <div class="section-title">
+      <span class="section-num">16</span>
+      <span class="icon">✍️</span> חתימה
+    </div>
+
+    <div class="signature-box">
+      <div style="font-size:22px;">💙</div>
+      <div style="font-size:18px;font-weight:800;color:#2d2d2d;margin-top:10px;">יומן הרגשות שלי</div>
+      <div style="font-size:13px;color:#888;margin-top:4px;">אפיון מוצר גרסה 1.1 | יוני 2026</div>
+
+      <div class="sig-row">
+        <div class="sig-item">
+          <div class="sig-label">עבור</div>
+          <div class="sig-value">מורן מילר, מטפלת רגשית</div>
+        </div>
+        <div class="sig-item">
+          <div class="sig-label">פיתוח</div>
+          <div class="sig-value">נירה טל, מתודה AI</div>
+        </div>
+        <div class="sig-item">
+          <div class="sig-label">כתובת</div>
+          <div class="sig-value" style="font-size:13px;">my-feelings-notebook-moran.vercel.app</div>
+        </div>
+      </div>
+
+      <div style="margin-top:20px;font-size:12px;color:#aaa;">
+        האפיון מבוסס על קוד production בפועל, שאלון אפיון עם מורן מילר, מסמך אפיון ראשוני, מסמך גיימיפיקציה V1 והיסטוריית פיתוח מלאה.
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ FOOTER ══ -->
+  <div class="footer">
+    <img src="Method Logo (1).png" alt="מתודה AI" class="footer-logo" onerror="this.style.display:'none'" />
+    <div class="footer-name">נירה טל | מתודה פתרונות AI</div>
+    <div class="footer-links">
+      <span>© כל הזכויות שמורות 2026</span>
+      <span class="footer-sep">|</span>
+      <a href="tel:0542215222">054-2215222</a>
+      <span class="footer-sep">|</span>
+      <a href="mailto:nira1502@gmail.com">nira1502@gmail.com</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

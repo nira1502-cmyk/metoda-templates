@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>מדריך למורן - יומן הרגשות שלי</title>
+  <link rel="icon" href="Metoda Fabicon (2).png" type="image/png" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: #f5f7ff;
+      color: #2d2d2d;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    /* Cover */
+    .cover {
+      text-align: center;
+      padding: 28px 24px 24px;
+      background: linear-gradient(135deg, #4361EE 0%, #7c3aed 100%);
+      border-radius: 20px;
+      color: white;
+      margin-bottom: 40px;
+    }
+    .cover-logo {
+      height: 90px;
+      margin-bottom: 14px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      filter: brightness(0) invert(1);
+    }
+    .cover h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+    .cover p { font-size: 19px; font-weight: 500; opacity: 1; color: #ffffff; margin-bottom: 0; }
+
+    /* Section */
+    section {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 28px 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .section-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: #4361EE;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 2px solid #eef0ff;
+      padding-bottom: 10px;
+    }
+    .section-title .icon { font-size: 22px; }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+      margin: 16px 0 6px;
+    }
+
+    p { margin-bottom: 10px; color: #444; font-size: 15px; }
+
+    ul {
+      padding-right: 20px;
+      margin-bottom: 10px;
+    }
+    li {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    /* Step boxes */
+    .steps { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #f8f9ff;
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .step-num {
+      min-width: 28px;
+      height: 28px;
+      background: #4361EE;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .step-text { font-size: 14.5px; color: #333; line-height: 1.55; }
+    .step-text strong { color: #4361EE; }
+
+    /* Badge */
+    .badge {
+      display: inline-block;
+      background: #eef0ff;
+      color: #4361EE;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 13px;
+      font-weight: 600;
+      margin: 0 2px;
+    }
+
+    /* Tip box */
+    .tip {
+      background: #fff8e6;
+      border-right: 4px solid #f59e0b;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 14px;
+      color: #555;
+      margin-top: 12px;
+    }
+    .tip strong { color: #b45309; }
+
+    /* Privacy box */
+    .privacy {
+      background: #f0fdf4;
+      border-right: 4px solid #22c55e;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 14px;
+      color: #15803d;
+      margin-top: 12px;
+    }
+    .privacy strong { color: #166534; }
+
+    /* Nav preview */
+    .nav-bar {
+      background: #f8f9ff;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14.5px;
+      color: #333;
+    }
+    .nav-item .ni { font-size: 18px; min-width: 24px; text-align: center; }
+
+    /* Two-col grid for PWA */
+    .pwa-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 12px;
+    }
+    .pwa-box {
+      background: #f8f9ff;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .pwa-box h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pwa-box .step { background: white; }
+
+    /* Wizard steps inline */
+    .wizard-steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .wizard-step {
+      background: #f8f9ff;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 14px;
+      color: #333;
+    }
+    .wizard-step span { color: #4361EE; font-weight: 700; margin-left: 4px; }
+
+    /* Closing message */
+    .closing {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+      color: #4361EE;
+      padding: 24px 0 8px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 32px;
+      padding: 28px 20px;
+      background: #1a1f3c;
+      border-radius: 16px;
+      color: #a0a8c8;
+      font-size: 13.5px;
+      line-height: 2;
+    }
+    .footer-logo {
+      height: 68px;
+      margin-bottom: 12px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      filter: brightness(0) invert(1);
+    }
+    .footer-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .footer-links a {
+      color: #7c8fc7;
+      text-decoration: none;
+      font-size: 13px;
+    }
+    .footer-links a:hover { color: #aab4e0; }
+    .footer-sep { color: #3a4060; }
+
+    /* Parent message template */
+    .msg-block {
+      background: #f8f9ff;
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-top: 14px;
+      font-size: 14.5px;
+      color: #333;
+      line-height: 1.8;
+      white-space: pre-wrap;
+      border: 1px dashed #c7d0f8;
+    }
+
+    /* Tech table */
+    .tech-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 14px;
+    }
+    .tech-table th {
+      background: #4361EE;
+      color: white;
+      padding: 10px 14px;
+      text-align: right;
+      font-weight: 600;
+    }
+    .tech-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #eef0ff;
+      color: #444;
+      vertical-align: top;
+    }
+    .tech-table tr:nth-child(even) td { background: #f8f9ff; }
+    .tech-table code {
+      background: #eef0ff;
+      color: #4361EE;
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 12.5px;
+      font-family: monospace;
+    }
+
+    @media (max-width: 560px) {
+      .pwa-grid { grid-template-columns: 1fr; }
+      .wizard-steps { grid-template-columns: 1fr; }
+      section { padding: 20px 18px; }
+      .tech-table { font-size: 12.5px; }
+      .tech-table th, .tech-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Cover -->
+  <div class="cover">
+    <img src="Method Logo (1).png" alt="Method AI" class="cover-logo" onerror="this.style.display='none'" />
+    <h1>מדריך למורן</h1>
+    <p>יומן הרגשות שלי - כל מה שצריך לדעת</p>
+  </div>
+
+
+  <!-- 1. LOGIN -->
+  <section>
+    <div class="section-title"><span class="icon">🔐</span> כניסה למערכת</div>
+    <p>כדי להיכנס לאזור המטפלת:</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">גלשי לכתובת: <a href="https://my-feeling-notebook-moran.vercel.app/" target="_blank" style="color:#4361EE;font-weight:600;">my-feeling-notebook-moran.vercel.app</a></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">הזיני את <strong>כתובת המייל</strong> והסיסמה שלך</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">לחצי על <strong>כניסה</strong> - תגיעי ישירות לרשימת הילדים</div></div>
+    </div>
+  </section>
+
+
+  <!-- 2. PASSWORD -->
+  <section>
+    <div class="section-title"><span class="icon">🔑</span> שינוי סיסמה</div>
+    <p>אם שכחת את הסיסמה או שאת רוצה להחליף אותה:</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">בדף הכניסה לחצי על <strong>שכחתי סיסמה</strong></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">הזיני את כתובת המייל שלך ולחצי <strong>שליחה</strong> - יגיע אליך מייל עם קישור</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">לחצי על הקישור במייל (תוקפו <strong>60 דקות</strong>)</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">הזיני סיסמה חדשה (לפחות 8 תווים) ואמתי אותה - לאחר מכן תועברי לכניסה</div></div>
+    </div>
+    <div class="privacy"><strong>🔒 אבטחה ופרטיות:</strong> הסיסמה שלך מוצפנת ומאובטחת. רק את יכולה לגשת לנתוני הילדים. אף ילד לא יכול לראות את אזור המטפלת.</div>
+  </section>
+
+
+  <!-- 3. THERAPIST DASHBOARD -->
+  <section>
+    <div class="section-title"><span class="icon">🗂️</span> אזור המטפלת - הדשבורד</div>
+
+    <h3>סרגל הניווט</h3>
+    <p>בדסקטופ - סרגל שמאלי קבוע. במובייל - סרגל תחתון.</p>
+    <div class="nav-bar">
+      <div class="nav-item"><span class="ni">👧</span> <div><strong>הילדים שלי</strong> - רשימת כל הילדים</div></div>
+      <div class="nav-item"><span class="ni">📓</span> <div><strong>יומן חדש +</strong> - יצירת פרופיל ילד חדש</div></div>
+      <div class="nav-item"><span class="ni">←</span> <div><strong>יציאה מהמערכת</strong> - התנתקות (אייקון יציאה)</div></div>
+    </div>
+
+    <h3>רשימת הילדים</h3>
+    <p>בדף הראשי תראי את כל הילדים. ניתן <strong>לחפש לפי שם</strong> באמצעות שדה החיפוש בראש הרשימה. לכל ילד מוצגים:</p>
+    <ul>
+      <li>אווטאר, שם ומין</li>
+      <li><span class="badge">🔥 רצף</span> - כמה ימים רצופים נכנס לאפליקציה</li>
+      <li><span class="badge">⭐ ניקוד</span> - כוכבים שצבר</li>
+      <li>תאריך הרגע האחרון שנרשם</li>
+    </ul>
+    <p>לחיצה על כרטיס ילד פותחת את הפרופיל המלא שלו.</p>
+
+    <h3>פרופיל ילד</h3>
+    <p>בדף הפרופיל תמצאי:</p>
+    <ul>
+      <li><strong>קוד היומן</strong> - הקוד ששלחת לילד בכניסה הראשונה. אם הילד לא זוכר את הקוד, את יכולה לשלוח לו שוב.</li>
+      <li><strong>קוד אישי (PIN)</strong> - הקוד שהגדיר הילד לעצמו. הקוד שמור בדשבורד שלך ורק את יכולה לראות אותו.</li>
+      <li><strong>🔗 העתיקי קישור לשליחה</strong> - לחיצה מעתיקה קישור מוכן לשיתוף עם הילד/ההורה</li>
+      <li>כל הרגעים שרשם הילד - עד 20 האחרונים, עם כפתור "טען עוד"</li>
+    </ul>
+
+    <h3>לוח מעקב - כפתור "צפי ביומן ←"</h3>
+    <p>ברשימת הילדים, ליד כל ילד מופיע כפתור <strong>צפי ביומן ←</strong>. לחיצה עליו פותחת את <strong>לוח המעקב</strong> של הילד ומאפשרת לעקוב אחרי הרגשות שלו לאורך זמן.</p>
+    <p>בלוח המעקב תמצאי:</p>
+    <ul>
+      <li>את כל הרגעים שרשם הילד, ממוינים מהחדש לישן - עם תאריך ושעה לכל רגע</li>
+      <li>לכל רגע: <strong>מה קרה</strong>, <strong>מה חשב</strong>, <strong>מה עשה</strong> ו<strong>מה יכול לעזור</strong></li>
+      <li>אם הילד ערך רגע לאחר כתיבתו - יופיע תג <strong>"נערך"</strong></li>
+    </ul>
+    <div class="tip"><strong>למעקב טיפולי:</strong> הצפי מאפשר לך לראות דפוסים רגשיים חוזרים לאורך זמן - אילו סיטואציות מעוררות רגשות מסוימים, ומה עוזר לילד להתמודד.</div>
+
+    <h3>יצירת ילד חדש</h3>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">לחצי על <strong>יומן חדש +</strong> בסרגל הניווט</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">הזיני את <strong>שם הילד/ה</strong> ובחרי מין (<strong>👦 בן / 👧 בת</strong>)</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">לחצי <strong>צרי יומן</strong> - יופיע <strong>קוד יומן</strong> ייחודי</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">לחצי <strong>🔗 העתיקי קישור לשליחה</strong> ושלחי לילד/להורה</div></div>
+    </div>
+    <div class="tip"><strong>חשוב:</strong> הקישור מכיל את הקוד ומוביל ישירות לדף הפתיחה של הילד - הילד לא צריך להקליד כלום.</div>
+  </section>
+
+
+  <!-- 4. KID AREA -->
+  <section>
+    <div class="section-title"><span class="icon">🧒</span> אזור הילד/ה</div>
+
+    <h3>כניסה ראשונה (הגדרת יומן)</h3>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">הילד פותח את הקישור ששלחת - מגיע לדף הפתיחה עם שדה הקוד מוטמע בפנים</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">לילד יש אפשרות לקבוע <strong>קוד אישי</strong> (4 ספרות, קל לזכירה) - לכניסות הבאות</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">מסך <strong>"המקום הבטוח"</strong> - הסבר קצר על הפרטיות של היומן</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">הגעה לדף הבית של היומן - שם הילד יכול להתחיל לרשום רגעים</div></div>
+    </div>
+    <div class="privacy"><strong>🔒 פרטיות הילד:</strong> היומן הוא המרחב הפרטי של הילד. הקוד האישי שלו מגן על התכנים ומונע כניסה של ילדים אחרים.</div>
+
+    <h3>כניסות חוזרות</h3>
+    <p>הילד לוחץ על <strong>יש לי קוד אישי</strong> בדף הפתיחה, מזין את ה-PIN שלו (4 ספרות) ונכנס ישירות.</p>
+
+    <h3>סרגל הניווט התחתון</h3>
+    <div class="nav-bar">
+      <div class="nav-item"><span class="ni">🏠</span> <div><strong>בית</strong> - מסך הפתיחה עם ברכה אישית, רצף וניקוד</div></div>
+      <div class="nav-item"><span class="ni">📓</span> <div><strong>יומן</strong> - כל הרגעים שנרשמו</div></div>
+      <div class="nav-item"><span class="ni">💬</span> <div><strong>ציטוטים</strong> - משפטים שהילד שמר</div></div>
+      <div class="nav-item"><span class="ni">📖</span> <div><strong>אודות</strong> - הסבר על היומן ואיך משתמשים בו</div></div>
+      <div class="nav-item"><span class="ni">☰</span> <div><strong>הגדרות</strong> - בחירת אווטאר ושינוי צבע מסך - 28 אווטארים ו-6 ערכות צבע</div></div>
+      <div class="nav-item"><span class="ni">←</span> <div><strong>יציאה</strong> - חזרה לדף הפתיחה (אייקון יציאה)</div></div>
+    </div>
+  </section>
+
+
+  <!-- 5. ENTRY WIZARD -->
+  <section>
+    <div class="section-title"><span class="icon">✍️</span> רישום רגע חדש</div>
+    <p>הילד לוחץ על כפתור <strong>+ רגע חדש</strong> בדף הבית. הרישום מתחלק ל-7 שלבים בהם אפשר לכתוב או להקליט לפי רצון הילד:</p>
+
+    <div class="wizard-steps">
+      <div class="wizard-step"><span>שלב 1</span> מה קרה? - תיאור האירוע</div>
+      <div class="wizard-step"><span>שלב 2</span> בחירת רגשות (עד 12) דרך לחיצה על אימוג'י, ואפשרות להוסיף תיאור בכתב</div>
+      <div class="wizard-step"><span>שלב 3</span> מה חשבתי?</div>
+      <div class="wizard-step"><span>שלב 4</span> מה עשיתי?</div>
+      <div class="wizard-step"><span>שלב 5</span> מה יכול לעזור?</div>
+      <div class="wizard-step"><span>שלב 6</span> מתי? (בוקר / צהריים / ערב / לילה)</div>
+      <div class="wizard-step"><span>שלב 7</span> איפה? (בית / בית ספר / חברים / בחוץ)</div>
+    </div>
+
+    <p style="margin-top:12px;">בסיום מופיעה אנימציית סיום מעודדת. ניתן לערוך עד שעה אחרי האירוע, לאחר מכן האפשרות נעלמת. לא ניתן למחוק רגעים מהיומן.</p>
+  </section>
+
+
+  <!-- 6. OTHER KID FEATURES -->
+  <section>
+    <div class="section-title"><span class="icon">⚙️</span> פונקציות נוספות לילד</div>
+
+    <h3>הגדרות</h3>
+    <p>שינוי אווטאר (28 אפשרויות) וערכת עיצוב (6 צבעים). לחיצה על שמירה מביאה לשמירה מיידית.</p>
+
+    <h3>יומן</h3>
+    <p>כל הרגעים מסודרים לפי שבועות - "השבוע", "שבוע שעבר" ולאחר מכן חודש ושנה. לחיצה על רגע פותחת אותו לצפייה מלאה ועריכה (עד שעה אחרי האירוע).</p>
+
+    <h3>ציטוטים שמורים</h3>
+    <p>כל ציטוט שהילד בחר לשמור מופיע כאן. ניתן להסיר שמירה בכל עת.</p>
+
+    <h3>אודות</h3>
+    <p>הסבר לילד על מטרת היומן, איך משתמשים בו ודוגמה לרגע מלא. התוכן מותאם לזהות המין.</p>
+  </section>
+
+
+  <!-- 7. PWA -->
+  <section>
+    <div class="section-title"><span class="icon">📱</span> הוספה למסך הבית</div>
+    <p>האפליקציה ניתנת להתקנה על מסך הבית - גם ב-iOS וגם באנדרואיד - ואז היא נראית ומתנהגת כמו אפליקציה רגילה.</p>
+
+    <div class="pwa-grid">
+      <div class="pwa-box">
+        <h4>🍎 iPhone / iPad</h4>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">פתחי את האפליקציה ב-<strong>Safari</strong></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">לחצי על כפתור <strong>השיתוף</strong> (ריבוע עם חץ למעלה ⬆️) בתחתית הדפדפן</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">גלגלי מטה ובחרי <strong>הוספה למסך הבית</strong></div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">לחצי <strong>הוספה</strong> - האייקון יופיע על המסך</div></div>
+        </div>
+        <div class="tip" style="margin-top:10px;"><strong>חשוב:</strong> חייב להיות Safari. Chrome ב-iOS לא תומך בהתקנה.</div>
+      </div>
+
+      <div class="pwa-box">
+        <h4>🤖 אנדרואיד</h4>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">פתחי את האפליקציה ב-<strong>Chrome</strong></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">יופיע באנר בתחתית <strong>"הוספה לדף הבית"</strong> - לחצי עליו</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">אם הבאנר לא הופיע: לחצי על <strong>תפריט ⋮</strong> (שלוש נקודות) ← <strong>הוספה למסך הבית</strong></div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">לחצי <strong>הוספה</strong> - האייקון יופיע</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:16px;"><strong>אחרי ההתקנה:</strong> האפליקציה נפתחת ללא שורת הדפדפן ועובדת גם ללא אינטרנט (במצב מוגבל).</div>
+  </section>
+
+
+  <!-- 8. PARENT PRIVACY MESSAGE -->
+  <section>
+    <div class="section-title"><span class="icon">📨</span> תבנית הודעה להורים - אבטחת מידע ופרטיות</div>
+    <p>הודעה מוכנה לשליחה להורים שמבקשים לדעת יותר על אבטחת המידע:</p>
+    <div class="msg-block">אבטחת המידע והפרטיות של הילד.ה שלכם בראש סדר העדיפויות שלי 🔒
+
+כחלק מהמחויבות שלי למרחב טיפולי בטוח ומוגן, האפליקציה נבנתה בסטנדרטים המחמירים ביותר של אבטחת מידע המקובלים כיום בשוק. הנה כמה דברים שחשוב שתדעו על האופן שבו המידע שלכם שמור ומאובטח:
+
+• אחסון בענן מאובטח ומוביל: האפליקציה והמידע שבה מאוחסנים ומנוהלים על גבי תשתיות ענן מתקדמות ומאובטחות (Supabase ו-Vercel), המשמשות חברות טכנולוגיה וארגונים רפואיים מובילים בעולם.
+
+• הפרדה מוחלטת וחיסיון: קוד המקור של האפליקציה מוגדר כפרטי לחלוטין ואינו חשוף לאף גורם חיצוני. המידע הטיפולי והאישי של כל ילד מופרד ונשמר תחת הצפנה מתקדמת, כך שרק לכם (וכמטפלים הרלוונטיים) יש גישה אליו.
+
+• מניעת גישה לא מורשית: כל מעבר של מידע באפליקציה (מהטלפון או המחשב שלכם אל שרתי המערכת) מוצפן מקצה לקצה בטכנולוגיית SSL (בדומה לאתרי בנקים), מה שמונע מכל גורם חיצוני ליירט או לקרוא את הנתונים.
+
+אני מבינה לחלוטין את הרגישות ומנהלת את המערכת מתוך תפיסה של "פרטיות כברירת מחדל". אם יש לכם שאלות נוספות על אופן שמירת הנתונים, אני כאן בשמחה לכל הסבר.</div>
+
+    <h3 style="margin-top:22px;">מיפוי טכני - איך הטכנולוגיה מתרגמת ללשון בני אדם</h3>
+    <p>כדי שתרגישי בנוח לענות על שאלות המשך מהורים:</p>
+    <table class="tech-table">
+      <thead>
+        <tr>
+          <th>מה יש בפרויקט?</th>
+          <th>מה זה אומר בשפה של הורים?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>GitHub Private Repo</code></td>
+          <td>קוד האפליקציה נעול בכספת דיגיטלית סגורה. אף אחד לא יכול לראות איך המערכת בנויה או לחפש בה פרצות.</td>
+        </tr>
+        <tr>
+          <td><code>Supabase (PostgreSQL)</code></td>
+          <td>בסיס הנתונים יושב על תשתית ענן מאובטחת (AWS). המידע הטיפולי נשמר בהפרדה מוחלטת (Row Level Security), כך שמשתמש א' בחיים לא יוכל לראות מידע של משתמש ב'.</td>
+        </tr>
+        <tr>
+          <td><code>Vercel</code></td>
+          <td>שרת האפליקציה מוגן מפני מתקפות (DDoS) ומספק תעודת אבטחה (SSL) אוטומטית - הגלישה באפליקציה מוצפנת ומאובטחת לחלוטין.</td>
+        </tr>
+        <tr>
+          <td><code>Environment Variables</code></td>
+          <td>כל מפתחות הגישה, הסיסמאות והחיבורים בין המערכות חבויים ברמת השרת ואינם גלויים בקוד או לדפדפן של המשתמש.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <!-- 9. QUICK TIPS -->
+  <section>
+    <div class="section-title"><span class="icon">💡</span> טיפים מהירים</div>
+    <ul>
+      <li>כל ילד מקבל <strong>קוד ייחודי</strong> - לא ניתן לערבב בין ילדים.</li>
+      <li>הילד בוחר קוד אישי וקל לזכירה. אם הילד שכח, תוכלי לראות אותו בדשבורד שלך ולהזכיר לו.</li>
+      <li>ה-<span class="badge">🔥 רצף</span> מתאפס אם הילד לא נכנס יום אחד - כדאי לעודד כניסה יומית.</li>
+      <li>לשיתוף יומן עם ילד חדש - תמיד השתמשי בכפתור <strong>🔗 העתיקי קישור</strong> ולא בהקלדה ידנית של הקוד.</li>
+    </ul>
+  </section>
+
+  <!-- Closing -->
+  <div class="closing">בהצלחה 💙</div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <img src="Method Logo (1).png" alt="Method AI" class="footer-logo" onerror="this.style.display='none'" />
+    <div class="footer-name">נירה טל | מתודה פתרונות AI</div>
+    <div class="footer-links">
+      <span>© כל הזכויות שמורות</span>
+      <span class="footer-sep">|</span>
+      <a href="tel:0542215222">054-2215222</a>
+      <span class="footer-sep">|</span>
+      <a href="mailto:nira.tal@metoda.ai">nira.tal@metoda.ai</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
