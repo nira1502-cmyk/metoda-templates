@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>הצעת מחיר — יומן מלווה טיפול | White Label</title>
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="stylesheet" href="../../shared-styles.css" />
+  <style>
+    .price-total td { font-weight: 700; font-size: 16px; background: var(--primary-light); color: var(--primary); }
+    .signature-box { border: 1.5px dashed var(--border); border-radius: 8px; padding: 16px; margin-top: 12px; min-height: 80px; }
+  </style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <img src="../../logo.png" alt="לוגו" class="cover-logo" onerror="this.style.display='none'" />
+  <div class="cover-badge">הצעת מחיר — White Label</div>
+  <h1>יומן מלווה טיפול</h1>
+  <div class="cover-sub">מוגשת ל: [שם המטפל/ת / הקליניקה]</div>
+  <div class="cover-meta">נירה טל | מתודה פתרונות AI | יולי 2026 | בתוקף עד [תאריך]</div>
+</div>
+
+<div class="doc-wrapper">
+
+  <!-- ===== מבוא ===== -->
+  <div class="section">
+    <div class="section-title">מבוא</div>
+    <p>תודה על הפנייה! להלן הצעת מחיר עבור <strong>יומן מלווה טיפול</strong> — ממותג בשם ובזהות שלך.</p>
+    <p>"רציתי להגיד לך משהו ושכחתי" — המשפט שכל מטפל/ת שומע/ת שבועית. היומן סוגר את המעגל: המטופל/ת מתעד/ת נושאים לדיבור ומחשבות ברגע שהם עולים, סדר היום לפגישה מתגבש מאליו, וחלון "אחרי הפגישה" משמר את מה שנלקח. הטיפול מפסיק להיות שעה בשבוע והופך לתהליך רציף — עם שליטה מלאה של המטופל/ת במה שמשותף.</p>
+    <div class="info-box">
+      <strong>הגישה שלנו:</strong> ה-Auth, ההקלטה הקולית, ציר הזמן וה-PWA מגיעים ממוצר פעיל ומוכח בפרודקשן. הפיתוח הייחודי — סוגי רשומות, מעגל הפגישה ומנוע הרשימות — נבנה על תשתית עובדת, ולכן המחיר נמוך משמעותית מפיתוח מאפס.
+    </div>
+  </div>
+
+  <!-- ===== היקף העבודה ===== -->
+  <div class="section">
+    <div class="section-title">היקף העבודה</div>
+    <h3>מה כלול בהצעה</h3>
+    <ul>
+      <li><strong>פיתוח ראשוני</strong> — שכפול תשתית המוצר, הקמת סביבה ייעודית (Supabase + Vercel נפרדים), חיבור וקונפיגורציה מלאה</li>
+      <li><strong>התאמות לפי האפיון</strong> — שלושת סוגי הרשומות (לדבר על זה בטיפול / מחשבה שעלתה / אחרי הפגישה), מסך "הפגישה הקרובה" לשני הצדדים, רשימות עם פריטי סימון, הבחנת פרטי/לשיתוף ברמת ה-RLS, ניהול מועדי פגישות</li>
+      <li><strong>ממשק ניהול מותג</strong> — קובץ קונפיגורציה מרכזי (config) לצבעים, לוגו, שם המוצר, נוסחי שאלות העיבוד ומדיניות השיתוף — שינויים עתידיים בלי לגעת בקוד</li>
+      <li><strong>מסירה וליווי</strong> — חשבון מטפל/ת, ליווי במטופל/ת הראשון/ה</li>
+    </ul>
+    <h3>מה לא כלול</h3>
+    <ul>
+      <li>מודולי הרחבה (סוכן תקציר לפני פגישה, תזכורות חכמות, תבניות רשימות, מבט אורך, רב-מטפלים) — מתומחרים בנפרד לפי מסמך האפיון</li>
+      <li>שירותים נלווים: דומיין מותאם, מיתוג מיילים, מדריך ממותג, הזנת תוכן</li>
+      <li>אפליקציית סטור נייטיב — המוצר הוא PWA להתקנה על מסך הבית</li>
+    </ul>
+    <div class="tip"><strong>חשוב:</strong> כל תוספת מעבר להיקף המוגדר תמוחר בנפרד ותובא לאישור מראש.</div>
+  </div>
+
+  <!-- ===== לוח זמנים ===== -->
+  <div class="section">
+    <div class="section-title">לוח זמנים</div>
+    <table>
+      <thead>
+        <tr><th>שלב</th><th>תיאור</th><th>משך</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="badge badge-blue">שלב א׳</span></td><td>פגישת אפיון קצרה: סטינג טיפולי, מדיניות שיתוף, נוסח שאלות העיבוד, מיתוג</td><td>פגישה אחת</td></tr>
+        <tr><td><span class="badge badge-blue">שלב ב׳</span></td><td>הקמת סביבה + פיתוח סוגי הרשומות, מעגל הפגישה והרשימות + מיתוג</td><td>5–8 ימי עבודה</td></tr>
+        <tr><td><span class="badge badge-blue">שלב ג׳</span></td><td>בדיקות, כיול נוסחים ומסירה מלווה</td><td>2–3 ימי עבודה</td></tr>
+        <tr><td><span class="badge badge-green">השקה</span></td><td>עלייה לאוויר — סה"כ שבוע–שבועיים</td><td>—</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><strong>המועד מותנה</strong> בקבלת אישור, דמי קדמה וחומרי המיתוג (לוגו, צבעים, נוסחים).</div>
+  </div>
+
+  <!-- ===== תמחור ===== -->
+  <div class="section">
+    <div class="section-title">תמחור</div>
+    <table>
+      <thead>
+        <tr><th>רכיב</th><th>היקף</th><th>מחיר</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>פיתוח ראשוני — שכפול + קונפיגורציה + סביבה ייעודית</td><td>8 שעות × ₪350</td><td>₪2,800</td></tr>
+        <tr><td>התאמות ספציפיות לפי האפיון — סוגי רשומות, מעגל הפגישה, מנוע רשימות, פרטיות ברמת DB</td><td>12 שעות × ₪350</td><td>₪4,200</td></tr>
+        <tr><td>ממשק ניהול מותג — צבעים / לוגו / שפה בקובץ config מרכזי</td><td>4 שעות × ₪350</td><td>₪1,400</td></tr>
+        <tr class="price-total"><td colspan="2">סה״כ (לפני מע״מ) — 24 שעות</td><td>₪8,400</td></tr>
+        <tr class="price-total"><td colspan="2">סה״כ כולל מע״מ (18%)</td><td>₪9,912</td></tr>
+      </tbody>
+    </table>
+
+    <h3>חבילת שלושת היומנים — הנחת חבילה</h3>
+    <p>לרוכשים את שלושת ה-White Labels יחד (יומן ילדים + יומן CBT למבוגרים + יומן מלווה טיפול):</p>
+    <table>
+      <tbody>
+        <tr><td>יומן רגשות דיגיטלי לילדים</td><td>₪6,300</td></tr>
+        <tr><td>יומן CBT למבוגרים</td><td>₪7,700</td></tr>
+        <tr><td>יומן מלווה טיפול</td><td>₪8,400</td></tr>
+        <tr><td><strong>סה"כ בנפרד</strong></td><td>₪22,400</td></tr>
+        <tr class="price-total"><td>חבילת 3 יחד — הנחה של ₪3,400 (כ-15%)</td><td>₪19,000 (לפני מע״מ)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>תנאי תשלום</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-text"><strong>50%</strong> דמי קדמה עם חתימת ההסכם — ₪4,200 + מע״מ</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text"><strong>50%</strong> עם מסירה ועלייה לאוויר — ₪4,200 + מע״מ</div></div>
+  </div>
+
+  <!-- ===== מה מקבלים ===== -->
+  <div class="section">
+    <div class="section-title">מה מקבלים בסיום</div>
+    <ul>
+      <li>✅ מערכת מלאה באוויר, ממותגת בזהות שלך — PWA להתקנה על מסך הבית</li>
+      <li>✅ סביבה ייעודית ונפרדת (Supabase + Vercel) — רשומות פרטיות חסומות למטפל/ת גם ברמת ה-DB</li>
+      <li>✅ שלושת סוגי הרשומות + רשימות + מסך "הפגישה הקרובה" לשני הצדדים</li>
+      <li>✅ הקלטה קולית (Whisper) בכל שדה</li>
+      <li>✅ ליווי מסירה + תמיכה בתקלות למשך 30 יום מהמסירה</li>
+    </ul>
+  </div>
+
+  <!-- ===== תנאים כלליים ===== -->
+  <div class="section">
+    <div class="section-title">תנאים כלליים</div>
+    <ul>
+      <li>הצעה זו בתוקף עד <strong>[תאריך]</strong></li>
+      <li>שינויים בהיקף יחייבו עדכון הצעת מחיר</li>
+      <li>חומרי המיתוג והנוסחים יימסרו לנו לפני תחילת שלב ב׳</li>
+      <li>עלויות שוטפות של ספקי צד שלישי (Supabase, Vercel, OpenAI) — על חשבון הלקוח/ה, לפי שימוש בפועל</li>
+      <li>תקשורת שוטפת תתנהל דרך אימייל / וואטסאפ</li>
+    </ul>
+    <div class="tip"><strong>אחריות:</strong> תיקון תקלות בתפקוד המערכת ללא עלות למשך 30 יום מהמסירה. תוספות ושינויים — לפי תמחור שעתי (₪350/שעה) או הצעה נפרדת.</div>
+  </div>
+
+  <!-- ===== אישור ===== -->
+  <div class="section">
+    <div class="section-title">אישור הצעה</div>
+    <p>חתימה על מסמך זה מהווה אישור לתנאים המפורטים לעיל והסכמה להתחיל את הפרויקט.</p>
+    <table>
+      <tbody>
+        <tr>
+          <td style="width:50%">
+            <strong>מוגשת על ידי:</strong><br/>
+            נירה טל | מתודה פתרונות AI<br/>
+            <div class="signature-box"></div>
+            <small>חתימה ותאריך</small>
+          </td>
+          <td style="width:50%">
+            <strong>מאושר על ידי:</strong><br/>
+            [שם הלקוח/ה]<br/>
+            <div class="signature-box"></div>
+            <small>חתימה ותאריך</small>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <img src="../../logo.png" alt="מתודה AI" class="footer-logo" onerror="this.style.display='none'" />
+  <div class="footer-name">נירה טל | מתודה פתרונות AI</div>
+  <div class="footer-links">
+    <span>© כל הזכויות שמורות</span>
+    <span class="footer-sep">|</span>
+    <a href="tel:0542215222">054-2215222</a>
+    <span class="footer-sep">|</span>
+    <a href="mailto:nira@metoda.ai">nira@metoda.ai</a>
+  </div>
+</div>
+
+</body>
+</html>
