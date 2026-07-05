@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אפיון — יומן מלווה טיפול | White Label | מתודה פתרונות AI</title>
+  <link rel="stylesheet" href="../shared-styles.css" />
+  <style>
+    .pill {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pill-green  { background: #dcfce7; color: #166534; }
+    .pill-amber  { background: #fef9c3; color: #92400e; }
+    .pill-blue   { background: #dbeafe; color: #1e40af; }
+    .pill-gray   { background: #f1f5f9; color: #475569; }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 700px) { .module-grid { grid-template-columns: 1fr; } }
+
+    .module-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 14px 16px;
+      background: #fff;
+    }
+    .module-card h4 {
+      margin: 0 0 6px;
+      font-size: 0.95rem;
+      color: #1e293b;
+    }
+    .module-card p {
+      margin: 0 0 8px;
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    .sales-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+      color: #fff;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 24px 0;
+    }
+    .sales-box h2 { color: #e2e8f0; margin-top: 0; font-size: 1.3rem; }
+    .sales-box ul { padding-right: 20px; margin: 12px 0 0; }
+    .sales-box li { margin-bottom: 8px; font-size: 0.92rem; line-height: 1.6; color: #cbd5e1; }
+    .sales-box li strong { color: #fff; }
+
+    .entry-type {
+      border: 1px solid #e2e8f0;
+      border-right: 4px solid #7c3aed;
+      border-radius: 10px;
+      padding: 14px 16px;
+      background: #fff;
+      margin-top: 10px;
+    }
+    .entry-type h4 { margin: 0 0 6px; font-size: 0.95rem; color: #1e293b; }
+    .entry-type p, .entry-type li { font-size: 0.87rem; color: #475569; line-height: 1.6; }
+    .entry-type ul { margin: 6px 0 0; padding-right: 18px; }
+  </style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <div class="cover-badge">מסמך אפיון ופיץ׳ מכירה — White Label</div>
+  <h1>יומן מלווה טיפול</h1>
+  <div class="cover-sub">מחשבות לפני הטיפול ואחריו — המשכיות בין פגישות, למבוגרים, עם רשימות אישיות</div>
+  <div class="cover-meta">מתודה פתרונות AI | נירה טל | יולי 2026 | גרסה 1.0</div>
+</div>
+
+<div class="doc-wrapper">
+
+  <!-- ===== פיץ׳ מכירה ===== -->
+  <div class="section">
+    <div class="section-title">למה המטפל/ת צריכ/ה את זה?</div>
+
+    <div class="sales-box">
+      <h2>הבעיה שאנחנו פותרים</h2>
+      <ul>
+        <li><strong>"רציתי להגיד לך משהו ושכחתי"</strong> — המשפט הנפוץ בקליניקה. מחשבות חשובות עולות באמצע השבוע ונעלמות עד הפגישה.</li>
+        <li><strong>הדקות הראשונות מתבזבזות</strong> — כל פגישה נפתחת בשחזור: "על מה דיברנו? מה קרה מאז?" במקום להיכנס ישר לעומק.</li>
+        <li><strong>התובנות מהפגישה מתאדות</strong> — מה שהתחדד בשעה הטיפולית לא מתועד, ועד הפגישה הבאה נשאר ממנו מעט.</li>
+        <li><strong>פתקים מפוזרים</strong> — מטופלים כותבים לעצמם בנוטס, בוואטסאפ לעצמם, על ניירות — כלום לא מגיע לחדר.</li>
+      </ul>
+    </div>
+
+    <div class="info-box">
+      <strong>הפתרון:</strong> יומן דיגיטלי אחד שמלווה את מעגל הטיפול — לתעד מה שרוצים לדבר עליו, לכתוב מחשבות שעולות לקראת פגישה, לעבד את מה שקרה אחריה, ולנהל רשימות אישיות. הטיפול מפסיק להיות שעה בשבוע והופך לתהליך רציף.
+    </div>
+
+    <h3>למי זה מתאים?</h3>
+    <ul>
+      <li>פסיכותרפיסטים ופסיכולוגים בכל הגישות — המוצר אינו תלוי-שיטה (לא רק CBT)</li>
+      <li>מטפלים דינמיים שרוצים לשמר חומר בין פגישות בלי לכפות מבנה</li>
+      <li>מטפלים זוגיים ומשפחתיים — נושאים לפגישה מצטברים אצל כל אחד מבני הזוג</li>
+      <li>מדריכים ומלווים בתהליכים ארוכים (הדרכה, קואוצ'ינג טיפולי)</li>
+    </ul>
+  </div>
+
+  <!-- ===== פרטי המוצר ===== -->
+  <div class="section">
+    <div class="section-title">פרטי המוצר</div>
+    <table>
+      <tbody>
+        <tr><td><strong>שם המוצר</strong></td><td>יומן מלווה טיפול — White Label (שם ללקוח/ה נקבע במיתוג)</td></tr>
+        <tr><td><strong>פלטפורמה</strong></td><td>Next.js 16 + Supabase + Vercel (Fluid Compute)</td></tr>
+        <tr><td><strong>שפה</strong></td><td>עברית, RTL מלא, פנייה מגדרית לפי בחירת המשתמש/ת</td></tr>
+        <tr><td><strong>AI</strong></td><td>Whisper — הקלטה קולית | סוכן סיכום למטפל/ת (מודול)</td></tr>
+        <tr><td><strong>עיקרון מרכזי</strong></td><td>המשכיות: לפני הפגישה ← בפגישה ← אחרי הפגישה — מעגל אחד</td></tr>
+        <tr><td><strong>גיימיפיקציה</strong></td><td>ללא. כלי עבודה בוגר ושקט</td></tr>
+        <tr><td><strong>זמן הקמה</strong></td><td>שבוע–שבועיים (נגזרת מהליבה הקיימת + מיתוג)</td></tr>
+        <tr><td><strong>סטטוס</strong></td><td><span class="badge badge-amber">נגזרת ממוצר האם הפעיל — יומן הרגשות לילדים (פרודקשן)</span></td></tr>
+        <tr><td><strong>תמחור</strong></td><td>הצעת מחיר נפרדת לפי חבילה ומודולים (proposal-template)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== קהל יעד ===== -->
+  <div class="section">
+    <div class="section-title">קהל יעד</div>
+
+    <h3>המשתמש/ת — המטופל/ת הבוגר/ת</h3>
+    <ul>
+      <li>גיל 18+, בטיפול רגשי מתמשך בכל גישה</li>
+      <li>רוצה מקום אחד לכל מה שקשור לטיפול — במקום פתקים מפוזרים</li>
+      <li>כותב/ת מהטלפון ברגע שהמחשבה עולה: בדרך לעבודה, בלילה, אחרי שיחה קשה</li>
+    </ul>
+
+    <h3>הלקוח/ה שלנו — המטפל/ת</h3>
+    <ul>
+      <li>רואה לפני כל פגישה את סדר היום שהמטופל/ת הכין/ה — נכנס/ת ישר לעבודה</li>
+      <li>עוקב/ת אחרי עיבוד בין-פגישתי: מה נשאר מהפגישה, מה התעורר אחריה</li>
+    </ul>
+
+    <div class="tip"><strong>שיתוף בשליטת המטופל/ת:</strong> בשונה מגרסת הילדים, כאן המטופל/ת בוחר/ת מה משותף עם המטפל/ת. כל רשומה נשמרת כ"פרטי" או "לשיתוף" — ההסכמה מובנית בממשק, לא רק בטופס.</div>
+  </div>
+
+  <!-- ===== ליבת המוצר — סוגי רשומות ===== -->
+  <div class="section">
+    <div class="section-title">ליבת המוצר — שלושה סוגי רשומות ורשימות</div>
+    <p>אין אשף ארוך ואין מבנה כפוי — כתיבה חופשית מהירה, עם שיוך לאחד משלושה הקשרים במעגל הטיפול:</p>
+
+    <div class="entry-type">
+      <h4>💬 לדבר על זה בטיפול</h4>
+      <p>נושא שהמטופל/ת רוצה להביא לפגישה. הרשומות מסוג זה נאספות אוטומטית ל<strong>סדר היום לפגישה הקרובה</strong>.</p>
+      <ul>
+        <li>בפגישה עצמה — סימון "דיברנו על זה ←" מעביר את הנושא לארכיון</li>
+        <li>נושא שלא נדון עובר אוטומטית לפגישה הבאה — שום דבר לא נופל</li>
+      </ul>
+    </div>
+
+    <div class="entry-type">
+      <h4>💭 מחשבה שעלתה</h4>
+      <p>כתיבה חופשית בכל רגע — מחשבות, חלומות, אירועים, דברים שמעסיקים. אפשר לכתוב או להקליט. ברירת מחדל פרטית, בלחיצה אחת הופכת ל"לשיתוף" או מקושרת לפגישה.</p>
+    </div>
+
+    <div class="entry-type">
+      <h4>🌱 אחרי הפגישה</h4>
+      <p>חלון עיבוד קצר ומונחה אחרי כל פגישה:</p>
+      <ul>
+        <li><strong>מה אני לוקח/ת מהפגישה?</strong></li>
+        <li><strong>מה הרגשתי במהלכה או אחריה?</strong></li>
+        <li><strong>מה אני רוצה לזכור לפעם הבאה?</strong></li>
+      </ul>
+      <p>שלושת השדות בעמוד אחד — מילוי מקפיץ לשדה הבא, גלילה חופשית (הזרימה המוכחת ממוצר האם).</p>
+    </div>
+
+    <h3>📋 רשימות</h3>
+    <p>מעבר לרשומות — המטופל/ת יכול/ה <strong>ליצור רשימות</strong> או <strong>לצרף רשימות</strong> לרשומה ולפגישה:</p>
+    <ul>
+      <li>רשימות חופשיות עם פריטי סימון: "דברים שמלחיצים אותי", "מה עוזר לי להירגע", "משפטים שאני אומר/ת לעצמי"</li>
+      <li>רשימה יכולה להיות מצורפת לפגישה ("לעבור על זה יחד") או לעמוד בפני עצמה</li>
+      <li>פריטים ניתנים לסימון כבוצעו / רלוונטיים — הרשימה חיה ומתעדכנת לאורך הטיפול</li>
+      <li>המטפל/ת יכול/ה להציע תבניות רשימה מוכנות (מודול)</li>
+    </ul>
+  </div>
+
+  <!-- ===== מעגל הפגישה ===== -->
+  <div class="section">
+    <div class="section-title">מעגל הפגישה — איך הכל מתחבר</div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text"><strong>בין פגישות:</strong> המטופל/ת כותב/ת מחשבות ונושאים לדיבור ברגע שהם עולים — כתיבה או הקלטה, מהטלפון</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><strong>לקראת הפגישה:</strong> מסך "הפגישה הקרובה" מרכז את סדר היום, המחשבות ששותפו והרשימות המצורפות</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><strong>בפגישה:</strong> המטפל/ת פותח/ת את אותו מסך בדשבורד — שני הצדדים מול אותו סדר יום. נושאים מסומנים כ"דיברנו על זה ←"</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text"><strong>אחרי הפגישה:</strong> חלון "אחרי הפגישה" מתעד את מה שנלקח — והופך לנקודת הפתיחה של המעגל הבא</div></div>
+    </div>
+    <div class="info-box"><strong>הערך למטפל/ת:</strong> חמש דקות לפני הפגישה — מבט אחד על סדר היום, על העיבוד מהפגישה הקודמת ועל מה שהצטבר בדרך. הפגישה מתחילה מעומק, לא מאפס.</div>
+  </div>
+
+  <!-- ===== חבילת בסיס ===== -->
+  <div class="section">
+    <div class="section-title">מה כלול בחבילת הבסיס</div>
+
+    <h3>ממשק המטופל/ת</h3>
+    <ul>
+      <li>שלושת סוגי הרשומות + רשימות עם פריטי סימון</li>
+      <li>כתיבה או הקלטה קולית (Whisper) בכל שדה</li>
+      <li>מסך "הפגישה הקרובה" — סדר יום מתגבש מאליו</li>
+      <li>שליטה מלאה בפרטיות: פרטי / לשיתוף, לכל רשומה בנפרד</li>
+      <li>ארכיון פגישות — כל פגישה עם הנושאים שנדונו והעיבוד שאחריה</li>
+      <li>ערכות צבע בוגרות, PWA להתקנה על מסך הבית</li>
+    </ul>
+
+    <h3>ממשק המטפל/ת</h3>
+    <ul>
+      <li>רשימת מטופלים עם התראה "יש חומר חדש לפגישה"</li>
+      <li>מסך פגישה: סדר יום, רשומות ששותפו, רשימות מצורפות, עיבוד קודם</li>
+      <li>ניהול מועדי פגישות (תאריך הפגישה הבאה לכל מטופל/ת)</li>
+      <li>יצירת מטופל/ת חדש/ה וקישור הזמנה בהעתקה אחת</li>
+    </ul>
+
+    <h3>תשתית</h3>
+    <ul>
+      <li>Supabase RLS — הפרדת נתונים מוחלטת; רשומות פרטיות אינן נגישות למטפל/ת גם ברמת ה-DB</li>
+      <li>אימות מטופל/ת: email + password או קוד הזמנה</li>
+    </ul>
+  </div>
+
+  <!-- ===== מודולים ===== -->
+  <div class="section">
+    <div class="section-title">מודולים — הרחבות לפי בחירה</div>
+
+    <div class="module-grid">
+      <div class="module-card">
+        <h4>🤖 סוכן AI — תקציר לפני פגישה <span class="pill pill-blue">מודול</span></h4>
+        <p>סיכום אוטומטי של החומר ששותף מאז הפגישה הקודמת: נושאים מרכזיים, טון רגשי, חוטים חוזרים — למטפל/ת בלבד.</p>
+      </div>
+      <div class="module-card">
+        <h4>🔔 תזכורות חכמות <span class="pill pill-blue">מודול</span></h4>
+        <p>תזכורת עדינה יום לפני פגישה ("יש משהו שתרצה/י להוסיף לסדר היום?") ותזכורת עיבוד אחרי פגישה.</p>
+      </div>
+      <div class="module-card">
+        <h4>📋 תבניות רשימות למטפל/ת <span class="pill pill-blue">מודול</span></h4>
+        <p>המטפל/ת בונה תבניות רשימה ("סולם חרדה", "מדדי שבוע") ושולח/ת למטופל/ת למילוי.</p>
+      </div>
+      <div class="module-card">
+        <h4>📈 מבט אורך <span class="pill pill-blue">מודול</span></h4>
+        <p>ציר זמן של כל הפגישות: אילו נושאים חזרו, מה נסגר ומה מלווה את הטיפול לאורך זמן.</p>
+      </div>
+      <div class="module-card">
+        <h4>💬 משפטי השראה <span class="pill pill-gray">אופציונלי</span></h4>
+        <p>משפט בוגר אחרי כתיבה, עם "אהבתי ←" ואזור ציטוטים שמורים — למטפלים שרוצים נופך מחזק. כבוי כברירת מחדל.</p>
+      </div>
+      <div class="module-card">
+        <h4>🏥 רב-מטפלים <span class="pill pill-gray">Roadmap</span></h4>
+        <p>קליניקות ומכונים — כמה מטפלים תחת מותג אחד.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== מה מותאם ללקוח ===== -->
+  <div class="section">
+    <div class="section-title">מה מותאם אישית בכל התקנה (White Label)</div>
+    <table>
+      <thead>
+        <tr><th>רכיב</th><th>התאמה</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>שם המוצר ולוגו</strong></td><td>שם היומן, לוגו ואייקון PWA של המטפל/ת</td></tr>
+        <tr><td><strong>צבעי מותג</strong></td><td>פלטה בוגרת בהתאמה לזהות הקליניקה</td></tr>
+        <tr><td><strong>שאלות "אחרי הפגישה"</strong></td><td>נוסח שלוש השאלות ניתן לכיול לגישה הטיפולית</td></tr>
+        <tr><td><strong>מדיניות שיתוף</strong></td><td>ברירת מחדל פרטי / לשיתוף — לפי הסטינג הטיפולי</td></tr>
+        <tr><td><strong>סוגי רשומות</strong></td><td>אפשר להוסיף סוג רביעי מותאם (למשל "חלומות" בטיפול דינמי)</td></tr>
+        <tr><td><strong>דומיין</strong></td><td>סאב-דומיין ייעודי או דומיין של הלקוח/ה</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== ארכיטקטורה ===== -->
+  <div class="section">
+    <div class="section-title">ארכיטקטורה טכנית</div>
+    <table>
+      <tbody>
+        <tr><td><strong>Frontend</strong></td><td>Next.js 16 App Router, Tailwind v4, TypeScript strict</td></tr>
+        <tr><td><strong>Backend / DB</strong></td><td>Supabase (PostgreSQL) עם RLS, מפתחות פורמט 2026</td></tr>
+        <tr><td><strong>מודל נתונים</strong></td><td>profiles, entries (עם entry_type + visibility), sessions, session_topics, lists, list_items</td></tr>
+        <tr><td><strong>פרטיות ברמת DB</strong></td><td>מדיניות RLS נפרדת לרשומות פרטיות — המטפל/ת רואה רק visibility='shared'</td></tr>
+        <tr><td><strong>AI Voice</strong></td><td>Whisper — תמלול הקלטות</td></tr>
+        <tr><td><strong>Hosting</strong></td><td>Vercel — Fluid Compute, PWA מלא</td></tr>
+      </tbody>
+    </table>
+    <div class="tip"><strong>יתרון תשתיתי:</strong> ה-Auth, ההקלטה הקולית, ציר הזמן של המטפל/ת וה-PWA מגיעים ממוצר האם המוכח. הפיתוח הייחודי: סוגי רשומות, מעגל הפגישה ומנוע הרשימות.</div>
+  </div>
+
+  <!-- ===== שלבי הקמה ===== -->
+  <div class="section">
+    <div class="section-title">שלבי ההקמה ללקוח/ה חדש/ה</div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text"><strong>פגישת אפיון קצרה</strong> — סטינג טיפולי, מדיניות שיתוף, נוסח שאלות העיבוד, מיתוג</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><strong>הקמת סביבה ייעודית</strong> — Supabase + Vercel נפרדים ללקוח/ה</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><strong>התאמה ומיתוג</strong> — צבעים, לוגו, נוסחים, סוגי רשומות</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text"><strong>מסירה</strong> — חשבון מטפל/ת, מדריך ממותג, ליווי במטופל/ת הראשון/ה</div></div>
+    </div>
+  </div>
+
+  <!-- ===== הערות למכירה ===== -->
+  <div class="section">
+    <div class="section-title">הערות למכירה</div>
+    <div class="info-box">
+      <strong>טיפ לשיחת מכירה:</strong> לפתוח במשפט "רציתי להגיד לך משהו ושכחתי" — כל מטפל/ת שומע/ת אותו שבועית. המוצר הזה הוא התשובה, וזה נמכר בסיפור אחד.
+    </div>
+    <ul>
+      <li>המוצר אינו תלוי-שיטה — קהל היעד רחב יותר משני היומנים האחרים (לא רק CBT).</li>
+      <li>ההבחנה פרטי/לשיתוף היא נקודת המכירה האתית — מרגיעה חששות של מטפלים דינמיים לגבי "מעקב".</li>
+      <li>שילוב טבעי כ-cross-sell: מטפל/ת שקנה/תה את יומן הילדים מקבל/ת את מלווה הטיפול למטופלים הבוגרים באותו מותג.</li>
+      <li>מודול התקציר לפני פגישה — ה-upsell המרכזי; חוסך למטפל/ת זמן אמיתי לפני כל פגישה.</li>
+    </ul>
+    <table>
+      <tbody>
+        <tr><td><strong>הוכן על ידי</strong></td><td>נירה טל | מתודה פתרונות AI</td><td><strong>תאריך:</strong> יולי 2026</td></tr>
+        <tr><td><strong>גרסה</strong></td><td>1.0</td><td><span class="badge badge-amber">מסמך פנימי</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <div class="footer-name">נירה טל | מתודה פתרונות AI</div>
+  <div class="footer-links">
+    <span>© כל הזכויות שמורות</span>
+    <span class="footer-sep">|</span>
+    <a href="tel:0542215222">054-2215222</a>
+    <span class="footer-sep">|</span>
+    <a href="mailto:nira@metoda.ai">nira@metoda.ai</a>
+  </div>
+</div>
+
+</body>
+</html>
