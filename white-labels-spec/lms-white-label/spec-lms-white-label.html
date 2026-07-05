@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אפיון — LMS White Label | מתודה פתרונות AI</title>
+  <link rel="stylesheet" href="../shared-styles.css" />
+  <style>
+    .pill {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pill-green  { background: #dcfce7; color: #166534; }
+    .pill-amber  { background: #fef9c3; color: #92400e; }
+    .pill-blue   { background: #dbeafe; color: #1e40af; }
+    .pill-gray   { background: #f1f5f9; color: #475569; }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 700px) { .module-grid { grid-template-columns: 1fr; } }
+
+    .module-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 14px 16px;
+      background: #fff;
+    }
+    .module-card h4 {
+      margin: 0 0 6px;
+      font-size: 0.95rem;
+      color: #1e293b;
+    }
+    .module-card p {
+      margin: 0 0 8px;
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+    .module-card .price {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .sales-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+      color: #fff;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 24px 0;
+    }
+    .sales-box h2 { color: #e2e8f0; margin-top: 0; font-size: 1.3rem; }
+    .sales-box ul { padding-right: 20px; margin: 12px 0 0; }
+    .sales-box li { margin-bottom: 8px; font-size: 0.92rem; line-height: 1.6; color: #cbd5e1; }
+    .sales-box li strong { color: #fff; }
+
+    .compare-table td, .compare-table th { padding: 10px 14px; }
+    .tick { color: #16a34a; font-weight: 700; }
+    .cross { color: #dc2626; }
+  </style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <div class="cover-badge">מסמך אפיון ופיץ׳ מכירה</div>
+  <h1>LMS White Label</h1>
+  <div class="cover-sub">פלטפורמת למידה מלאה — ממותגת, מוכנה להפעלה, מבוססת AI</div>
+  <div class="cover-meta">מתודה פתרונות AI | נירה טל | יולי 2026 | גרסה 1.0</div>
+</div>
+
+<div class="doc-wrapper">
+
+  <!-- ===== פיץ׳ מכירה ===== -->
+  <div class="section">
+    <div class="section-title">למה הלקוח/ה צריכ/ה את זה?</div>
+
+    <div class="sales-box">
+      <h2>הבעיה שאנחנו פותרים</h2>
+      <ul>
+        <li><strong>Teachable / Thinkific / Kajabi</strong> — יקרות, באנגלית, ממשק זר. הלקוחות מאבדים שליטה על המיתוג.</li>
+        <li><strong>פיתוח מאפס</strong> — עולה עשרות אלפי שקלים, לוקח חודשים, ומסתיים ב-"עוד תיקון קטן".</li>
+        <li><strong>Google Classroom / WhatsApp קבוצות</strong> — לא מקצועי, לא מדיד, אין מעקב ולא ממותג.</li>
+      </ul>
+    </div>
+
+    <div class="info-box">
+      <strong>הפתרון:</strong> מערכת למידה מלאה, בעברית, RTL, ממותגת עם הצבעים והלוגו של הלקוח/ה — בשבוע אחד, במחיר שליש מפיתוח מאפס.
+    </div>
+
+    <h3>למי זה מתאים?</h3>
+    <ul>
+      <li>מאמנות, מדריכות ומטפלות שרוצות מערכת קורסים רציניות</li>
+      <li>בעלי מקצוע שמלמדים קבוצות, מחזורים ופרוגרמות</li>
+      <li>ארגונים קטנים שרוצים פלטפורמה פנימית לעובדים</li>
+      <li>כל מי שמוכר "קורס דיגיטלי" ורוצה שזה ייראה מקצועי</li>
+    </ul>
+  </div>
+
+  <!-- ===== פרטי המוצר ===== -->
+  <div class="section">
+    <div class="section-title">פרטי המוצר</div>
+    <table>
+      <tbody>
+        <tr><td><strong>שם המוצר</strong></td><td>LMS White Label — מתודה פתרונות AI</td></tr>
+        <tr><td><strong>פלטפורמה</strong></td><td>Next.js 16 + Supabase + Vercel</td></tr>
+        <tr><td><strong>שפה</strong></td><td>עברית, RTL מלא</td></tr>
+        <tr><td><strong>AI</strong></td><td>Claude API (Anthropic) — עוזר AI מוטמע לכל שיעור</td></tr>
+        <tr><td><strong>מבנה</strong></td><td>חבילת בסיס + מודולים לפי בחירה</td></tr>
+        <tr><td><strong>זמן הקמה</strong></td><td>3–7 ימי עבודה (ללא פיתוח מותאם)</td></tr>
+        <tr><td><strong>סטטוס</strong></td><td><span class="badge badge-green">פעיל בפרודקשן — sivan-courses.vercel.app</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== קהל יעד ===== -->
+  <div class="section">
+    <div class="section-title">קהל יעד</div>
+    <h3>הלקוח/ה שלנו — בעל/ת עסק עצמאי/ת שמלמד/ת</h3>
+    <p>מאמנת כושר שמנהלת 3 קבוצות אונליין. מדריכה ליוגה שרוצה לעלות לדיגיטל. יועצת ארגונית שמוכרת קורס מחשבה עסקית. פסיכולוגית שמלמדת הורים. מה שמשותף לכולן — הן מומחיות בתחומן, לא בטכנולוגיה.</p>
+    <div class="tip"><strong>כאב מרכזי:</strong> הן רוצות להיראות מקצועיות ולתת חוויה מושקעת ללומדים — בלי להיות כלואות בפלטפורמה זרה שאי אפשר לשנות.</div>
+
+    <h3>המנחה / המנהל/ת</h3>
+    <p>לוח ניהול שמאפשר להעלות קורסים ושיעורים, לראות מי מתקדם ומי תקוע, לנהל תמלולים ואת בסיס הידע של ה-AI — הכל ללא מגע בקוד.</p>
+
+    <h3>הלומד/ת</h3>
+    <p>נרשמת לקורס, רואה סרטונים, מסמנת הושלם, שואלת את העוזר ה-AI שאלות ומקבלת תשובות מבוססות על התמלול של השיעור.</p>
+  </div>
+
+  <!-- ===== חבילת בסיס ===== -->
+  <div class="section">
+    <div class="section-title">מה כלול בחבילת הבסיס</div>
+    <p>כל לקוח/ה מקבל/ת את הבסיס הבא — ללא תוספת מחיר לכל רכיב:</p>
+    <ul>
+      <li><strong>דף נחיתה ממותג</strong> — לוגו, צבעים, כותרת וטקסט מותאמים אישית</li>
+      <li><strong>הזדהות מלאה</strong> — הרשמה, התחברות, אימות מייל, איפוס סיסמה (Supabase Auth)</li>
+      <li><strong>קורסים ושיעורים</strong> — קורס מתמשך (רב-שיעורים) או סדנה (שיעור יחיד), נגן YouTube / Vimeo / URL</li>
+      <li><strong>מעקב התקדמות</strong> — סימון שיעורים שהושלמו, Progress bar, "המשך מאיפה שהפסקת"</li>
+      <li><strong>לוח ניהול בסיסי</strong> — יצירה, עריכה, Drag & Drop של קורסים ושיעורים</li>
+      <li><strong>GitHub + Vercel + CI/CD</strong> — כל push = דיפלוי אוטומטי לפרודקשן</li>
+    </ul>
+    <div class="note"><strong>מחיר חבילת בסיס:</strong> ₪4,500–₪7,000 (הקמה חד-פעמית)</div>
+  </div>
+
+  <!-- ===== מודולים קיימים ===== -->
+  <div class="section">
+    <div class="section-title">מודולים קיימים — מוכנים להפעלה</div>
+    <p>כל מודול קיים בקוד ומחובר — נדרשת רק הפעלה/כיבוי ולא פיתוח נוסף.</p>
+
+    <div class="module-grid">
+      <div class="module-card">
+        <h4>🤖 עוזר AI לשיעורים</h4>
+        <p>צ'אט AI לכל שיעור, מבוסס על תמלול הוידאו ועל מאגר ידע אישי. ההיסטוריה נשמרת ונגישה לאדמין.</p>
+        <span class="pill pill-green">קיים</span>&nbsp;<span class="price">₪800–₪1,200</span>
+      </div>
+      <div class="module-card">
+        <h4>📚 מאגר ידע ל-AI</h4>
+        <p>הזנת שיטת עבודה, FAQ, ביוגרפיה — ה-AI מכיר את אלה בכל שיחה.</p>
+        <span class="pill pill-green">קיים</span>&nbsp;<span class="price">₪400–₪700</span>
+      </div>
+      <div class="module-card">
+        <h4>📎 צירוף קבצים בצ'אט</h4>
+        <p>הלומד/ת יכול/ה לצרף תמונות ומסמכים לשיחת ה-AI.</p>
+        <span class="pill pill-green">קיים</span>&nbsp;<span class="price">₪250–₪450</span>
+      </div>
+      <div class="module-card">
+        <h4>🔒 מרחבים אישיים</h4>
+        <p>קורסים פרטיים ללקוחות ליווי 1:1 — רק הם רואים את התוכן שלהם.</p>
+        <span class="pill pill-green">קיים</span>&nbsp;<span class="price">₪400–₪700</span>
+      </div>
+      <div class="module-card">
+        <h4>👥 קבוצות פרטיות</h4>
+        <p>קורס לקבוצה סגורה — רק חברי הקבוצה רואים ויש ניהול חברים.</p>
+        <span class="pill pill-green">קיים</span>&nbsp;<span class="price">₪400–₪700</span>
+      </div>
+      <div class="module-card">
+        <h4>📊 דשבורד קהילה</h4>
+        <p>טבלת התקדמות כל הלומדים, התראה על "תקועים" (7 ימי חוסר פעילות).</p>
+        <span class="pill pill-green">קיים</span>&nbsp;<span class="price">₪400–₪700</span>
+      </div>
+      <div class="module-card">
+        <h4>🐛 דיווח תקלות</h4>
+        <p>טופס Fillout מוטמע בפאנל האדמין לדיווח ומעקב תקלות.</p>
+        <span class="pill pill-green">קיים</span>&nbsp;<span class="price">₪0–₪200</span>
+      </div>
+      <div class="module-card">
+        <h4>📖 קישור מדריך</h4>
+        <p>לינק למדריך משתמש ממותג בתפריט הניווט.</p>
+        <span class="pill pill-green">קיים</span>&nbsp;<span class="price">₪0–₪150</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== מודולים בפיתוח ===== -->
+  <div class="section">
+    <div class="section-title">מודולים בתוכנית פיתוח (Roadmap)</div>
+    <p>פיצ'רים אלה <strong>אינם קיימים עדיין</strong> בתבנית — כל אחד דורש פיתוח ייעודי ומתומחר בנפרד.</p>
+
+    <h3>חוויית הלומד/ת</h3>
+    <div class="module-grid">
+      <div class="module-card">
+        <h4>💳 תמחור קורסים + קופונים</h4>
+        <p>מחיר לכל קורס, עמוד checkout, קוד קופון (% / סכום קבוע).</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪600–₪1,000</span>
+      </div>
+      <div class="module-card">
+        <h4>🔍 חיפוש כללי</h4>
+        <p>חיפוש בקטלוג הקורסים, השיעורים והתוכן.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪400–₪700</span>
+      </div>
+      <div class="module-card">
+        <h4>🏅 תעודת סיום (PDF)</h4>
+        <p>תעודה אוטומטית עם שם הלומד/ת ושם הקורס — נשלחת אחרי סיום.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪600–₪1,000</span>
+      </div>
+      <div class="module-card">
+        <h4>📝 שאלון אחרי שיעור (Quiz)</h4>
+        <p>שאלות אמריקאיות / פתוחות בסוף שיעור; AI יכול לייצר שאלות מהתמלול.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪700–₪1,200</span>
+      </div>
+      <div class="module-card">
+        <h4>📱 PWA — אפליקציה מותקנת</h4>
+        <p>"הוסף למסך הבית" — חוויית אפליקציה מלאה ב-mobile ללא חנות אפליקציות.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪800–₪1,500</span>
+      </div>
+    </div>
+
+    <h3>כלי Admin</h3>
+    <div class="module-grid">
+      <div class="module-card">
+        <h4>⏰ שחרור תוכן מדורג (Drip)</h4>
+        <p>שיעור נפתח רק אחרי תאריך קבוע / X ימים מרגע ההרשמה.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪500–₪900</span>
+      </div>
+      <div class="module-card">
+        <h4>✋ "תלמיד/ה רוצה קשר"</h4>
+        <p>כפתור ללומד/ת לשלוח הודעה למנחה, עם אוטומציה לאדמין.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪350–₪600</span>
+      </div>
+      <div class="module-card">
+        <h4>📈 אנליטיקת צפייה</h4>
+        <p>מעקב זמן צפייה בפועל (לא רק "הושלם") — עמודת נתונים בדשבורד.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪600–₪1,000</span>
+      </div>
+      <div class="module-card">
+        <h4>📣 הודעות לכלל הלומדים</h4>
+        <p>אדמין שולח/ת הודעה שמופיעה לכולם בדשבורד בכניסה הבאה.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪350–₪600</span>
+      </div>
+    </div>
+
+    <h3>AI נוסף</h3>
+    <div class="module-grid">
+      <div class="module-card">
+        <h4>📋 "סכם לי את השיעור"</h4>
+        <p>AI מייצר תקציר מובנה מהתמלול — נשמר ונגיש ללומד/ת.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪350–₪600</span>
+      </div>
+      <div class="module-card">
+        <h4>✨ המלצת שיעור מותאמת</h4>
+        <p>AI מציע/ה שיעור הבא על סמך היסטוריית הלמידה האישית.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪700–₪1,200</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== אינטגרציות ===== -->
+  <div class="section">
+    <div class="section-title">אינטגרציות חיצוניות (דרך Make / Webhook)</div>
+    <p>כל אינטגרציה מחוברת דרך Make (Integromat) + Webhooks ב-API Routes — ללא שינוי בקוד הליבה.</p>
+
+    <table>
+      <thead>
+        <tr><th>אינטגרציה</th><th>שימוש עיקרי</th><th>טווח מחיר</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>💬 <strong>וואטסאפ</strong> (Green API / Twilio)</td><td>התראות אוטומטיות, תזכורות, יצירת קשר</td><td>₪800–₪1,500</td></tr>
+        <tr><td>📧 <strong>דיוור</strong> (Rav Messer / Smoove / Mailchimp)</td><td>ניוזלטר, מייל פתיחת קורס, פולואפ</td><td>₪500–₪1,000</td></tr>
+        <tr><td>💳 <strong>תשלומים</strong> (Grow / Cardcom / PayPlus / Bit)</td><td>פתיחת גישה אוטומטית אחרי רכישה</td><td>₪1,000–₪2,000</td></tr>
+        <tr><td>🎥 <strong>Zoom</strong></td><td>הקמת ישיבה + שליחת קישור ללומד/ת</td><td>₪600–₪1,000</td></tr>
+        <tr><td>📅 <strong>יומן</strong> (Google Calendar / Calendly)</td><td>קביעת פגישות, סנכרון אוטומטי</td><td>₪500–₪800</td></tr>
+        <tr><td>🗂️ <strong>CRM</strong> (Fireberry / monday / Airtable)</td><td>סנכרון לקוחות, מעקב, ניהול מכירות</td><td>₪800–₪1,500</td></tr>
+        <tr><td>📋 <strong>טפסים</strong> (Fillout)</td><td>שאלון סוף קורס, הערכה, יצירת קשר</td><td>₪0–₪300</td></tr>
+        <tr><td>👥 <strong>קבוצות חברתיות</strong> (פייסבוק / וואטסאפ)</td><td>לינק לקבוצה אחרי הרשמה, פוסט על תלמיד/ה חדש/ה</td><td>₪300–₪600</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== שירותים נלווים ===== -->
+  <div class="section">
+    <div class="section-title">שירותים נלווים (מחוץ לקוד)</div>
+    <table>
+      <thead>
+        <tr><th>שירות</th><th>תיאור</th><th>טווח מחיר</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🌐 דומיין מותאם</td><td>חיבור דומיין הלקוח/ה + SSL + עדכון Auth URLs</td><td>₪350–₪600</td></tr>
+        <tr><td>✉️ מיתוג מיילים</td><td>SMTP מותאם (Resend) + SPF/DKIM — מיילי המערכת מהדומיין של הלקוח/ה</td><td>₪250–₪500</td></tr>
+        <tr><td>📖 מדריך משתמש ממותג</td><td>אתר מדריך נפרד בעיצוב הלקוח/ה</td><td>₪800–₪1,500</td></tr>
+        <tr><td>⬆️ הזנת תוכן ראשונית</td><td>העלאת קורסים, תמלולים וידע AI עבור הלקוח/ה</td><td>₪400–₪900</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== השוואה למתחרים ===== -->
+  <div class="section">
+    <div class="section-title">למה לא ללכת למתחרים?</div>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>קריטריון</th>
+          <th>LMS White Label (מתודה)</th>
+          <th>Teachable / Kajabi</th>
+          <th>פיתוח מאפס</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>עברית + RTL מלא</td>
+          <td><span class="tick">✓ מלא</span></td>
+          <td><span class="cross">✗ חלקי</span></td>
+          <td><span class="tick">✓ אפשרי</span></td>
+        </tr>
+        <tr>
+          <td>מיתוג מלא</td>
+          <td><span class="tick">✓ מלא</span></td>
+          <td><span class="cross">✗ מוגבל</span></td>
+          <td><span class="tick">✓ מלא</span></td>
+        </tr>
+        <tr>
+          <td>AI מוטמע בשיעורים</td>
+          <td><span class="tick">✓ Claude API</span></td>
+          <td><span class="cross">✗ אין</span></td>
+          <td>תוספת עלות</td>
+        </tr>
+        <tr>
+          <td>עלות חודשית שוטפת</td>
+          <td><span class="tick">✓ אפסית (Vercel + Supabase)</span></td>
+          <td><span class="cross">✗ $99–$299/חודש</span></td>
+          <td>תשתית + תחזוקה</td>
+        </tr>
+        <tr>
+          <td>בעלות על הנתונים</td>
+          <td><span class="tick">✓ מלאה</span></td>
+          <td><span class="cross">✗ נעולה בפלטפורמה</span></td>
+          <td><span class="tick">✓ מלאה</span></td>
+        </tr>
+        <tr>
+          <td>זמן הקמה</td>
+          <td><span class="tick">✓ 3–7 ימים</span></td>
+          <td><span class="tick">✓ מיידי</span></td>
+          <td><span class="cross">✗ 2–6 חודשים</span></td>
+        </tr>
+        <tr>
+          <td>עלות כוללת שנה ראשונה</td>
+          <td><span class="tick">✓ ₪5,000–₪12,000</span></td>
+          <td><span class="cross">✗ $1,200–$3,600</span></td>
+          <td><span class="cross">✗ ₪40,000+</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== דרישות טכניות ===== -->
+  <div class="section">
+    <div class="section-title">ארכיטקטורה טכנית</div>
+    <table>
+      <thead>
+        <tr><th>רכיב</th><th>טכנולוגיה</th><th>הערות</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Frontend + Backend</td><td>Next.js 16 + React 19</td><td>App Router, TypeScript Strict</td></tr>
+        <tr><td>מסד נתונים + Auth</td><td>Supabase (Postgres)</td><td>RLS מלא, 2026 API format</td></tr>
+        <tr><td>Hosting + CI/CD</td><td>Vercel</td><td>Fluid Compute, דיפלוי בכל push</td></tr>
+        <tr><td>AI</td><td>Claude API (Anthropic)</td><td>claude-sonnet-4-6, streaming</td></tr>
+        <tr><td>אוטומציות</td><td>Make (Integromat)</td><td>חיבור דרך Webhooks / API Routes</td></tr>
+        <tr><td>אחסון קבצים</td><td>Supabase Storage</td><td>תמונות קורסים + קבצי צ'אט</td></tr>
+        <tr><td>וידאו</td><td>YouTube / Vimeo / URL</td><td>Embed, לא אחסון וידאו ישיר</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== שלבי הקמה ===== -->
+  <div class="section">
+    <div class="section-title">שלבי ההקמה ללקוח/ה חדש/ה</div>
+    <div class="step"><div class="step-num">1</div><div class="step-text"><strong>שכפול התבנית:</strong> העתקת ה-codebase לפרויקט חדש ב-Projects_New — יום אחד</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text"><strong>מיתוג:</strong> עדכון brand.ts, צבעי CSS, לוגואים ופאביקון — חצי יום</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Supabase:</strong> פרויקט חדש, הרצת schema.sql, הגדרת Auth URLs — חצי יום</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text"><strong>GitHub + Vercel:</strong> repo פרטי, CI/CD אוטומטי, משתני סביבה — חצי יום</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-text"><strong>דומיין + מיילים:</strong> CNAME, SSL, SMTP עם SPF/DKIM — יום אחד</div></div>
+    <div class="step"><div class="step-num">6</div><div class="step-text"><strong>תוכן + AI:</strong> הזנת קורס ראשון, תמלולים, ידע ראשוני ל-AI — לפי כמות התוכן</div></div>
+    <div class="step"><div class="step-num">7</div><div class="step-text"><strong>מסירה + הדרכה:</strong> בדיקות קבלה, אדמין ראשוני, הדרכה ולינק למדריך — חצי יום</div></div>
+    <div class="note"><strong>זמן כולל:</strong> 3–7 ימי עבודה בפועל (תלוי בכמות התוכן והאינטגרציות)</div>
+  </div>
+
+  <!-- ===== Out of Scope ===== -->
+  <div class="section">
+    <div class="section-title">מה לא כלול בתבנית הבסיסית</div>
+    <ul>
+      <li>אפליקציית Native (iOS / Android) — PWA מכסה את רוב הצרכים</li>
+      <li>הקלטה ועריכת וידאו — וידאו מוזן כקישור חיצוני בלבד (YouTube/Vimeo)</li>
+      <li>מערכת תשלומים מובנית — ניתן להוסיף כמודול או אינטגרציה</li>
+      <li>מודול פורום / קהילה פנימית — ניתן לחבר לקבוצת WhatsApp/Facebook</li>
+      <li>תמיכה ב-LTI / SCORM (ארגונים גדולים)</li>
+    </ul>
+    <div class="tip"><strong>כל אחד מאלה ניתן לפיתוח מותאם</strong> — יתומחר בנפרד לפי הצורך.</div>
+  </div>
+
+  <!-- ===== אישור ===== -->
+  <div class="section">
+    <div class="section-title">הערות למכירה</div>
+    <div class="info-box">
+      <strong>טיפ לשיחת מכירה:</strong> הדגש/י את ה-AI — זה מה שמבדל אותנו מכל הפלטפורמות האחרות. לומד/ת יכול/ה לשאול שאלה על שיעור שצפתה בו לפני שבוע ולקבל תשובה מבוססת על מה שנאמר בפועל — לא ChatGPT גנרי.
+    </div>
+    <ul>
+      <li>מומלץ להתחיל עם חבילת בסיס + AI Assistant + מאגר ידע — החבילה שהכי מרשימה בפגישת Demo.</li>
+      <li>אינטגרציות (וואטסאפ / תשלומים) מומלץ להציע כשלב ב׳ — לא לעמוס בהתחלה.</li>
+      <li>לקוחות שמוכרות 1:1 — להדגיש מרחבים אישיים. לקוחות שמנהלות קבוצות — דשבורד קהילה.</li>
+    </ul>
+    <table>
+      <tbody>
+        <tr><td><strong>הוכן על ידי</strong></td><td>נירה טל | מתודה פתרונות AI</td><td><strong>תאריך:</strong> יולי 2026</td></tr>
+        <tr><td><strong>גרסה</strong></td><td>1.0</td><td><span class="badge badge-amber">מסמך פנימי</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <div class="footer-name">נירה טל | מתודה פתרונות AI</div>
+  <div class="footer-links">
+    <span>© כל הזכויות שמורות</span>
+    <span class="footer-sep">|</span>
+    <a href="tel:0542215222">054-2215222</a>
+    <span class="footer-sep">|</span>
+    <a href="mailto:nira@metoda.ai">nira@metoda.ai</a>
+  </div>
+</div>
+
+</body>
+</html>
