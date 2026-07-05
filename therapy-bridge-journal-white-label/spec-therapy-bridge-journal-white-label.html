@@ -44,6 +44,11 @@
       color: #64748b;
       line-height: 1.5;
     }
+    .module-card .price {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
 
     .sales-box {
       background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
@@ -122,7 +127,7 @@
         <tr><td><strong>גיימיפיקציה</strong></td><td>ללא. כלי עבודה בוגר ושקט</td></tr>
         <tr><td><strong>זמן הקמה</strong></td><td>שבוע–שבועיים (נגזרת מהליבה הקיימת + מיתוג)</td></tr>
         <tr><td><strong>סטטוס</strong></td><td><span class="badge badge-amber">נגזרת ממוצר האם הפעיל — יומן הרגשות לילדים (פרודקשן)</span></td></tr>
-        <tr><td><strong>תמחור</strong></td><td>הצעת מחיר נפרדת לפי חבילה ומודולים (proposal-template)</td></tr>
+        <tr><td><strong>תמחור</strong></td><td>חבילת בסיס + מודולים לפי בחירה — פירוט מלא בהמשך המסמך</td></tr>
       </tbody>
     </table>
   </div>
@@ -226,6 +231,7 @@
       <li>Supabase RLS — הפרדת נתונים מוחלטת; רשומות פרטיות אינן נגישות למטפל/ת גם ברמת ה-DB</li>
       <li>אימות מטופל/ת: email + password או קוד הזמנה</li>
     </ul>
+    <div class="note"><strong>מחיר חבילת בסיס:</strong> ₪6,500–₪9,500 (הקמה חד-פעמית) — כולל פיתוח סוגי הרשומות, מעגל הפגישה ומנוע הרשימות, מיתוג מלא, סביבה ייעודית וליווי מסירה</div>
   </div>
 
   <!-- ===== מודולים ===== -->
@@ -234,30 +240,52 @@
 
     <div class="module-grid">
       <div class="module-card">
-        <h4>🤖 סוכן AI — תקציר לפני פגישה <span class="pill pill-blue">מודול</span></h4>
+        <h4>🤖 סוכן AI — תקציר לפני פגישה</h4>
         <p>סיכום אוטומטי של החומר ששותף מאז הפגישה הקודמת: נושאים מרכזיים, טון רגשי, חוטים חוזרים — למטפל/ת בלבד.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪1,000–₪1,800</span>
       </div>
       <div class="module-card">
-        <h4>🔔 תזכורות חכמות <span class="pill pill-blue">מודול</span></h4>
+        <h4>🔔 תזכורות חכמות</h4>
         <p>תזכורת עדינה יום לפני פגישה ("יש משהו שתרצה/י להוסיף לסדר היום?") ותזכורת עיבוד אחרי פגישה.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪600–₪1,000</span>
       </div>
       <div class="module-card">
-        <h4>📋 תבניות רשימות למטפל/ת <span class="pill pill-blue">מודול</span></h4>
+        <h4>📋 תבניות רשימות למטפל/ת</h4>
         <p>המטפל/ת בונה תבניות רשימה ("סולם חרדה", "מדדי שבוע") ושולח/ת למטופל/ת למילוי.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪700–₪1,200</span>
       </div>
       <div class="module-card">
-        <h4>📈 מבט אורך <span class="pill pill-blue">מודול</span></h4>
+        <h4>📈 מבט אורך</h4>
         <p>ציר זמן של כל הפגישות: אילו נושאים חזרו, מה נסגר ומה מלווה את הטיפול לאורך זמן.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪800–₪1,400</span>
       </div>
       <div class="module-card">
-        <h4>💬 משפטי השראה <span class="pill pill-gray">אופציונלי</span></h4>
+        <h4>💬 משפטי השראה</h4>
         <p>משפט בוגר אחרי כתיבה, עם "אהבתי ←" ואזור ציטוטים שמורים — למטפלים שרוצים נופך מחזק. כבוי כברירת מחדל.</p>
+        <span class="pill pill-green">קיים במוצר האם</span>&nbsp;<span class="price">₪400–₪700</span>
       </div>
       <div class="module-card">
-        <h4>🏥 רב-מטפלים <span class="pill pill-gray">Roadmap</span></h4>
+        <h4>🏥 רב-מטפלים</h4>
         <p>קליניקות ומכונים — כמה מטפלים תחת מותג אחד.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪1,500–₪2,500</span>
       </div>
     </div>
+  </div>
+
+  <!-- ===== שירותים נלווים ===== -->
+  <div class="section">
+    <div class="section-title">שירותים נלווים (מחוץ לקוד)</div>
+    <table>
+      <thead>
+        <tr><th>שירות</th><th>תיאור</th><th>טווח מחיר</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🌐 דומיין מותאם</td><td>חיבור דומיין הלקוח/ה + SSL + עדכון Auth URLs</td><td>₪350–₪600</td></tr>
+        <tr><td>✉️ מיתוג מיילים</td><td>SMTP מותאם (Resend) + SPF/DKIM — מיילי המערכת מהדומיין של הלקוח/ה</td><td>₪250–₪500</td></tr>
+        <tr><td>📖 מדריך משתמש ממותג</td><td>אתר מדריך נפרד בעיצוב הלקוח/ה — למטפל/ת ולמטופלים</td><td>₪800–₪1,500</td></tr>
+        <tr><td>⬆️ הזנת תוכן ראשונית</td><td>טעינת נוסחי שאלות, תבניות רשימות וסוג רשומה מותאם עבור הלקוח/ה</td><td>₪300–₪600</td></tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- ===== מה מותאם ללקוח ===== -->

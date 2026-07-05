@@ -44,6 +44,11 @@
       color: #64748b;
       line-height: 1.5;
     }
+    .module-card .price {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
 
     .sales-box {
       background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
@@ -122,7 +127,7 @@
         <tr><td><strong>מבנה</strong></td><td>חבילת בסיס + מודולים לפי בחירה</td></tr>
         <tr><td><strong>זמן הקמה</strong></td><td>שבוע–שבועיים (התאמת הליבה הקיימת לגרסה בוגרת + מיתוג)</td></tr>
         <tr><td><strong>סטטוס</strong></td><td><span class="badge badge-amber">נגזרת ממוצר האם הפעיל — יומן הרגשות לילדים (פרודקשן)</span></td></tr>
-        <tr><td><strong>תמחור</strong></td><td>הצעת מחיר נפרדת לפי חבילה ומודולים (proposal-template)</td></tr>
+        <tr><td><strong>תמחור</strong></td><td>חבילת בסיס + מודולים לפי בחירה — פירוט מלא בהמשך המסמך</td></tr>
       </tbody>
     </table>
   </div>
@@ -233,6 +238,7 @@
       <li>רשימת רגשות ועוצמות ניתנת להתאמה למטפל/ת</li>
       <li>הסכמה מדעת דיגיטלית: המטופל/ת מאשר/ת שהמטפל/ת רואה את התכנים</li>
     </ul>
+    <div class="note"><strong>מחיר חבילת בסיס:</strong> ₪6,000–₪9,000 (הקמה חד-פעמית) — כולל התאמת הליבה לגרסה בוגרת, מיתוג מלא, סביבה ייעודית וליווי מסירה</div>
   </div>
 
   <!-- ===== מודולים ===== -->
@@ -241,30 +247,52 @@
 
     <div class="module-grid">
       <div class="module-card">
-        <h4>📊 אנליטיקות מטפל/ת <span class="pill pill-blue">מודול</span></h4>
+        <h4>📊 אנליטיקות מטפל/ת</h4>
         <p>גרף עוצמות רגשיות לאורך זמן, התפלגות רגשות, טריגרים לפי הקשר וזמן ביום, השוואה בין תקופות.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪800–₪1,400</span>
       </div>
       <div class="module-card">
-        <h4>🧠 סוכן AI — הכנה לפגישה <span class="pill pill-blue">מודול</span></h4>
+        <h4>🧠 סוכן AI — הכנה לפגישה</h4>
         <p>סיכום התקופה מאז הפגישה הקודמת: נושאים מרכזיים, מחשבות אוטומטיות חוזרות, חיבור תיאורטי וכיווני עבודה.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪1,000–₪1,800</span>
       </div>
       <div class="module-card">
-        <h4>🔁 זיהוי עיוותי חשיבה <span class="pill pill-blue">מודול</span></h4>
+        <h4>🔁 זיהוי עיוותי חשיבה</h4>
         <p>AI מסמן דפוסים קוגניטיביים חוזרים (הכללת יתר, חשיבת הכל-או-כלום, קריאת מחשבות) — למטפל/ת בלבד, ככלי עבודה קליני.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪1,200–₪2,000</span>
       </div>
       <div class="module-card">
-        <h4>📝 מטלות בית (Homework) <span class="pill pill-blue">מודול</span></h4>
+        <h4>📝 מטלות בית (Homework)</h4>
         <p>המטפל/ת מגדיר/ה מטלת CBT בין פגישות; המטופל/ת מסמן/ת ביצוע ומתעד/ת עליה — סגירת מעגל ההומווורק.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪800–₪1,400</span>
       </div>
       <div class="module-card">
-        <h4>🔎 פילטרים למטפל/ת <span class="pill pill-blue">מודול</span></h4>
+        <h4>🔎 פילטרים למטפל/ת</h4>
         <p>סינון לפי רגש, עוצמה, תאריך, הקשר וזמן ביום.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪400–₪700</span>
       </div>
       <div class="module-card">
-        <h4>🏥 רב-מטפלים <span class="pill pill-gray">Roadmap</span></h4>
+        <h4>🏥 רב-מטפלים</h4>
         <p>קליניקה עם כמה מטפלים תחת מותג אחד — כל מטפל/ת רואה רק את המטופלים שלו/ה.</p>
+        <span class="pill pill-amber">בפיתוח</span>&nbsp;<span class="price">₪1,500–₪2,500</span>
       </div>
     </div>
+  </div>
+
+  <!-- ===== שירותים נלווים ===== -->
+  <div class="section">
+    <div class="section-title">שירותים נלווים (מחוץ לקוד)</div>
+    <table>
+      <thead>
+        <tr><th>שירות</th><th>תיאור</th><th>טווח מחיר</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🌐 דומיין מותאם</td><td>חיבור דומיין הלקוח/ה + SSL + עדכון Auth URLs</td><td>₪350–₪600</td></tr>
+        <tr><td>✉️ מיתוג מיילים</td><td>SMTP מותאם (Resend) + SPF/DKIM — מיילי המערכת מהדומיין של הלקוח/ה</td><td>₪250–₪500</td></tr>
+        <tr><td>📖 מדריך משתמש ממותג</td><td>אתר מדריך נפרד בעיצוב הלקוח/ה — למטפל/ת ולמטופלים</td><td>₪800–₪1,500</td></tr>
+        <tr><td>⬆️ הזנת תוכן ראשונית</td><td>טעינת רשימת רגשות, נוסחי שאלות ומאגר משפטי השראה עבור הלקוח/ה</td><td>₪300–₪600</td></tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- ===== מה מותאם ללקוח ===== -->
