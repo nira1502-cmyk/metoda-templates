@@ -1,5 +1,6 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/spec-gali-agent-public.html" }
+    { "source": "/", "destination": "/spec-gali-agent-public.html" },
+    { "source": "/privacy-policy", "destination": "/privacy-policy.html" }
   ]
 }
