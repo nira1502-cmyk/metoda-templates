@@ -5,6 +5,7 @@
     { "source": "/legal/dpa-template", "destination": "/legal/dpa-template.html" },
     { "source": "/legal/contract", "destination": "/legal/contract-template.html" },
     { "source": "/legal/client-security-guide", "destination": "/legal/client-security-guide.html" },
+    { "source": "/legal/nda-template", "destination": "/legal/nda-template.html" },
     { "source": "/catalog", "destination": "/catalog-metoda-2026.html" },
     { "source": "/white-labels/clinical-knowledge-platform", "destination": "/white-labels-spec/clinical-knowledge-platform/spec-clinical-knowledge-platform.html" }
   ]
