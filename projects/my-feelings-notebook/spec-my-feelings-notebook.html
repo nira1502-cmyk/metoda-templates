@@ -449,8 +449,8 @@
     <h1>יומן הרגשות שלי</h1>
     <div class="subtitle">אפיון מוצר מלא | נירה טל | מתודה פתרונות AI</div>
     <div class="cover-meta">
-      <span>📅 יוני 2026</span>
-      <span>📄 גרסה 1.1</span>
+      <span>📅 יולי 2026</span>
+      <span>📄 גרסה 1.2</span>
     </div>
   </div>
 
@@ -748,6 +748,15 @@ USING (
   (SELECT <span class="c-key">role</span> FROM profiles WHERE id = (SELECT <span class="c-key">auth.uid()</span>)) = <span class="c-str">'therapist'</span>
 )
     </div>
+    <div class="info"><strong>אופטימיזציה (יולי 2026):</strong> כל <code>auth.uid()</code> ב-RLS עוטף ב-<code>(SELECT auth.uid())</code> למניעת הערכה חוזרת לכל שורה. פולסיות self+admin אוחדו ל-policy בודד עם OR — ביצועים טובים יותר ו-0 warnings בבודק האבטחה של Supabase.</div>
+
+    <h3>Audit Log — תיעוד פעולות</h3>
+    <p>כל כניסה (notebook_code / PIN) ושמירת רגע מתועדת בטבלת <code>audit_logs</code>:</p>
+    <ul>
+      <li><code>actor_id</code>, <code>actor_role</code>, <code>action</code> (login / insert)</li>
+      <li><code>table_name</code>, <code>record_id</code>, <code>notebook_code</code>, <code>metadata</code>, <code>created_at</code></li>
+      <li>Trigger <code>fn_audit_log</code> מופעל אוטומטית על INSERT ב-entries ו-profiles. ממומש עם IF/ELSIF (לא CASE) — חשוב: PostgreSQL מקמפל CASE כולו גם בענפים שאינם רצים.</li>
+    </ul>
   </section>
 
 
@@ -796,25 +805,27 @@ USING (
         מה יכול לעזור? — כתיבה / הקלטה
       </div>
       <div class="wizard-card">
-        <div class="step-label">שלב 6 — אופציונלי</div>
+        <div class="step-label">שלב 6</div>
         מתי זה קרה? 🌅 בוקר | ☀️ צהריים | 🌤️ אחה"צ | 🌙 ערב
       </div>
       <div class="wizard-card">
-        <div class="step-label">שלב 7 — אופציונלי</div>
+        <div class="step-label">שלב 7</div>
         איפה זה קרה? 🏠 בית | 🏫 בי"ס | 👫 חברים | 👨‍👩‍👧 משפחה | 🎒 כיתה | 📍 אחר
       </div>
     </div>
-    <div class="tip" style="margin-top:14px;"><strong>מצב עריכה:</strong> /new-entry?edit=[id] — טוען נתונים קיימים. Header מציג "עריכת רגע". ניתן לערוך עד שעה מרגע הכתיבה.</div>
+    <div class="tip" style="margin-top:14px;"><strong>כפתורי ניווט:</strong> "להמשיך" בין שלבים 1–6, "שמירה" / "שמירת עריכה" בשלב 7. "שומר..." בזמן submit. שלב 3 מציג 3 שאלות (מה חשבתי / מה עשיתי / מה יכול לעזור) באותו מסך בגלילה.</div>
+    <div class="tip" style="margin-top:8px;"><strong>מצב עריכה:</strong> /new-entry?edit=[id] — טוען נתונים קיימים. Header מציג "עריכת רגע". ניתן לערוך עד שעה מרגע הכתיבה.</div>
 
     <h3>ניווט ילד — BottomNav</h3>
     <div class="code-block" style="text-align:center; direction:rtl;">
-🏠 בית | 📓 רגעים | 💬 ציטוטים | 📖 היומן | ☰ הגדרות | 🚪 סגירה
+🏠 בית | 📓 רגעים | ✨ השראה | 📖 היומן | ☰ הגדרות | 🚪 סגירה
     </div>
     <ul style="margin-top:10px;">
       <li>גובה: 60px + pb-safe (iOS safe area)</li>
       <li>Indicator: קו כחול תחתי לפריט פעיל (layoutId animation)</li>
       <li>נסתר ב-/new-entry — חוויה full-screen</li>
       <li>כפתור יציאה: "סגירה" (לא "יציאה")</li>
+      <li>כרטיסיית <strong>ציטוטים → השראה ✨</strong> — /saved-quotes</li>
     </ul>
 
     <h3>ממשק מטפלת — /profiles</h3>
@@ -985,12 +996,14 @@ USING (
     </ul>
 
     <h3>CompletionOverlay — אחרי שמירת רגע</h3>
-    <p>אנימציה של <strong>כוכב וזיקוקים</strong> עם:</p>
+    <p>4 שלבי completion לאחר שמירה מוצלחת:</p>
     <ul>
-      <li>הודעה על הרצף המצטבר</li>
-      <li>"+10 נקודות יצורים"</li>
-      <li>משפט חיזוק מגדרי: "כל הכבוד ששיתפת" / "כל הכבוד ששיתפת"</li>
+      <li><strong>celebration (10 שניות)</strong> — אמוג'י גדול + הודעת עידוד מגדרית. לחיצה ממשיכה מיד. "להמשיך ←" כרמז</li>
+      <li><strong>quote</strong> — משפט השראה רנדומלי מותאם מגדר. כפתורים: "שמור את המשפט ⭐" / "שמרי את המשפט ⭐" (לפי מגדר) + "דילוג"</li>
+      <li><strong>gratitude</strong> — שאלת כפיות תודה אופציונלית עם textarea + מיקרופון. כפתורים: שמירה + "דילוג"</li>
+      <li><strong>done</strong> — redirect ל-/ אחרי 400ms</li>
     </ul>
+    <div class="tip"><strong>קבוע:</strong> <code>ENTRY_LOCK_MINUTES = 60</code> — נעילת עריכה שעה מרגע הכתיבה.</div>
 
     <h3>Roadmap גיימיפיקציה — V2</h3>
     <div class="checklist">
@@ -1224,10 +1237,12 @@ data.map(row => ({ date: row.date, count: row.count <span class="c-key">?? 0</sp
 
     <h3>Environment Variables</h3>
     <div class="code-block">
-<span class="c-com"># Vercel Dashboard — Environment Variables</span>
-<span class="c-com"># (שאר המפתחות hardcoded ב-lib/supabase/config.ts)</span>
+<span class="c-com"># Vercel Dashboard — Environment Variables → Production</span>
+<span class="c-com"># (ערכי Supabase הציבוריים hardcoded ב-lib/supabase/config.ts)</span>
 <span class="c-key">SUPABASE_SECRET_KEY</span>=<span class="c-str">sb_secret_...</span>
+<span class="c-key">OPENAI_API_KEY</span>      =<span class="c-str">sk-...</span>   <span class="c-com"># Whisper voice transcription</span>
     </div>
+    <div class="info"><strong>חשוב:</strong> <code>lib/supabase/client.ts</code> משתמש בערכים hardcoded מ-<code>config.ts</code> ולא ב-<code>process.env.NEXT_PUBLIC_*</code> — עמידות לשגיאות הגדרה ב-Vercel.</div>
   </section>
 
 
@@ -1254,6 +1269,11 @@ data.map(row => ({ date: row.date, count: row.count <span class="c-key">?? 0</sp
       <div class="check-item"><span class="check-icon">✅</span>PWA — הוסף למסך הבית</div>
       <div class="check-item"><span class="check-icon">✅</span>פנייה מגדרית בכל הממשק</div>
       <div class="check-item"><span class="check-icon">✅</span>OG Tags + metadata מלא</div>
+      <div class="check-item"><span class="check-icon">✅</span>כרטיסיית "השראה ✨" (שונה מ-ציטוטים) — משפטי השראה מגדריים, שמירה gender-aware (שמור/שמרי)</div>
+      <div class="check-item"><span class="check-icon">✅</span>CompletionOverlay 4 שלבים — celebration (10s) + quote + gratitude + done</div>
+      <div class="check-item"><span class="check-icon">✅</span>RLS מאוחד ומואץ — כל policies אוחדו, auth.uid() עוטף ב-SELECT</div>
+      <div class="check-item"><span class="check-icon">✅</span>Audit Log trigger — fn_audit_log ממומש עם IF/ELSIF (תוקן ממבנה CASE שגרם לקריסת INSERT)</div>
+      <div class="check-item"><span class="check-icon">✅</span>Voice transcription (Whisper) — OPENAI_API_KEY בVercel, endpoint /api/transcribe</div>
     </div>
 
     <h3>מוגדר — נדרש בדיקה / השלמה ⚠️</h3>
@@ -1273,7 +1293,7 @@ data.map(row => ({ date: row.date, count: row.count <span class="c-key">?? 0</sp
     <div class="signature-box">
       <div style="font-size:22px;">💙</div>
       <div style="font-size:18px;font-weight:800;color:#2d2d2d;margin-top:10px;">יומן הרגשות שלי</div>
-      <div style="font-size:13px;color:#888;margin-top:4px;">אפיון מוצר גרסה 1.1 | יוני 2026</div>
+      <div style="font-size:13px;color:#888;margin-top:4px;">אפיון מוצר גרסה 1.2 | יולי 2026</div>
 
       <div class="sig-row">
         <div class="sig-item">
