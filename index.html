@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ספריית מסמכים — מתודה פתרונות AI</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: #f4f6fb;
+      color: #1e1e2e;
+      direction: rtl;
+      min-height: 100vh;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, #4361EE 0%, #7c3aed 100%);
+      color: white;
+      padding: 40px 32px 36px;
+      text-align: center;
+    }
+    header img { height: 54px; margin-bottom: 14px; filter: brightness(0) invert(1); }
+    header h1 { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
+    header p { font-size: 14px; opacity: 0.82; }
+
+    /* ===== LAYOUT ===== */
+    main { max-width: 980px; margin: 0 auto; padding: 36px 20px 60px; }
+
+    /* ===== SECTION ===== */
+    .section { margin-bottom: 36px; }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #4361EE;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e0e4f8;
+    }
+    .section-title .icon { font-size: 18px; }
+
+    /* ===== GRID ===== */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+
+    /* ===== CARD ===== */
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 18px 18px 14px;
+      border: 1px solid #e8ebf4;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: box-shadow 0.18s, transform 0.18s, border-color 0.18s;
+      cursor: pointer;
+    }
+    .card:hover {
+      box-shadow: 0 6px 24px rgba(67,97,238,0.13);
+      transform: translateY(-2px);
+      border-color: #b0bcf8;
+    }
+    .card-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      display: inline-block;
+      width: fit-content;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .badge-live  { background: #dcfce7; color: #166534; }
+    .badge-draft { background: #fef3c7; color: #92400e; }
+    .badge-internal { background: #f1f5f9; color: #475569; }
+
+    .card-title { font-size: 14px; font-weight: 600; line-height: 1.4; color: #1e1e2e; }
+    .card-sub   { font-size: 12px; color: #6b7280; line-height: 1.4; }
+
+    /* sub-grid for clients */
+    .client-block { background: white; border-radius: 14px; border: 1px solid #e8ebf4; padding: 20px; margin-bottom: 12px; }
+    .client-name { font-size: 14px; font-weight: 700; color: #1e1e2e; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .client-docs { display: flex; flex-wrap: wrap; gap: 8px; }
+    .doc-chip {
+      background: #f4f6fb;
+      border: 1px solid #e0e4f8;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #4361EE;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .doc-chip:hover { background: #e0e4f8; }
+
+    @media (max-width: 600px) {
+      header { padding: 28px 16px; }
+      header h1 { font-size: 20px; }
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="מתודה AI" />
+  <h1>ספריית מסמכים</h1>
+  <p>מתודה פתרונות AI — כל המסמכים במקום אחד</p>
+</header>
+
+<main>
+
+  <!-- ===== אבטחת מידע ===== -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🔒</span> אבטחת מידע</div>
+    <div class="grid">
+      <a class="card" href="/legal/client-security-guide">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">מדריך אבטחת מידע ללקוחות</span>
+        <span class="card-sub">הסבר פשוט — 6 שכבות הגנה, Controller vs Processor, מה הלקוח צריך לעשות</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== מסמכים משפטיים ===== -->
+  <div class="section">
+    <div class="section-title"><span class="icon">📄</span> מסמכים משפטיים</div>
+    <div class="grid">
+      <a class="card" href="/privacy-policy">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">מדיניות פרטיות — מתודה</span>
+        <span class="card-sub">מדיניות כללית של מתודה פתרונות AI</span>
+      </a>
+      <a class="card" href="/legal/dpa-template">
+        <span class="card-badge badge-draft">תבנית</span>
+        <span class="card-title">הסכם עיבוד נתונים (DPA)</span>
+        <span class="card-sub">תבנית כללית — להתאמה לכל לקוח</span>
+      </a>
+      <a class="card" href="/legal/contract">
+        <span class="card-badge badge-draft">תבנית</span>
+        <span class="card-title">חוזה התקשרות</span>
+        <span class="card-sub">הסכם בסיסי מול לקוח — שירותי פיתוח ו-AI</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== מדיניות פרטיות לפי מוצר ===== -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🛡️</span> מדיניות פרטיות לפי מוצר</div>
+    <div class="grid">
+      <a class="card" href="/legal/my-feelings-notebook/privacy-policy.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">יומן הרגשות שלי</span>
+        <span class="card-sub">My Feelings Notebook</span>
+      </a>
+      <a class="card" href="/legal/sivan-courses/privacy-policy.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">קורסי סיוון</span>
+        <span class="card-sub">Sivan Courses</span>
+      </a>
+      <a class="card" href="/legal/gali-clinical-thinking-partner/privacy-policy.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">שותף חשיבה קלינית — גלי</span>
+        <span class="card-sub">Clinical Thinking Partner</span>
+      </a>
+      <a class="card" href="/legal/adults-cbt-journal/privacy-policy.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">יומן CBT למבוגרים</span>
+        <span class="card-sub">Adults CBT Journal</span>
+      </a>
+      <a class="card" href="/legal/kids-emotions-journal/privacy-policy.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">יומן רגשות לילדים</span>
+        <span class="card-sub">Kids Emotions Journal</span>
+      </a>
+      <a class="card" href="/legal/lms-platform/privacy-policy.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">פלטפורמת LMS</span>
+        <span class="card-sub">LMS Platform</span>
+      </a>
+      <a class="card" href="/legal/therapist-selfcare/privacy-policy.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">מרחב טיפול עצמי למטפלים</span>
+        <span class="card-sub">Therapist Selfcare</span>
+      </a>
+      <a class="card" href="/legal/therapy-bridge-journal/privacy-policy.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">יומן מלווה טיפול</span>
+        <span class="card-sub">Therapy Bridge Journal</span>
+      </a>
+      <a class="card" href="/legal/therapy-metaphors/privacy-policy.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">מנוע מטאפורות</span>
+        <span class="card-sub">Therapy Metaphors</span>
+      </a>
+      <a class="card" href="/legal/workshop-planner/privacy-policy.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">מתכנן סדנאות</span>
+        <span class="card-sub">Workshop Planner</span>
+      </a>
+      <a class="card" href="/legal/clinical-thinking-partner/privacy-policy.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">שותף חשיבה קלינית</span>
+        <span class="card-sub">Clinical Thinking Partner — White Label</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== הצעות מחיר ===== -->
+  <div class="section">
+    <div class="section-title"><span class="icon">💰</span> הצעות מחיר וקטלוג</div>
+    <div class="grid">
+      <a class="card" href="/catalog">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">קטלוג מחירים 2026</span>
+        <span class="card-sub">מחירון שירותים ומוצרים — מתודה AI</span>
+      </a>
+      <a class="card" href="/white-labels-spec/adults-cbt-journal-white-label/proposal-adults-cbt-journal-white-label.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">הצעת מחיר — יומן CBT</span>
+        <span class="card-sub">Adults CBT Journal White Label</span>
+      </a>
+      <a class="card" href="/white-labels-spec/kids-emotions-journal-white-label/proposal-kids-emotions-journal-white-label.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">הצעת מחיר — יומן ילדים</span>
+        <span class="card-sub">Kids Emotions Journal White Label</span>
+      </a>
+      <a class="card" href="/white-labels-spec/therapy-bridge-journal-white-label/proposal-therapy-bridge-journal-white-label.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">הצעת מחיר — יומן מלווה טיפול</span>
+        <span class="card-sub">Therapy Bridge Journal White Label</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== לקוחות ===== -->
+  <div class="section">
+    <div class="section-title"><span class="icon">👥</span> פרויקטי לקוחות</div>
+
+    <div class="client-block">
+      <div class="client-name">🟣 גלי — Clinical Thinking Partner</div>
+      <div class="client-docs">
+        <a class="doc-chip" href="/projects/gali-clinical-thinking-partner/spec-gali-agent.html">אפיון</a>
+        <a class="doc-chip" href="/projects/gali-clinical-thinking-partner/guide-gali-agent.html">מדריך</a>
+        <a class="doc-chip" href="/projects/gali-clinical-thinking-partner/dpa-gali.html">DPA</a>
+        <a class="doc-chip" href="/legal/gali-clinical-thinking-partner/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="client-block">
+      <div class="client-name">🔵 מורן — יומן הרגשות שלי</div>
+      <div class="client-docs">
+        <a class="doc-chip" href="/projects/my-feelings-notebook/spec-my-feelings-notebook.html">אפיון</a>
+        <a class="doc-chip" href="/projects/my-feelings-notebook/guide-my-feelings-notebook.html">מדריך</a>
+        <a class="doc-chip" href="/projects/my-feelings-notebook/dpa-moran.html">DPA</a>
+        <a class="doc-chip" href="/projects/my-feelings-notebook/privacy-policy-my-feelings-notebook.html">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="client-block">
+      <div class="client-name">🟢 סיוון — מערכת הקורסים</div>
+      <div class="client-docs">
+        <a class="doc-chip" href="/projects/sivan-courses/spec-sivan-courses.html">אפיון</a>
+        <a class="doc-chip" href="/projects/sivan-courses/spec-bug-reporting.html">אפיון דיווח תקלות</a>
+        <a class="doc-chip" href="/projects/sivan-courses/guide-sivan-courses.html">מדריך</a>
+        <a class="doc-chip" href="/projects/sivan-courses/dpa-sivan.html">DPA</a>
+        <a class="doc-chip" href="/legal/sivan-courses/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== White Labels ===== -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🏷️</span> White Labels — אפיונים</div>
+    <div class="grid">
+      <a class="card" href="/white-labels-spec/adults-cbt-journal-white-label/spec-adults-cbt-journal-white-label.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">יומן CBT למבוגרים</span>
+        <span class="card-sub">Adults CBT Journal</span>
+      </a>
+      <a class="card" href="/white-labels-spec/kids-emotions-journal-white-label/spec-kids-emotions-journal-white-label.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">יומן רגשות לילדים</span>
+        <span class="card-sub">Kids Emotions Journal</span>
+      </a>
+      <a class="card" href="/white-labels-spec/therapy-bridge-journal-white-label/spec-therapy-bridge-journal-white-label.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">יומן מלווה טיפול</span>
+        <span class="card-sub">Therapy Bridge Journal</span>
+      </a>
+      <a class="card" href="/white-labels-spec/clinical-thinking-partner-white-label/spec-clinical-thinking-partner-white-label.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">שותף חשיבה קלינית</span>
+        <span class="card-sub">Clinical Thinking Partner</span>
+      </a>
+      <a class="card" href="/white-labels-spec/clinical-knowledge-platform/spec-clinical-knowledge-platform.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">רצף — ניהול ידע טיפולי</span>
+        <span class="card-sub">Clinical Knowledge Platform</span>
+      </a>
+      <a class="card" href="/white-labels-spec/lms-white-label/spec-lms-white-label.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">פלטפורמת LMS</span>
+        <span class="card-sub">LMS White Label</span>
+      </a>
+      <a class="card" href="/white-labels-spec/therapist-selfcare-white-label/spec-therapist-selfcare.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">מרחב טיפול עצמי</span>
+        <span class="card-sub">Therapist Selfcare</span>
+      </a>
+      <a class="card" href="/white-labels-spec/therapy-metaphors-white-label/spec-therapy-metaphors-white-label.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">מנוע מטאפורות</span>
+        <span class="card-sub">Therapy Metaphors</span>
+      </a>
+      <a class="card" href="/white-labels-spec/workshop-planner-white-label/spec-workshop-planner-white-label.html">
+        <span class="card-badge badge-live">חי</span>
+        <span class="card-title">מתכנן סדנאות</span>
+        <span class="card-sub">Workshop Planner</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== תבניות ===== -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🛠️</span> תבניות עבודה</div>
+    <div class="grid">
+      <a class="card" href="/spec-template.html">
+        <span class="card-badge badge-internal">תבנית</span>
+        <span class="card-title">תבנית אפיון</span>
+        <span class="card-sub">Spec Template — ריקה לשימוש עם לקוח חדש</span>
+      </a>
+      <a class="card" href="/guide-template.html">
+        <span class="card-badge badge-internal">תבנית</span>
+        <span class="card-title">תבנית מדריך</span>
+        <span class="card-sub">Guide Template — ריקה לשימוש עם לקוח חדש</span>
+      </a>
+      <a class="card" href="/proposal-template.html">
+        <span class="card-badge badge-internal">תבנית</span>
+        <span class="card-title">תבנית הצעת מחיר</span>
+        <span class="card-sub">Proposal Template — ריקה</span>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>
