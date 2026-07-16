@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>מדיניות פרטיות — יומן הרגשות שלי</title>
+  <style>
+    body { font-family: 'Heebo', Arial, sans-serif; font-size: 15px; line-height: 1.8; color: #333; max-width: 820px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 26px; color: #4361EE; margin-bottom: 4px; }
+    h2 { font-size: 17px; color: #222; margin-top: 32px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+    p, li { margin-bottom: 10px; }
+    ul { padding-right: 20px; }
+    .meta { color: #777; font-size: 13px; margin-bottom: 28px; }
+    .highlight { background: #f0f4ff; border-right: 3px solid #4361EE; padding: 10px 14px; border-radius: 4px; margin: 16px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+    th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: right; }
+    th { background: #f5f5f5; font-weight: 600; }
+    .ph { color: #c00; font-weight: bold; }
+  </style>
+</head>
+<body>
+<h1>מדיניות פרטיות</h1>
+<h2 style="border:none;margin-top:4px;font-size:20px;">יומן הרגשות שלי</h2>
+<p class="meta">גרסה 1.0 | יולי 2026</p>
+
+<div class="highlight">מסמך זה מסביר אילו מידע נאסף באפליקציה, כיצד הוא מאוחסן ומאובטח, ומהן זכויות הילד וההורה.</div>
+
+<h2>1. בעל המידע</h2>
+<p><strong>Controller:</strong> <span class="ph">[שם המטפל/ת]</span> — <span class="ph">[פרטי קשר]</span></p>
+<p><strong>Processor:</strong> מתודה פתרונות AI (נירה טל) — nira1502@gmail.com</p>
+
+<h2>2. קהל המשתמשים</h2>
+<p>ילדים ובני/בנות נוער המקבלים טיפול, בליווי מטפל/ת מוסמכ/ת. הסכמת הורים מתקבלת בהסכם הטיפולי.</p>
+
+<h2>3. מידע הנאסף</h2>
+<table>
+  <thead><tr><th>סוג מידע</th><th>מה בדיוק</th><th>מטרה</th></tr></thead>
+  <tbody>
+    <tr><td>פרטי זיהוי</td><td>שם פרטי, מין, אווטאר</td><td>פרופיל אישי</td></tr>
+    <tr><td>תכני יומן</td><td>כתיבה חופשית, רגשות, פעילויות</td><td>תיעוד לצרכי הטיפול</td></tr>
+    <tr><td>הקלטות קול</td><td>לתמלול בלבד — נמחקות מיד</td><td>הקלה על כתיבה</td></tr>
+    <tr><td>נתוני כניסה</td><td>תאריך, שעה, שיטת כניסה</td><td>אבטחה ואודיט</td></tr>
+    <tr><td>קודי כניסה</td><td>קוד יומן (6 תווים), PIN (4 ספרות)</td><td>אימות זהות</td></tr>
+  </tbody>
+</table>
+<p>לא נאסף: מיקום, תמונות, פרטי תשלום, מידע רפואי ישיר.</p>
+
+<h2>4. אחסון ואבטחה</h2>
+<ul>
+  <li>שרתים: Supabase, eu-west-1 (אירלנד, האיחוד האירופי)</li>
+  <li>הצפנה: TLS + encryption at rest</li>
+  <li>RLS: כל ילד/ה רואה רק את שלו/ה; מטפל/ת רואה רק ילדים שלו/ה</li>
+  <li>Audit log: כל כניסה ופעולה מתועדת</li>
+  <li>הקלטות קול: נמחקות מיד לאחר תמלול, לא נשמרות</li>
+</ul>
+
+<h2>5. גישה למידע</h2>
+<table>
+  <thead><tr><th>גורם</th><th>גישה</th></tr></thead>
+  <tbody>
+    <tr><td>הילד/ה</td><td>רשומות שלו/ה בלבד</td></tr>
+    <tr><td>המטפל/ת</td><td>כל תכני יומן הילדים שלו/ה</td></tr>
+    <tr><td>מתודה פתרונות AI</td><td>גישה טכנית לתמיכה בלבד</td></tr>
+    <tr><td>OpenAI (Whisper)</td><td>קובץ קול לתמלול בלבד — נמחק</td></tr>
+  </tbody>
+</table>
+<p><strong>המידע אינו נמכר ואינו מועבר לפרסום.</strong></p>
+
+<h2>6. משך שמירה</h2>
+<p>נתוני הילד/ה נשמרים לכל תקופת הטיפול + <strong>7 שנים</strong> לאחריה, לפי חוק זכויות החולה (תשנ"ו-1996). ניתן לבקש מחיקה מוקדמת בכפוף לדין.</p>
+
+<h2>7. זכויות הילד וההורה</h2>
+<ul>
+  <li>עיון, תיקון, מחיקה — פנייה ל: <span class="ph">[פרטי קשר המטפל/ת]</span></li>
+</ul>
+
+<h2>8. ספקים חיצוניים</h2>
+<table>
+  <thead><tr><th>ספק</th><th>שירות</th><th>מיקום</th></tr></thead>
+  <tbody>
+    <tr><td>Supabase</td><td>DB + Auth</td><td>אירלנד (EU)</td></tr>
+    <tr><td>Vercel</td><td>פריסה</td><td>ארה"ב</td></tr>
+    <tr><td>OpenAI (Whisper)</td><td>תמלול קול</td><td>ארה"ב</td></tr>
+  </tbody>
+</table>
+
+<h2>9. דיווח פרצה</h2>
+<p>הודעה ל-Controller תוך 72 שעות מגילוי אירוע, לפי תיקון 13 לחוק הגנת הפרטיות.</p>
+
+<h2>10. קשר</h2>
+<p><span class="ph">[פרטי קשר המטפל/ת]</span> | מתודה: nira1502@gmail.com</p>
+
+<hr style="margin-top:40px;border:none;border-top:1px solid #eee;"/>
+<p style="font-size:12px;color:#999;text-align:center;">© 2026 מתודה פתרונות AI</p>
+</body>
+</html>

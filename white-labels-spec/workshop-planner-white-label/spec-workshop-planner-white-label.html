@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אפיון — Workshop Planner White Label | מתודה פתרונות AI</title>
+  <link rel="stylesheet" href="../shared-styles.css" />
+  <style>
+    .pill {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pill-green  { background: #dcfce7; color: #166534; }
+    .pill-amber  { background: #fef9c3; color: #92400e; }
+    .pill-blue   { background: #dbeafe; color: #1e40af; }
+    .pill-gray   { background: #f1f5f9; color: #475569; }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 700px) { .module-grid { grid-template-columns: 1fr; } }
+
+    .module-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 14px 16px;
+      background: #fff;
+    }
+    .module-card h4 {
+      margin: 0 0 6px;
+      font-size: 0.95rem;
+      color: #1e293b;
+    }
+    .module-card p {
+      margin: 0 0 8px;
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+    .module-card .price {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .sales-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1a3a52 100%);
+      color: #fff;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 24px 0;
+    }
+    .sales-box h2 { color: #e2e8f0; margin-top: 0; font-size: 1.3rem; }
+    .sales-box ul { padding-right: 20px; margin: 12px 0 0; }
+    .sales-box li { margin-bottom: 8px; font-size: 0.92rem; line-height: 1.6; color: #cbd5e1; }
+    .sales-box li strong { color: #fff; }
+
+    .flow-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 20px 0;
+    }
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .flow-step:last-child { border-bottom: none; }
+    .flow-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #0f172a;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .flow-body strong { display: block; font-size: 0.95rem; color: #1e293b; margin-bottom: 3px; }
+    .flow-body p { margin: 0; font-size: 0.85rem; color: #64748b; line-height: 1.5; }
+
+    .compare-table td, .compare-table th { padding: 10px 14px; }
+    .tick { color: #16a34a; font-weight: 700; }
+    .cross { color: #dc2626; }
+
+    .lms-bridge {
+      border: 2px solid #2563eb;
+      border-radius: 12px;
+      padding: 20px 24px;
+      background: #eff6ff;
+      margin: 20px 0;
+    }
+    .lms-bridge h3 { color: #1d4ed8; margin-top: 0; }
+    .lms-bridge p { color: #1e3a8a; font-size: 0.9rem; margin-bottom: 0; }
+  </style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <div class="cover-badge">מסמך אפיון ופיץ׳ מכירה</div>
+  <h1>Workshop Planner White Label</h1>
+  <div class="cover-sub">בניית מערך סדנה עם AI — ממיפוי צרכים ועד ייצוא — ממותג לכל מטפל/ת ומנחה</div>
+  <div class="cover-meta">מתודה פתרונות AI | נירה טל | יולי 2026 | גרסה 1.0</div>
+</div>
+
+<div class="doc-wrapper">
+
+  <!-- ===== פיץ׳ מכירה ===== -->
+  <div class="section">
+    <div class="section-title">למה הלקוח/ה צריכ/ה את זה?</div>
+
+    <div class="sales-box">
+      <h2>הבעיה שאנחנו פותרים</h2>
+      <ul>
+        <li><strong>Google Docs / Word</strong> — שאלון בטופס נפרד, מסמך Word לתכנון, PDF להדפסה. שלושה כלים, אין חיבור, כל מערך מחדש.</li>
+        <li><strong>שאלוני Google Forms / Typeform</strong> — לא ממותגים, אין AI שמסנתז את התשובות, צריך לקרוא הכל ולבנות לבד.</li>
+        <li><strong>תכנון ידני של מערך</strong> — שעות על גיבוש לו"ז, חישוב זמנים, כתיבת הנחיות למנחה — לכל לקוח/ה מחדש.</li>
+        <li><strong>מצגות PowerPoint כ"תיק סדנה"</strong> — לא מקצועי, לא מובנה, לא ניתן לשיתוף.</li>
+      </ul>
+    </div>
+
+    <div class="info-box">
+      <strong>הפתרון:</strong> כלי ממותג שמשלב שאלון צרכים, AI שמכיר את המטפל/ת וה"שיטה" שלה, ובונה מערך מלא — עם עורך, לו"ז דקה-לדקה וייצוא PDF — הכל במקום אחד.
+    </div>
+
+    <h3>למי זה מתאים?</h3>
+    <ul>
+      <li>מטפלות, מאמנות ופסיכולוגיות שמנחות סדנאות וקבוצות</li>
+      <li>יועצי ארגונים ומדריכי הכשרות בתחום המקצועי</li>
+      <li>מרצות ומנחות תהליכים בחברות וארגונים</li>
+      <li>כל בעל/ת מקצוע שמוכר/ת "ימי עיון", "סדנאות" או "הדרכות" ורוצה שהתכנון ייראה מקצועי ויחסוך זמן</li>
+    </ul>
+  </div>
+
+  <!-- ===== פרטי המוצר ===== -->
+  <div class="section">
+    <div class="section-title">פרטי המוצר</div>
+    <table>
+      <tbody>
+        <tr><td><strong>שם המוצר</strong></td><td>Workshop Planner White Label — מתודה פתרונות AI</td></tr>
+        <tr><td><strong>פלטפורמה</strong></td><td>Next.js 16 + Supabase + Vercel</td></tr>
+        <tr><td><strong>שפה</strong></td><td>עברית, RTL מלא</td></tr>
+        <tr><td><strong>AI</strong></td><td>Claude API (Anthropic) — מחולל ומדייק מערכים</td></tr>
+        <tr><td><strong>מבנה</strong></td><td>חבילת בסיס + מודולים לפי בחירה</td></tr>
+        <tr><td><strong>זמן הקמה</strong></td><td>3–7 ימי עבודה (ללא פיתוח מותאם)</td></tr>
+        <tr><td><strong>סטטוס</strong></td><td><span class="badge badge-green">תבנית מוכנה — מאומתת ב-TypeCheck ו-Build</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== זרימת המשתמש ===== -->
+  <div class="section">
+    <div class="section-title">הזרימה המלאה — מה המשתמש/ת עושה</div>
+
+    <div class="flow-box">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div class="flow-body">
+          <strong>מגדירים פרופיל מקצועי (פעם אחת)</strong>
+          <p>המטפל/ת מזינה: גישה מקצועית, סגנון שפה, קהלי יעד מרכזיים. ה-AI יקרא את זה לפני כל בניית מערך — כך כל מערך "נשמע" כמוה.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div class="flow-body">
+          <strong>בונים שאלון צרכים ושולחים לינק לארגון</strong>
+          <p>בוחרים שאלות (פתוחות, בחירה, סולם), מוסיפים שם ארגון וטקסט פתיחה, ומקבלים לינק ציבורי. הנציג/ה בארגון ממלא/ת בלי הרשמה.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div class="flow-body">
+          <strong>מסכמים תשובות ומשיקים בניית מערך</strong>
+          <p>כל התשובות מרוכזות. לחיצה על "בנה מערך עם AI" — ה-AI קורא את הפרופיל, התשובות ומסמכי הידע שנבחרו, ומחזיר מערך מלא תוך כדקה.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <div class="flow-body">
+          <strong>עורכים ומדייקים את המערך</strong>
+          <p>עורך חזותי לכל חלק ופעילות: כותרת, מטרה, זמן, הנחיות למנחה, ציוד נדרש, מקורות. אפשר לדייק בשיחה חופשית ("קצרי את הפתיחה ל-10 דקות") — ה-AI מתקן בלי לאבד את שאר המערך.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">5</div>
+        <div class="flow-body">
+          <strong>מייצאים — PDF מסוכם או מסמך ניהול מלא</strong>
+          <p>PDF מסוכם: מבנה המערך, זמנים, רפרנסים. מסמך ניהול: לו"ז דקה-לדקה, הנחיות מפורטות למנחה, רשימת ציוד. שניהם בעברית RTL מלאה, מודפסים ישר מהדפדפן.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== קהל יעד ===== -->
+  <div class="section">
+    <div class="section-title">קהל יעד</div>
+
+    <h3>המטפל/ת / המנחה — המשתמש/ת הראשי/ת</h3>
+    <p>פסיכולוגית שמנחה סדנאות הורים. יועץ ארגוני שמוכר ימי הכשרה לחברות. מטפלת שמנחה קבוצות תמיכה. מה שמשותף — הם מומחים בתוכן, לא בטכנולוגיה, ורוצים לחסוך את שעות ה"כיצד-בונים-מערך-בגוגל-דוקס".</p>
+    <div class="tip"><strong>כאב מרכזי:</strong> הם בונים מחדש כל פעם — שאלון בטופס אחד, מערך בוורד, ייצוא ב-PDF ידני. כל לקוח/ה מחדש. Workshop Planner מאחד הכל ומזכיר את ה"שיטה" שלהם בכל בנייה.</div>
+
+    <h3>נציג/ת הארגון — ממלא/ת השאלון</h3>
+    <p>מנהל/ת HR, מרכז/ת פדגוגי/ת, או כל מי שממלא/ת שאלון צרכים מטעם הארגון. אין להם חשבון — הם נכנסים דרך לינק ציבורי, ממלאים בעברית מלאה ונסגרים. חוויה נקייה, ממותגת ברוח המטפל/ת.</p>
+  </div>
+
+  <!-- ===== חבילת בסיס ===== -->
+  <div class="section">
+    <div class="section-title">מה כלול בחבילת הבסיס</div>
+    <p>כל לקוח/ה מקבל/ת את הבסיס הבא — ללא תוספת מחיר לכל רכיב:</p>
+    <ul>
+      <li><strong>מסכי הזדהות ממותגים</strong> — כניסה, הרשמה, איפוס סיסמה (Supabase Auth)</li>
+      <li><strong>פרופיל מקצועי</strong> — גישה, סגנון שפה, קהלי יעד — מוזן ל-AI לפני כל בנייה</li>
+      <li><strong>בונה שאלון צרכים</strong> — 4 סוגי שאלות: פתוחה, בחירה יחידה, מרובה, סולם; סידור וסימון חובה</li>
+      <li><strong>לינק ציבורי לשאלון</strong> — עמוד מילוי ממותג ללא הרשמה, מותאם מובייל, פתיחה/סגירה</li>
+      <li><strong>ריכוז תשובות</strong> — כל תשובות כל שאלון בממשק מסודר</li>
+      <li><strong>מחולל מערך AI</strong> — מערך מלא (חלקים → פעילויות → זמנים) מהתשובות + הפרופיל</li>
+      <li><strong>עורך מערך</strong> — עריכה מלאה: כותרת, מטרה, זמן, הנחיות, ציוד, מקורות</li>
+      <li><strong>ייצוא PDF מסוכם</strong> — Print CSS מלא, עברית RTL, ממותג — מה שהלקוח/ה מדפיסה לסדנה</li>
+      <li><strong>דשבורד סקירה</strong> — שאלונים אחרונים, מערכים אחרונים, מסמכי ידע</li>
+      <li><strong>GitHub + Vercel + CI/CD</strong> — כל push = דיפלוי אוטומטי לפרודקשן</li>
+    </ul>
+    <div class="note"><strong>מחיר חבילת בסיס:</strong> ₪4,500–₪7,000 (הקמה חד-פעמית)</div>
+  </div>
+
+  <!-- ===== מודולים קיימים ===== -->
+  <div class="section">
+    <div class="section-title">מודולים קיימים — מוכנים להפעלה</div>
+    <p>כל מודול קיים בקוד ומחובר — נדרשת רק הפעלה/כיבוי ב-<code>config/modules.ts</code> ולא פיתוח נוסף.</p>
+
+    <div class="module-grid">
+      <div class="module-card">
+        <h4>📚 ספריית ידע ל-AI</h4>
+        <p>העלאת מסמכים מקצועיים (הדבקה / txt / md) + תיוג. בעת בניית מערך — בוחרים אילו מסמכים ה-AI יקרא. מחזק את ה"שיטה" האישית של המנחה.</p>
+        <span class="pill pill-green">קיים</span>&nbsp;<span class="price">₪800–₪1,400</span>
+      </div>
+      <div class="module-card">
+        <h4>📋 תבניות שאלון</h4>
+        <p>שמירת שאלון מוצלח כתבנית + טעינה מהירה ביצירת שאלון חדש. מאפשר שאלון "אב" לסוגי לקוחות שחוזרים.</p>
+        <span class="pill pill-green">קיים</span>&nbsp;<span class="price">₪400–₪700</span>
+      </div>
+      <div class="module-card">
+        <h4>🗂️ היסטוריית סדנאות</h4>
+        <p>ארכיון כל המערכים + חיפוש לפי שם. בלעדיו — מוצגות 10 אחרונות בלבד. חשוב למי שמנהל/ת עשרות סדנאות בשנה.</p>
+        <span class="pill pill-green">קיים</span>&nbsp;<span class="price">₪400–₪700</span>
+      </div>
+      <div class="module-card">
+        <h4>📄 מסמך ניהול סדנה</h4>
+        <p>ייצוא מורחב: לו"ז דקה-לדקה, הנחיות מפורטות למנחה, רשימת ציוד. מה שהמנחה לוקח/ת לשטח כ"תיק סדנה".</p>
+        <span class="pill pill-green">קיים</span>&nbsp;<span class="price">₪400–₪800</span>
+      </div>
+      <div class="module-card">
+        <h4>✨ דיוק מערך בשיחה</h4>
+        <p>שורת בקשה חופשית לאחר בניית מערך: "הוסיפי פעילות שוברת קרח", "קצרי את הפתיחה", "שני הפסקות". ה-AI מתקן בדיוק.</p>
+        <span class="pill pill-green">קיים</span>&nbsp;<span class="price">₪600–₪1,000</span>
+      </div>
+      <div class="module-card">
+        <h4>🐛 דיווח תקלות</h4>
+        <p>עמוד טופס Fillout מוטמע לאדמין — דיווח ומעקב תקלות ללא צורך ב-Slack / מייל נפרד.</p>
+        <span class="pill pill-green">קיים</span>&nbsp;<span class="price">₪0–₪200</span>
+      </div>
+      <div class="module-card">
+        <h4>📖 קישור מדריך</h4>
+        <p>לינק למדריך משתמש ממותג בתפריט הניווט — מוריד שאלות תמיכה בסיסיות.</p>
+        <span class="pill pill-green">קיים</span>&nbsp;<span class="price">₪0–₪150</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== מודולים בפיתוח ===== -->
+  <div class="section">
+    <div class="section-title">מודולים בתוכנית פיתוח (Roadmap)</div>
+    <p>פיצ'רים אלה <strong>אינם קיימים עדיין</strong> בתבנית — כל אחד דורש פיתוח ייעודי ומתומחר בנפרד.</p>
+
+    <div class="module-grid">
+      <div class="module-card">
+        <h4>🔗 ייצוא ל-LMS White Label</h4>
+        <p>דחיפת מערך מוכן כקורס לפלטפורמת הלמידה של מתודה (sections→lessons). הסכמה כבר ערוכה בקוד (<code>export_payload</code>).</p>
+        <span class="pill pill-amber">Roadmap</span>&nbsp;<span class="price">₪1,200–₪2,500</span>
+      </div>
+      <div class="module-card">
+        <h4>📎 חילוץ PDF/DOCX לספרייה</h4>
+        <p>קליטת קבצי Word ו-PDF לספריית הידע עם חילוץ טקסט בשרת + Supabase Storage.</p>
+        <span class="pill pill-amber">Roadmap</span>&nbsp;<span class="price">₪400–₪700</span>
+      </div>
+      <div class="module-card">
+        <h4>📨 שליחת שאלון במייל/וואטסאפ</h4>
+        <p>שליחה ישירה מהמערכת דרך Make + Webhook במקום העתקת לינק ידנית.</p>
+        <span class="pill pill-amber">Roadmap</span>&nbsp;<span class="price">₪500–₪1,500</span>
+      </div>
+      <div class="module-card">
+        <h4>🔔 התראה על מילוי שאלון</h4>
+        <p>מייל/וואטסאפ אוטומטי למטפל/ת כשמתקבלת תשובה חדשה (Make + Webhook).</p>
+        <span class="pill pill-amber">Roadmap</span>&nbsp;<span class="price">₪350–₪600</span>
+      </div>
+      <div class="module-card">
+        <h4>🧠 סיכום תשובות עם AI</h4>
+        <p>לפני בניית המערך — AI מסכם את כל התשובות לפסקה שמדגישה את הצרכים המרכזיים.</p>
+        <span class="pill pill-amber">Roadmap</span>&nbsp;<span class="price">₪350–₪600</span>
+      </div>
+      <div class="module-card">
+        <h4>💎 בנק תרגילים אישי</h4>
+        <p>שמירת פעילויות מוצלחות מהמערכים ושיבוצן החוזר בלחיצה — "תמיד כלול את תרגיל X".</p>
+        <span class="pill pill-amber">Roadmap</span>&nbsp;<span class="price">₪600–₪1,000</span>
+      </div>
+      <div class="module-card">
+        <h4>🔍 שיתוף מערך עם לקוח/ה</h4>
+        <p>לינק צפייה ציבורי (read-only) על גרסת הסיכום — שולחים ללקוח לאישור לפני הסדנה.</p>
+        <span class="pill pill-amber">Roadmap</span>&nbsp;<span class="price">₪400–₪700</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== חיבור ל-LMS ===== -->
+  <div class="section">
+    <div class="section-title">הקשר עם LMS White Label</div>
+
+    <div class="lms-bridge">
+      <h3>🔗 שתי תבניות, זרימה אחת</h3>
+      <p>Workshop Planner ו-LMS White Label תוכננו יחד. מערך שנבנה ב-Workshop Planner — עם חלקים ופעילויות — מיפוי ישיר לקורס עם שיעורים ב-LMS. בעתיד (מודול Roadmap ₪1,200–₪2,500): לחיצה אחת שולחת את המערך לפלטפורמת הלמידה ויוצרת ממנו קורס מוכן.</p>
+    </div>
+
+    <p>המשמעות הפרקטית: לקוח/ה שמנחה סדנה שחוזרת — יכול/ה לבנות אותה ב-Workshop Planner, לדייק ולאשר, ולייצא ישירות ל-LMS כקורס מקוון. <strong>שני מוצרים שמחזקים אחד את השני.</strong></p>
+
+    <table>
+      <thead>
+        <tr><th>Workshop Planner</th><th></th><th>LMS White Label</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>שאלון צרכים</td><td>→</td><td>—</td></tr>
+        <tr><td>מערך סדנה</td><td>→</td><td>קורס</td></tr>
+        <tr><td>חלק במערך</td><td>→</td><td>שיעור / מודול</td></tr>
+        <tr><td>פעילות</td><td>→</td><td>תוכן שיעור</td></tr>
+        <tr><td>ייצוא PDF</td><td>→</td><td>חומרי שיעור להורדה</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== אינטגרציות ===== -->
+  <div class="section">
+    <div class="section-title">אינטגרציות חיצוניות (דרך Make / Webhook)</div>
+    <p>כל אינטגרציה מחוברת דרך Make + Webhooks ב-API Routes — ללא שינוי בקוד הליבה.</p>
+
+    <table>
+      <thead>
+        <tr><th>אינטגרציה</th><th>שימוש עיקרי</th><th>טווח מחיר</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>💬 <strong>וואטסאפ</strong> (Green API / Twilio)</td><td>שליחת לינק שאלון, התראה על מילוי, שיתוף מערך</td><td>₪800–₪1,500</td></tr>
+        <tr><td>📧 <strong>דיוור</strong> (Rav Messer / Smoove / Mailchimp)</td><td>שליחת שאלון במייל, פולואפ אחרי סדנה</td><td>₪500–₪1,000</td></tr>
+        <tr><td>📅 <strong>יומן</strong> (Google Calendar / Calendly)</td><td>קביעת ישיבת אפיון עם הארגון אחרי קבלת התשובות</td><td>₪500–₪800</td></tr>
+        <tr><td>🗂️ <strong>CRM</strong> (Fireberry / monday / Airtable)</td><td>סנכרון לקוחות + מעקב על שאלון שנשלח</td><td>₪800–₪1,500</td></tr>
+        <tr><td>📋 <strong>טפסים</strong> (Fillout)</td><td>שאלון משוב לאחר הסדנה — מוטמע בדף נפרד</td><td>₪0–₪300</td></tr>
+        <tr><td>🔗 <strong>LMS White Label</strong></td><td>ייצוא מערך כקורס (מודול Roadmap)</td><td>₪1,200–₪2,500</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== שירותים נלווים ===== -->
+  <div class="section">
+    <div class="section-title">שירותים נלווים (מחוץ לקוד)</div>
+    <table>
+      <thead>
+        <tr><th>שירות</th><th>תיאור</th><th>טווח מחיר</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🌐 דומיין מותאם</td><td>חיבור דומיין הלקוח/ה + SSL + עדכון Auth URLs + NEXT_PUBLIC_SITE_URL</td><td>₪350–₪600</td></tr>
+        <tr><td>✉️ מיתוג מיילים</td><td>SMTP מותאם (Resend) + SPF/DKIM — מיילי המערכת מהדומיין של הלקוח/ה</td><td>₪250–₪500</td></tr>
+        <tr><td>📖 מדריך משתמש ממותג</td><td>אתר מדריך נפרד בסגנון הלקוח/ה</td><td>₪800–₪1,500</td></tr>
+        <tr><td>📚 הזנת ספריית ידע ראשונית</td><td>המרה והזנה של חומרים מקצועיים + כיול הפרופיל האישי</td><td>₪400–₪900</td></tr>
+        <tr><td>📝 בניית שאלון אב ראשון</td><td>שאלון אפיון מקצועי ראשון ביחד עם הלקוח/ה + שמירה כתבנית</td><td>₪300–₪600</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== השוואה למתחרים ===== -->
+  <div class="section">
+    <div class="section-title">למה לא ללכת למתחרים?</div>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>קריטריון</th>
+          <th>Workshop Planner (מתודה)</th>
+          <th>Google Forms + Docs</th>
+          <th>פיתוח מאפס</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>עברית + RTL מלא</td>
+          <td><span class="tick">✓ מלא</span></td>
+          <td><span class="cross">✗ חלקי</span></td>
+          <td><span class="tick">✓ אפשרי</span></td>
+        </tr>
+        <tr>
+          <td>מיתוג מלא</td>
+          <td><span class="tick">✓ מלא</span></td>
+          <td><span class="cross">✗ אין</span></td>
+          <td><span class="tick">✓ מלא</span></td>
+        </tr>
+        <tr>
+          <td>AI שמכיר את השיטה האישית</td>
+          <td><span class="tick">✓ Claude API + פרופיל</span></td>
+          <td><span class="cross">✗ אין</span></td>
+          <td>תוספת עלות גדולה</td>
+        </tr>
+        <tr>
+          <td>שאלון + מערך + ייצוא — מקום אחד</td>
+          <td><span class="tick">✓ אחוד</span></td>
+          <td><span class="cross">✗ 3 כלים נפרדים</span></td>
+          <td><span class="tick">✓ אפשרי</span></td>
+        </tr>
+        <tr>
+          <td>עלות שוטפת</td>
+          <td><span class="tick">✓ אפסית (Vercel + Supabase)</span></td>
+          <td><span class="tick">✓ חינם</span></td>
+          <td>תשתית + תחזוקה</td>
+        </tr>
+        <tr>
+          <td>בעלות על הנתונים</td>
+          <td><span class="tick">✓ מלאה</span></td>
+          <td><span class="cross">✗ Google</span></td>
+          <td><span class="tick">✓ מלאה</span></td>
+        </tr>
+        <tr>
+          <td>זמן הקמה</td>
+          <td><span class="tick">✓ 3–7 ימים</span></td>
+          <td><span class="tick">✓ מיידי</span></td>
+          <td><span class="cross">✗ 2–6 חודשים</span></td>
+        </tr>
+        <tr>
+          <td>עלות כוללת שנה ראשונה</td>
+          <td><span class="tick">✓ ₪5,000–₪12,000</span></td>
+          <td><span class="tick">✓ ₪0 (אבל ללא AI, ללא מיתוג)</span></td>
+          <td><span class="cross">✗ ₪40,000+</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== ארכיטקטורה טכנית ===== -->
+  <div class="section">
+    <div class="section-title">ארכיטקטורה טכנית</div>
+    <table>
+      <thead>
+        <tr><th>רכיב</th><th>טכנולוגיה</th><th>הערות</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Frontend + Backend</td><td>Next.js 16 + React 19</td><td>App Router, TypeScript Strict, RTL</td></tr>
+        <tr><td>מסד נתונים + Auth</td><td>Supabase (Postgres)</td><td>RLS מלא, 6 טבלאות, 2026 API format</td></tr>
+        <tr><td>Hosting + CI/CD</td><td>Vercel</td><td>Fluid Compute, דיפלוי בכל push</td></tr>
+        <tr><td>AI — מחולל מערכים</td><td>Claude API (Anthropic)</td><td>claude-sonnet-4-6, max_tokens 8000</td></tr>
+        <tr><td>אוטומציות</td><td>Make (Integromat)</td><td>חיבור דרך Webhooks / API Routes</td></tr>
+        <tr><td>ספריית ידע</td><td>טקסט בלבד (DB)</td><td>ללא Storage בבסיס; PDF/DOCX — מודול Roadmap</td></tr>
+        <tr><td>ייצוא PDF</td><td>Print CSS (Browser)</td><td>ללא Puppeteer — הדפסה ישירה מהדפדפן</td></tr>
+      </tbody>
+    </table>
+
+    <h3>6 טבלאות ה-DB</h3>
+    <table>
+      <thead>
+        <tr><th>טבלה</th><th>תוכן</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>profiles</code></td><td>פרופיל מקצועי (גישה, סגנון שפה, קהלי יעד, תפקיד)</td></tr>
+        <tr><td><code>questionnaires</code></td><td>שאלונים (כולל <code>public_token</code> UUID לגישה ציבורית)</td></tr>
+        <tr><td><code>questionnaire_responses</code></td><td>תשובות (JSONB) — ללא חשבון, מזוהה בשם + תפקיד</td></tr>
+        <tr><td><code>questionnaire_templates</code></td><td>תבניות שאלון שמורות לשימוש חוזר</td></tr>
+        <tr><td><code>knowledge_documents</code></td><td>מסמכי ידע + תגיות; תוכן טקסט בשדה JSONB</td></tr>
+        <tr><td><code>workshops</code></td><td>מערכים (WorkshopPlan JSONB) + <code>export_payload</code> לייצוא עתידי ל-LMS</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== מה הלקוח/ה צריכ/ה לספק ===== -->
+  <div class="section">
+    <div class="section-title">מה הלקוח/ה צריכ/ה לספק לפני ההקמה</div>
+
+    <h3>🎨 תוכן ויזואל ומיתוג</h3>
+    <table>
+      <thead>
+        <tr><th>נכס</th><th>מפרט</th><th>הכרחי?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>לוגו — רקע בהיר</strong></td><td>PNG / SVG, רקע שקוף, לפחות 400px רוחב</td><td><span class="badge badge-red">חובה</span></td></tr>
+        <tr><td><strong>לוגו — רקע כהה</strong></td><td>גרסה בהירה לסרגל צד כהה (אם קיים)</td><td><span class="badge badge-amber">מומלץ</span></td></tr>
+        <tr><td><strong>פאביקון</strong></td><td>PNG 512×512 או SVG</td><td><span class="badge badge-red">חובה</span></td></tr>
+        <tr><td><strong>צבעי המותג</strong></td><td>צבע ראשי + צבע הדגשה + רקע (hex)</td><td><span class="badge badge-red">חובה</span></td></tr>
+        <tr><td><strong>שם העוזר/ת ה-AI</strong></td><td>השם שיופיע בממשק ("עוזר התכנון של [שם]")</td><td><span class="badge badge-amber">מומלץ</span></td></tr>
+        <tr><td><strong>טקסטים ממותגים</strong></td><td>כותרת דף הכניסה, כותרת ב-Sidebar, טקסט שאלון ציבורי</td><td><span class="badge badge-amber">מומלץ</span></td></tr>
+      </tbody>
+    </table>
+
+    <h3>📚 תוכן מקצועי</h3>
+    <table>
+      <thead>
+        <tr><th>נכס</th><th>מפרט</th><th>הכרחי?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>פרופיל מקצועי</strong></td><td>גישה, סגנון שפה, קהלי יעד מרכזיים — טקסט חופשי</td><td><span class="badge badge-red">חובה</span></td></tr>
+        <tr><td><strong>מסמכי ידע ראשוניים</strong></td><td>מאמרים, שיטות עבודה, FAQ — txt / Word / הדבקה</td><td><span class="badge badge-amber">אם מודול נרכש</span></td></tr>
+        <tr><td><strong>שאלון אב ראשון</strong></td><td>שאלות אפיון שחוזרות בכל לקוח — לשמירה כתבנית</td><td><span class="badge badge-gray">אופציונלי</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="tip"><strong>טיפ להקמה:</strong> הפרופיל המקצועי הוא ה"מנוע" של כל מערך. כדאי להשקיע בו 15–20 דקות ביחד עם הלקוח/ה בפגישה הראשונה — זה מה שיגרום לכל מערך להישמע "כמוה".</div>
+  </div>
+
+  <!-- ===== פלטפורמות וכלים ===== -->
+  <div class="section">
+    <div class="section-title">פלטפורמות וכלים — מה צריך לחבר</div>
+
+    <h3>כלי ליבה — תמיד נדרשים</h3>
+    <table>
+      <thead>
+        <tr><th>כלי / פלטפורמה</th><th>מה נדרש מהלקוח/ה</th><th>מי פותח</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🌐 <strong>דומיין</strong></td><td>גישה לרשם הדומיינים + שם הדומיין הרצוי (למשל: <code>plan.שם-לקוח.co.il</code>)</td><td>הלקוח/ה — נבצע CNAME</td></tr>
+        <tr><td>📧 <strong>כתובת מייל אדמין</strong></td><td>כתובת Gmail / מייל עסקי לחשבון הראשי</td><td>הלקוח/ה</td></tr>
+        <tr><td>🗄️ <strong>Supabase</strong></td><td>אין — נפתח ומעבירים גישת Admin</td><td>מתודה</td></tr>
+        <tr><td>🚀 <strong>Vercel</strong></td><td>אין — נפתח ומעבירים גישת Admin</td><td>מתודה</td></tr>
+        <tr><td>💻 <strong>GitHub</strong></td><td>אין — נפתח Repo פרטי ומעבירים Collaborator</td><td>מתודה</td></tr>
+        <tr><td>🤖 <strong>Anthropic API</strong></td><td>אין — Key שלנו; עלות לפי שימוש (מערך ≈ אגורות–שקלים)</td><td>מתודה</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note"><strong>כלל אצבע:</strong> כל כלי שהלקוח/ה כבר משתמש/ת בו — נחבר אליו ולא נחליף. כל כלי שאין להם — נמליץ ונפתח.</div>
+  </div>
+
+  <!-- ===== שלבי הקמה ===== -->
+  <div class="section">
+    <div class="section-title">שלבי ההקמה ללקוח/ה חדש/ה</div>
+    <div class="step"><div class="step-num">1</div><div class="step-text"><strong>שכפול התבנית:</strong> העתקת ה-codebase לפרויקט חדש — יום אחד</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text"><strong>מיתוג:</strong> עדכון brand.ts, צבעי CSS, לוגואים, פאביקון, טקסטים ממותגים — חצי יום</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Supabase:</strong> פרויקט חדש, הרצת schema.sql, הגדרת Auth URLs — חצי יום</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text"><strong>GitHub + Vercel:</strong> repo פרטי, CI/CD אוטומטי, משתני סביבה — חצי יום</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-text"><strong>דומיין + מיילים:</strong> CNAME, SSL, SMTP עם SPF/DKIM — יום אחד</div></div>
+    <div class="step"><div class="step-num">6</div><div class="step-text"><strong>כיול AI:</strong> הגדרת הפרופיל המקצועי, הזנת מסמכי ידע ראשוניים, בניית שאלון אב — חצי–יום שלם</div></div>
+    <div class="step"><div class="step-num">7</div><div class="step-text"><strong>מסירה + הדרכה:</strong> בדיקות קבלה, אדמין ראשוני, הדרכה ולינק למדריך — חצי יום</div></div>
+    <div class="note"><strong>זמן כולל:</strong> 3–7 ימי עבודה בפועל (תלוי במספר המודולים והאינטגרציות)</div>
+  </div>
+
+  <!-- ===== Out of Scope ===== -->
+  <div class="section">
+    <div class="section-title">מה לא כלול בתבנית הבסיסית</div>
+    <ul>
+      <li>ייצוא ל-LMS — מוכן לעתיד ב-schema, אך ממומש כמודול Roadmap בתשלום</li>
+      <li>חילוץ טקסט מ-PDF/DOCX — ספריית הידע מקבלת טקסט/txt/md בלבד</li>
+      <li>שיתוף מערך עם נציג הארגון (read-only) — מודול Roadmap</li>
+      <li>שליחה ישירה של שאלון במייל/וואטסאפ מהמערכת — מודול Roadmap</li>
+      <li>אפליקציית Native (iOS / Android) — דפדפן מספיק למוצר זה</li>
+      <li>תמחור ומכירת "כרטיסי כניסה" לסדנה — לא בסקופ</li>
+    </ul>
+    <div class="tip"><strong>כל אחד מאלה ניתן לפיתוח מותאם</strong> — יתומחר בנפרד לפי הצורך.</div>
+  </div>
+
+  <!-- ===== הערות למכירה ===== -->
+  <div class="section">
+    <div class="section-title">הערות למכירה</div>
+    <div class="info-box">
+      <strong>טיפ לשיחת מכירה:</strong> הדגישי את ה"קסם" של הפרופיל המקצועי — ה-AI לא מחזיר מערך גנרי, הוא מחזיר מערך שנשמע כמו המטפל/ת עצמה. זו ההבחנה הכי חשובה מול ChatGPT חינמי.
+    </div>
+    <ul>
+      <li>מומלץ להתחיל עם חבילת בסיס + ספריית ידע + דיוק בשיחה — החבילה שמרשימה בדמו.</li>
+      <li>מסמך ניהול סדנה (facilitatorDoc) — כל מי שמנחה יותר מסדנה אחת בשבוע, זה must-have.</li>
+      <li>לקוח/ה שגם מוכר/ת קורסים — להציע גם LMS White Label ולהסביר על הסינרגיה.</li>
+      <li>אינטגרציות (וואטסאפ / דיוור) — מומלץ כשלב ב׳, לא לעמוס בהתחלה.</li>
+    </ul>
+    <table>
+      <tbody>
+        <tr><td><strong>הוכן על ידי</strong></td><td>נירה טל | מתודה פתרונות AI</td><td><strong>תאריך:</strong> יולי 2026</td></tr>
+        <tr><td><strong>גרסה</strong></td><td>1.0</td><td><span class="badge badge-amber">מסמך פנימי</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <div class="footer-name">נירה טל | מתודה פתרונות AI</div>
+  <div class="footer-links">
+    <span>© כל הזכויות שמורות</span>
+    <span class="footer-sep">|</span>
+    <a href="tel:0542215222">054-2215222</a>
+    <span class="footer-sep">|</span>
+    <a href="mailto:nira@metoda.ai">nira@metoda.ai</a>
+  </div>
+</div>
+
+</body>
+</html>

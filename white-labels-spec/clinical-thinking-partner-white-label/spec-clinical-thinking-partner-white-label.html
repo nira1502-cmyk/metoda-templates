@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אפיון — Clinical Thinking Partner White Label</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="shared-styles.css" />
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <img src="logo.png" alt="לוגו" class="cover-logo" />
+  <div class="cover-badge">מסמך אפיון — White Label</div>
+  <h1>Clinical Thinking Partner</h1>
+  <div class="cover-sub">עמית/ה דיגיטלי/ת לחשיבה קלינית — תבנית מוצר ממותג למטפלים/ות</div>
+  <div class="cover-meta">הוכן על ידי נירה טל | מתודה פתרונות AI | יולי 2026 | גרסה 1.0</div>
+</div>
+
+<div class="doc-wrapper">
+
+  <!-- ===== סיכום מנהלים ===== -->
+  <div class="section">
+    <div class="section-title">סיכום מנהלים</div>
+    <p>מטפלים/ות ותיקים/ות חווים בדידות מקצועית ותקיעות בין הדרכות. Clinical Thinking Partner הוא עמית/ה לחשיבה מבוסס/ת AI — לא צ'אטבוט גנרי אלא Peer שמכיר/ה את הזהות הטיפולית של המשתמש/ת (הגישות, הערכים, הרגישויות) ומגיב/ה לפי מנוע שיחה קליני קבוע: השערות ולא מסקנות, שאלות עומק לפני ניתוח, תגובות קצרות. התבנית נגזרת ללקוח/ה חדש/ה תוך ימים.</p>
+    <div class="info-box">
+      <strong>מטרת הפרויקט:</strong> תבנית master שממנה מוסרים מוצר ממותג בשני מסלולים — פרומפט הפעלה לסוכנ/ת בממשק ChatGPT/Gemini, או מערכת web מלאה.
+    </div>
+  </div>
+
+  <!-- ===== פרטי הפרויקט ===== -->
+  <div class="section">
+    <div class="section-title">פרטי הפרויקט</div>
+    <table>
+      <tbody>
+        <tr><td><strong>מוצר</strong></td><td>Clinical Thinking Partner — White Label</td></tr>
+        <tr><td><strong>מקור</strong></td><td>פרויקט gali-clinical-thinking-partner (PRD סעיף 6 — White Label Blueprint)</td></tr>
+        <tr><td><strong>מגיש האפיון</strong></td><td>נירה טל | מתודה פתרונות AI</td></tr>
+        <tr><td><strong>תאריך</strong></td><td>יולי 2026</td></tr>
+        <tr><td><strong>גרסה</strong></td><td>1.0</td></tr>
+        <tr><td><strong>סטטוס</strong></td><td><span class="badge badge-amber">תבנית פעילה</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== קהל יעד ===== -->
+  <div class="section">
+    <div class="section-title">קהל יעד</div>
+    <h3>משתמש/ת ראשי/ת</h3>
+    <p>מטפל/ת ותיק/ה (פסיכולוגים/ות, עו"סים קליניים, מטפלים רגשיים) — מביא/ה מקרים, דילמות ותקיעות, ומחפש/ת שותפ/ה לחשיבה בגובה העיניים, בעברית, בשפה המקצועית שלו/ה.</p>
+    <h3>משתמש/ת משני/ת (Admin)</h3>
+    <p>בעל/ת הרישיון — מטפל/ת עצמאי/ת או מכון/קליניקה: מנהל/ת את ספריית הידע ואת המשתמשים (במודול הארגוני). ללא גישה לתוכן שיחות — סודיות קלינית מובנית.</p>
+    <div class="tip"><strong>כאב מרכזי:</strong> בדידות מקצועית ותקיעות קלינית בין הדרכות — אין עם מי לחשוב בזמן אמת.</div>
+  </div>
+
+  <!-- ===== ארכיטקטורת המנוע ===== -->
+  <div class="section">
+    <div class="section-title">ארכיטקטורה — המודל המרובע</div>
+    <p>המנוע מפוצל לארבע שכבות. שכבות 1, 2, 4 הן <strong>מנוע קבוע</strong> — קוד זהה לכל הלקוחות. שכבה 3 + פרופיל הזהות הם <strong>הרכיבים המתחלפים</strong> — נתונים פר-לקוח/ה.</p>
+    <ul>
+      <li><strong>שכבה 1 — מערכת הפעלה:</strong> זהות Peer, אי-ודאות מובנית, Anti-Pathology, תגובות קצרות (Stop is a Feature), עברית.</li>
+      <li><strong>שכבה 2 — מנוע החלטות:</strong> מצבי עבודה — ניתוח מקרה (שאלות עומק ← פרוטוקול 7 שכבות), עיבוד רגשי למטפל/ת, תקיעות, מחקר.</li>
+      <li><strong>שכבה 3 — ספריית ידע דינמית:</strong> עמוד שדרה תיאורטי (23 ישויות), אינדקס השראה תרבותי, תבניות עבודה — מוחלף פר-לקוח/ה.</li>
+      <li><strong>שכבה 4 — הנדסת שיחה:</strong> ניסוחים אסורים/מומלצים, ספריית שאלות מודל, מדד הצלחה.</li>
+    </ul>
+  </div>
+
+  <!-- ===== מסכים ===== -->
+  <div class="section">
+    <div class="section-title">מסכים ופונקציונליות (מסלול B)</div>
+
+    <h3>1. כניסה</h3>
+    <p>התחברות באימייל וסיסמה, ממותג מלא (לוגו, שם, tagline, disclaimer).</p>
+
+    <hr class="divider" />
+
+    <h3>2. שאלון זהות מקצועית (Identity-First Intake)</h3>
+    <p>חד-פעמי + ניתן לעדכון: לשון פנייה, תפיסת עולם, צירי ליבה, עדשות משניות, גישות דחויות, משפטי מצפן, כלים, מקורות השראה, נושאים רגישים, סגנון. מזין ישירות את שכבת הזהות של המנוע.</p>
+
+    <hr class="divider" />
+
+    <h3>3. צ'אט — מסך העבודה המרכזי</h3>
+    <ul>
+      <li>שיחה עם הפרסונה בסטרימינג, RTL מלא, הודעת פתיחה ממותגת</li>
+      <li>סרגל שיחות: חדשה, בחירה, מחיקה; היסטוריה מלאה</li>
+      <li>אזהרת פרטיות קבועה: ללא פרטים מזהים של מטופלים/ות</li>
+    </ul>
+
+    <hr class="divider" />
+
+    <h3>4. ניהול ספריית ידע (/admin — למנהל/ת בלבד)</h3>
+    <ul>
+      <li>הוספה/כיבוי/מחיקה של מסמכי ידע (גישות, השראה, תבניות)</li>
+      <li>שינוי משתקף מיידית בכל השיחות</li>
+    </ul>
+  </div>
+
+  <!-- ===== דרישות טכניות ===== -->
+  <div class="section">
+    <div class="section-title">דרישות טכניות</div>
+    <table>
+      <thead>
+        <tr><th>רכיב</th><th>טכנולוגיה</th><th>הערות</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Frontend + Backend</td><td>Next.js 16, React 19, TS Strict</td><td>Server Components; proxy.ts לאימות</td></tr>
+        <tr><td>DB + Auth</td><td>Supabase</td><td>פרויקט נפרד פר-לקוח/ה; RLS — admin ללא גישה לשיחות</td></tr>
+        <tr><td>AI</td><td>Claude API</td><td>Streaming + Prompt Caching; ללא RAG — הידע נכנס ב-context</td></tr>
+        <tr><td>UI</td><td>Tailwind CSS 4</td><td>BRAND PALETTE ב-globals.css; RTL מלא</td></tr>
+        <tr><td>Hosting</td><td>Vercel</td><td>מסלול B בלבד; מסלול A ללא תשתית כלל</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== לא בסקופ ===== -->
+  <div class="section">
+    <div class="section-title">מה לא כלול בשלב זה (Out of Scope)</div>
+    <ul>
+      <li>זיכרון חוצה-שיחות (סיכום אוטומטי של שיחות עבר לתוך ההקשר)</li>
+      <li>אפליקציית מובייל native (ה-web רספונסיבי)</li>
+      <li>אינטגרציות חיצוניות (יומן, CRM, תיעוד קליני) — בכוונה, סודיות</li>
+      <li>Multi-tenancy בפריסה אחת — כל לקוח/ה מקבל/ת פריסה נפרדת</li>
+    </ul>
+    <div class="tip"><strong>חשוב:</strong> סעיפים אלה ניתן לשקול בגרסה 2.0 לאחר אישור.</div>
+  </div>
+
+  <!-- ===== שלבי הפיתוח ===== -->
+  <div class="section">
+    <div class="section-title">שלבי הקמת לקוח/ה חדש/ה (מהתבנית)</div>
+    <div class="step"><div class="step-num">1</div><div class="step-text"><strong>אינטייק זהות:</strong> ראיון + מילוי פרופיל ה-DNA הטיפולי — יום</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text"><strong>מיתוג והרכבה:</strong> brand.ts, מתגים, צבעים, ידע — 1–2 ימים</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text"><strong>מסירה:</strong> מסלול A — התקנה בחשבון הלקוח/ה; מסלול B — Supabase + Vercel + דומיין + הדרכה — 1–2 ימים</div></div>
+  </div>
+
+  <!-- ===== אישור ===== -->
+  <div class="section">
+    <div class="section-title">אישור מסמך</div>
+    <p>מסמך זה מוגש לאישור לפני גזירת מוצר ללקוח/ה. שינויים לאחר האישור עשויים להשפיע על לוחות הזמנים והעלויות.</p>
+    <table>
+      <tbody>
+        <tr><td><strong>הוכן על ידי</strong></td><td>נירה טל | מתודה פתרונות AI</td><td><strong>תאריך:</strong> ___________</td></tr>
+        <tr><td><strong>אושר על ידי</strong></td><td>[שם הלקוח/ה]</td><td><strong>תאריך:</strong> ___________</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <img src="logo.png" alt="מתודה AI" class="footer-logo" onerror="this.style.display='none'" />
+  <div class="footer-name">נירה טל | מתודה פתרונות AI</div>
+  <div class="footer-links">
+    <span>© כל הזכויות שמורות</span>
+    <span class="footer-sep">|</span>
+    <a href="tel:0542215222">054-2215222</a>
+    <span class="footer-sep">|</span>
+    <a href="mailto:nira.tal@metoda.ai">nira.tal@metoda.ai</a>
+  </div>
+</div>
+
+</body>
+</html>

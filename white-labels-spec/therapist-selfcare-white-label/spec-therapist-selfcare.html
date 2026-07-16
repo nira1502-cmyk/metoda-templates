@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אפיון — Therapist Self-Care | White Label | מתודה פתרונות AI</title>
+  <link rel="stylesheet" href="../shared-styles.css" />
+  <style>
+    .pill {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pill-green  { background: #dcfce7; color: #166534; }
+    .pill-amber  { background: #fef9c3; color: #92400e; }
+    .pill-blue   { background: #dbeafe; color: #1e40af; }
+    .pill-gray   { background: #f1f5f9; color: #475569; }
+    .pill-teal   { background: #ccfbf1; color: #0f766e; }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 700px) { .module-grid { grid-template-columns: 1fr; } }
+
+    .module-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 14px 16px;
+      background: #fff;
+    }
+    .module-card h4 {
+      margin: 0 0 6px;
+      font-size: 0.95rem;
+      color: #1e293b;
+    }
+    .module-card p {
+      margin: 0 0 8px;
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+    .module-card .price {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .sales-box {
+      background: linear-gradient(135deg, #0f172a 0%, #134e4a 100%);
+      color: #fff;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 24px 0;
+    }
+    .sales-box h2 { color: #e2e8f0; margin-top: 0; font-size: 1.3rem; }
+    .sales-box ul { padding-right: 20px; margin: 12px 0 0; }
+    .sales-box li { margin-bottom: 8px; font-size: 0.92rem; line-height: 1.6; color: #cbd5e1; }
+    .sales-box li strong { color: #fff; }
+
+    .flow-phase {
+      border: 1px solid #e2e8f0;
+      border-right: 4px solid #0d9488;
+      border-radius: 10px;
+      padding: 14px 16px;
+      background: #fff;
+      margin-top: 10px;
+    }
+    .flow-phase h4 { margin: 0 0 6px; font-size: 0.95rem; color: #1e293b; }
+    .flow-phase p, .flow-phase li { font-size: 0.87rem; color: #475569; line-height: 1.6; }
+    .flow-phase ul { margin: 6px 0 0; padding-right: 18px; }
+
+    .trust-box {
+      background: linear-gradient(135deg, #f0fdf4 0%, #f0fdfa 100%);
+      border: 1px solid #a7f3d0;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 16px 0;
+    }
+    .trust-box h3 { color: #065f46; margin-top: 0; font-size: 1rem; }
+    .trust-box p, .trust-box li { font-size: 0.88rem; color: #064e3b; line-height: 1.65; }
+    .trust-box ul { padding-right: 20px; margin: 8px 0 0; }
+
+    .checkin-states {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 12px 0;
+    }
+    @media (max-width: 600px) { .checkin-states { grid-template-columns: repeat(2, 1fr); } }
+
+    .state-card {
+      text-align: center;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 12px 8px;
+      background: #f8fafc;
+      font-size: 0.87rem;
+      color: #334155;
+    }
+    .state-card .emoji { font-size: 1.5rem; display: block; margin-bottom: 4px; }
+    .state-card .key  { font-size: 0.72rem; color: #94a3b8; margin-top: 4px; font-family: monospace; }
+  </style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <div class="cover-badge">מסמך אפיון ופיץ׳ מכירה — White Label</div>
+  <h1>Therapist Self-Care</h1>
+  <div class="cover-sub">מרחב אישי מבוסס AI למי שמחזיק/ה מרחב לאחרים — צ׳ק-אין רגשי של 30 שניות שמחזיר הפוגה מותאמת אישית בשפת עמית/ה</div>
+  <div class="cover-meta">מתודה פתרונות AI | נירה טל | יולי 2026 | גרסה 1.0</div>
+</div>
+
+<div class="doc-wrapper">
+
+  <!-- ===== פיץ׳ מכירה ===== -->
+  <div class="section">
+    <div class="section-title">למה המטפל/ת צריכ/ה את זה?</div>
+
+    <div class="sales-box">
+      <h2>הבעיה שאנחנו פותרים</h2>
+      <ul>
+        <li><strong>מטפלות/ים הם האנשים שמחזיקים הכי הרבה מרחב לאחרים</strong> — ואין להם כמעט מקום לעצמם. בין פגישה לפגישה, לאחר מקרה כבד, בסוף יום — אין ריטואל טיפולי קצר שמסייע להם לחזור לעצמם.</li>
+        <li><strong>Burnout בקרב אנשי טיפול עומד על ~50%</strong> — חרדה, עייפות חמלה, תחושת ריקנות. הפתרונות הקיימים הם ספרים, וובינרים, קורסים — לא כלי שגרה יומיומי שמתאים לזמן שיש בין שתי פגישות.</li>
+        <li><strong>כלים גנריים של מיינדפולנס</strong> — לא מדברים בשפה המקצועית. מטפל/ת שלמד/ה 6-8 שנים לא צריכ/ה מדיטציה לביצה — הוא/היא צריכ/ה עמית/ה מקצועי/ת שמדבר/ת אליו/ה בגובה העיניים.</li>
+        <li><strong>Supervision קיים</strong> — אבל הוא תקופתי, ממוקד קלינית ולא מרחב לרווחה האישית. מה שחסר הוא ריטואל בין-פגישתי, מהיר, פרטי לחלוטין.</li>
+      </ul>
+    </div>
+
+    <div class="info-box">
+      <strong>הפתרון:</strong> צ׳ק-אין של 30 שניות (מה מרגיש/ה עכשיו + מילה על מה קרה) שמחזיר הפוגה מותאמת — ציטוט, תרגיל נשימה, שאלה לתשומת לב עצמית, מחשבה — בשפת עמית/ה, לפי הפרופיל המקצועי של המשתמש/ת. יומן פרטי לחלוטין (גם מהמנהל/ת) לנייד מחשבות ותחושות.
+    </div>
+
+    <h3>למי זה מתאים — הלקוח/ה של מתודה</h3>
+    <ul>
+      <li><strong>מטפל/ת מנחה</strong> שמרכז/ת supervision group — רוצה להציע לקבוצה כלי מרחב אישי ממותג בשמו/ה</li>
+      <li><strong>מכון / קליניקה</strong> שרוצה להשקיע ברווחת הצוות הטיפולי הפנימי</li>
+      <li><strong>מאמנ/ת מנטל/ית</strong> שעובד/ת עם קהל של אנשי עזרה — ורוצה לתת להם כלי בין הפגישות</li>
+      <li><strong>תוכנית הכשרה</strong> לפסיכולוגים, עו"ס, עובדי רווחה — כחלק ממארז הרווחה של הסטודנטים</li>
+    </ul>
+  </div>
+
+  <!-- ===== פרטי המוצר ===== -->
+  <div class="section">
+    <div class="section-title">פרטי המוצר</div>
+    <table>
+      <tbody>
+        <tr><td><strong>שם המוצר</strong></td><td>"המרחב שלי" (ניתן להחלפה בשם של הלקוח/ה)</td></tr>
+        <tr><td><strong>קהל יעד</strong></td><td>פסיכולוגים, עובדי סוציאליים קליניים, מאמנים מנטליים, מטפלי CBT/ACT/DBT ועוד</td></tr>
+        <tr><td><strong>פלטפורמה</strong></td><td>Next.js 16 + React 19 + Supabase + Claude API + Vercel</td></tr>
+        <tr><td><strong>שפה</strong></td><td>עברית, RTL מלא, פנייה מגדרית לפי בחירת המשתמש/ת</td></tr>
+        <tr><td><strong>AI</strong></td><td>Claude (Anthropic) — הפוגות, הנחיות יומן, שיחה קצרה</td></tr>
+        <tr><td><strong>מבנה</strong></td><td>חבילת בסיס + מודולים נבחרים</td></tr>
+        <tr><td><strong>זמן הקמה ללקוח/ה</strong></td><td>2-4 שעות (מיתוג + Supabase + Vercel + הזנת תוכן ראשוני)</td></tr>
+        <tr><td><strong>סטטוס</strong></td><td><span class="badge badge-green">תבנית מוכנה לפריסה — build ✓, typecheck ✓</span></td></tr>
+        <tr><td><strong>תמחור</strong></td><td>חבילת בסיס ₪5,000–₪7,500 + מודולים — פירוט בהמשך</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== קהל יעד ===== -->
+  <div class="section">
+    <div class="section-title">קהל יעד</div>
+
+    <h3>המשתמש/ת — המטפל/ת</h3>
+    <ul>
+      <li>פסיכולוג/ית קלינית, עו"ס קליני/ת, פסיכותרפיסט/ית, מאמן/ת מנטלי/ת</li>
+      <li>בין 28–55, עם השכלה אקדמית מתקדמת — מצפה לכלי שמדבר בשפתו/ה</li>
+      <li>רוצה משהו <strong>מהיר ופרטי</strong> — לא קורס, לא אפליקציה מורכבת, לא תיעוד עצמי כבד</li>
+      <li>עובד/ת לפי גישה (CBT, ACT, גשטלט, דינמי) — רוצה שהמרחב יכיר את זה</li>
+    </ul>
+
+    <h3>הלקוח/ה של מתודה — בעל/ת הרישיון</h3>
+    <ul>
+      <li>מנהל/ת את המערכת: מעלה תוכן לספרייה, מנהל/ת משתמשים, רואה סטטיסטיקות אנונימיות</li>
+      <li>אינו/ה רואה תכנים אישיים של משתמשים — עיקרון מכירתי מרכזי</li>
+    </ul>
+
+    <div class="tip"><strong>נקודת מכירה מרכזית לאנשי הטיפול:</strong> "המרחב הזה פרטי לחלוטין — גם המנחה שלך לא רואה מה כתבת. זה המרחב שלך בלבד."</div>
+  </div>
+
+  <!-- ===== זרימת המשתמש/ת ===== -->
+  <div class="section">
+    <div class="section-title">זרימת השימוש — הלב של המוצר</div>
+    <p>הזרימה המרכזית: <strong>צ׳ק-אין → הפוגת AI → פעולה</strong>. כל המודולים סובבים סביבה.</p>
+
+    <div class="flow-phase">
+      <h4>שלב 1 — צ׳ק-אין (30 שניות)</h4>
+      <ul>
+        <li>המשתמש/ת בוחר/ת <strong>מצב רגשי</strong> מ-6 כרטיסים: עייפ/ה 🌫️ | כבד/ה 🪨 | מרוקנ/ת 🕯️ | בסדר 🌤️ | טוב/ה ☀️ | זקוק/ה להפוגה 🌿</li>
+        <li>(אופציונלי) textarea קצר — מה קורה עכשיו? בלי הנחיה מכבידה, רק "ספר/י לי מה עבר עליך"</li>
+        <li>שמירה אחת → מעבר לשלב ה-AI</li>
+      </ul>
+    </div>
+
+    <div class="flow-phase">
+      <h4>שלב 2 — מנוע ה-AI מייצר הפוגה</h4>
+      <ul>
+        <li>Claude מקבל: מצב רגשי + פרופיל מקצועי (גישות, ערכים, מה מחזק) + ספריית תוכן</li>
+        <li>בוחר פריט מספריית בעל/ת הרישיון <strong>או</strong> יוצר תוכן מותאם</li>
+        <li>מחזיר: ציטוט / תרגיל / שאלה לתשומת לב / מחשבה — 3-8 שורות בשפת עמית/ה</li>
+        <li>פנייה מגדרית (נ/ז) לפי הפרופיל האישי</li>
+      </ul>
+    </div>
+
+    <div class="flow-phase">
+      <h4>שלב 3 — פעולה מתוך ההפוגה</h4>
+      <ul>
+        <li><strong>שמירה לספרייה האישית</strong> — הפוגות שאהבת נשמרות + חיפוש</li>
+        <li><strong>דירוג "עזר לי / פחות"</strong> — משפר את ה-AI לאורך זמן (מודול)</li>
+        <li><strong>שיחה קצרה "ספר/י לי מה קרה"</strong> — פריקה תחומה של עד 7 חילופים שנסגרת בהפוגה (מודול פרימיום)</li>
+        <li><strong>פתיחת יומן</strong> — כתיבה פרטית עם הנחיית כתיבה מה-AI (מודול)</li>
+      </ul>
+    </div>
+
+    <h3>מצבי הצ׳ק-אין — 6 מפתחות קבועים</h3>
+    <div class="checkin-states">
+      <div class="state-card"><span class="emoji">🌫️</span><strong>עייפ/ה</strong><div class="key">tired</div></div>
+      <div class="state-card"><span class="emoji">🪨</span><strong>כבד/ה</strong><div class="key">heavy</div></div>
+      <div class="state-card"><span class="emoji">🕯️</span><strong>מרוקנ/ת</strong><div class="key">drained</div></div>
+      <div class="state-card"><span class="emoji">🌤️</span><strong>בסדר</strong><div class="key">okay</div></div>
+      <div class="state-card"><span class="emoji">☀️</span><strong>טוב/ה</strong><div class="key">good</div></div>
+      <div class="state-card"><span class="emoji">🌿</span><strong>זקוק/ה להפוגה</strong><div class="key">needs_pause</div></div>
+    </div>
+    <p style="font-size:0.85rem;color:#64748b;margin-top:8px;">הניסוחים ניתנים להתאמה ב-brand.ts; המפתחות קבועים ב-DB ולא ניתנים לשינוי בלי migration.</p>
+  </div>
+
+  <!-- ===== פרופיל ===== -->
+  <div class="section">
+    <div class="section-title">פרופיל אישי-מקצועי — הלב שמאמן את ה-AI</div>
+    <p>הפרופיל הוא מה שהופך את ה-AI ל"עמית/ה" ולא לבוט גנרי. ממולא פעם אחת, משפיע על כל הפוגה:</p>
+
+    <table>
+      <thead>
+        <tr><th>שדה</th><th>תיאור</th><th>השפעה על ה-AI</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>שם מלא</strong></td><td>לתצוגה אישית</td><td>פנייה בשם בהפוגה</td></tr>
+        <tr><td><strong>גוף פנייה</strong></td><td>נקבה / זכר (radio)</td><td>כל טקסט AI בגוף המדויק</td></tr>
+        <tr><td><strong>גישות טיפוליות</strong></td><td>CBT, ACT, DBT, גשטלט, דינמי, מיינדפולנס, EMDR...</td><td>AI בוחר תוכן מתואם גישה</td></tr>
+        <tr><td><strong>תחומי עבודה</strong></td><td>חרדה, טראומה, זוגיות, ילדים, מבוגרים...</td><td>הקשר קליני להפוגה</td></tr>
+        <tr><td><strong>ערכים מקצועיים</strong></td><td>עם מה מזדהים/ת — אמפתיה, גבולות, סקרנות...</td><td>טון וזהות ה-AI</td></tr>
+        <tr><td><strong>נושאים שקשה כרגע</strong></td><td>מה מאתגר בתקופה זו (לא שדה חובה)</td><td>רגישות ה-AI לנושאים כבדים</td></tr>
+        <tr><td><strong>מה מחזק אותי</strong></td><td>תרגיל / טבע / מוזיקה / שיחה...</td><td>סוג ההפוגה המועדף</td></tr>
+        <tr><td><strong>סגנון הפוגה מועדף</strong></td><td>ציטוטים / תרגילים / שאלות / מחשבות (checkboxes)</td><td>ה-AI מתאים את סוג התוכן</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info-box"><strong>חשוב:</strong> הפרופיל אינו נחשף למנהל/ת — רק ה-AI רואה אותו בזמן יצירת ההפוגה. הוא נשמר ב-<code>profiles</code> עם RLS מלא.</div>
+  </div>
+
+  <!-- ===== פרטיות יומן ===== -->
+  <div class="section">
+    <div class="section-title">פרטיות היומן — חוזה האמון של המוצר</div>
+
+    <div class="trust-box">
+      <h3>🔒 שלוש שכבות הגנה — לא ניתנות להחלשה</h3>
+      <ul>
+        <li><strong>שכבה 1 — RLS:</strong> policy יחיד <code>journal_owner_only</code> — אין policy קריאה לאדמין, אפילו לא ל-count. בעלים בלבד.</li>
+        <li><strong>שכבה 2 — DB:</strong> <code>REVOKE ALL ON journal_entries FROM service_role</code> — גם ה-service key (שמשמש adminClient) חסום ברמת מסד הנתונים. אין דרך לעקוף.</li>
+        <li><strong>שכבה 3 — קוד:</strong> ה-AI מקבל רק <em>מצב הצ׳ק-אין</em> לצורך הנחיית הכתיבה — לעולם לא את תוכן היומן עצמו.</li>
+      </ul>
+    </div>
+
+    <p><strong>למה זה נקודת מכירה ולא רק תכונה טכנית:</strong> מטפלות/ים כותבים ביומן על רגשות שעולים אחרי מקרים קשים. אם יש חשש שמישהו יראה — הם לא יכתבו. המרחב הזה יעיל רק אם הוא באמת פרטי, ללא תנאים.</p>
+
+    <div class="tip"><strong>טיפ לשיחת מסירה עם לקוח/ה:</strong> לארוז את שלוש השכבות כ"הבטחת הפרטיות" ולהסביר שזו נקודת מבדל מפורשת שהלקוח/ה יכול/ה להציג לחברי הקבוצה.</div>
+  </div>
+
+  <!-- ===== חבילת בסיס ===== -->
+  <div class="section">
+    <div class="section-title">מה כלול בחבילת הבסיס</div>
+
+    <h3>ממשק המשתמש/ת</h3>
+    <ul>
+      <li>דף נחיתה ממותג + הרשמה / כניסה / שחזור סיסמה</li>
+      <li>צ׳ק-אין — 6 כרטיסי מצב + textarea אופציונלי</li>
+      <li>הפוגת AI מותאמת לפרופיל (מספריית בעל/ת הרישיון או יצירה)</li>
+      <li>שמירה לספרייה אישית + חיפוש</li>
+      <li>פרופיל אישי-מקצועי מלא (גישות, ערכים, מה מחזק, סגנון הפוגה, גוף פנייה)</li>
+    </ul>
+
+    <h3>ממשק האדמין</h3>
+    <ul>
+      <li>סטטיסטיקות אנונימיות בלבד (מספרים — אין תוכן): משתמשים פעילים, שיעור שביעות רצון, מגמת מצבי צ׳ק-אין</li>
+      <li>ניהול תוכן ספרייה: ציטוטים / תרגילי הפוגה / מחשבות / שאלות לתשומת לב / מאמרים</li>
+      <li>ניהול משתמשים: הזמנה, מחיקה</li>
+    </ul>
+
+    <h3>תשתית</h3>
+    <ul>
+      <li>Supabase RLS — הפרדת נתונים מלאה + הגנת יומן שלושה שכבות</li>
+      <li>RTL מלא + פונט Assistant (עברית)</li>
+      <li>פריסה ל-Vercel עם CI/CD אוטומטי</li>
+    </ul>
+
+    <div class="note"><strong>מחיר חבילת בסיס:</strong> ₪5,000–₪7,500 (הקמה חד-פעמית) — כולל מיתוג מלא, Supabase + Vercel ייעודיים, ליווי מסירה ושיחת הדרכה</div>
+  </div>
+
+  <!-- ===== מודולים ===== -->
+  <div class="section">
+    <div class="section-title">מודולים — מחוברים ומוכנים, הדלקה במתג</div>
+    <p>כל מודול ממומש בתבנית ומכובה כברירת מחדל. הדלקה = שינוי דגל ב-<code>config/modules.ts</code>.</p>
+
+    <div class="module-grid">
+      <div class="module-card">
+        <h4>📓 יומן פרטי</h4>
+        <p>כתיבה פרטית לחלוטין (גם מהאדמין) + הנחיית כתיבה מה-AI לפי מצב הצ׳ק-אין. ה-AI לא רואה את התוכן — רק מציע הנחיה.</p>
+        <span class="pill pill-green">מוכן</span>&nbsp;<span class="price">₪600–₪1,000</span>
+      </div>
+      <div class="module-card">
+        <h4>📚 ספריית חומרים מקצועיים</h4>
+        <p>"חדש בתחום שלי" — מאמרים, ספרים, פודקאסטים שהאדמין מעלה, מסוננים לפי הגישות המקצועיות של המשתמש/ת.</p>
+        <span class="pill pill-green">מוכן</span>&nbsp;<span class="price">₪800–₪1,400</span>
+      </div>
+      <div class="module-card">
+        <h4>⭐ דירוג הפוגות</h4>
+        <p>"עזר לי / פחות" — כפתורי דירוג על ההפוגה. אחוז שביעות רצון מופיע בלוח הניהול. מאפשר כיול ה-AI לאורך זמן.</p>
+        <span class="pill pill-green">מוכן</span>&nbsp;<span class="price">₪400–₪700</span>
+      </div>
+      <div class="module-card">
+        <h4>💬 שיחה קצרה — פרימיום</h4>
+        <p>פריקה תחומה: "ספר/י לי מה קרה" נפתחת מתוך צ׳ק-אין. <strong>עד 7 חילופים בלבד</strong>, נסגרת תמיד בהפוגה. לא צ׳אטבוט פתוח.</p>
+        <span class="pill pill-teal">פרימיום</span>&nbsp;<span class="price">₪1,200–₪2,000</span>
+      </div>
+      <div class="module-card">
+        <h4>🐛 דיווח תקלות</h4>
+        <p>עמוד טופס Fillout לאדמין — קישור פנימי לדיווח תקלות ומשוב.</p>
+        <span class="pill pill-green">מוכן</span>&nbsp;<span class="price">₪0–₪200</span>
+      </div>
+      <div class="module-card">
+        <h4>📖 קישור מדריך</h4>
+        <p>קישור למדריך משתמש חיצוני (כתובת URL) בתפריט הצד — לאחר שנבנה המדריך.</p>
+        <span class="pill pill-green">מוכן</span>&nbsp;<span class="price">₪0–₪150</span>
+      </div>
+    </div>
+
+    <div class="note"><strong>כיצד מכבים מודול:</strong> שינוי הדגל ל-<code>false</code> ב-<code>config/modules.ts</code> — המודול לא מופיע בתפריט ועמודו מחזיר 404. אין צורך בקוד נוסף.</div>
+  </div>
+
+  <!-- ===== Roadmap ===== -->
+  <div class="section">
+    <div class="section-title">Roadmap — מודולים בתוכנית פיתוח</div>
+    <p>הפיצ׳רים הבאים <strong>אינם קיימים עדיין</strong> בתבנית — כל אחד דורש פיתוח ייעודי ומתומחר בנפרד.</p>
+
+    <table>
+      <thead>
+        <tr><th>מודול</th><th>תיאור</th><th>טווח מחיר</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🔔 תזכורת צ׳ק-אין עדינה</td><td>מייל / וואטסאפ "לא היית כאן שבוע" — בלי streak, בלי לחץ, בלי אשמה</td><td>₪500–₪900</td></tr>
+        <tr><td>📬 דיוור "תוכן השבוע"</td><td>Make webhook + דיוור שבועי אוטומטי עם פריט מהספרייה המקצועית</td><td>₪800–₪1,400</td></tr>
+        <tr><td>📊 תובנות אישיות</td><td>"החודש שלך" — מגמת מצבים אישית לעיני המשתמש/ת בלבד</td><td>₪700–₪1,200</td></tr>
+        <tr><td>📱 PWA — אפליקציית ווב</td><td>"הוסף למסך הבית" + חוויית mobile מלאה, עבודה offline בסיסית</td><td>₪800–₪1,500</td></tr>
+        <tr><td>⬇️ ייצוא יומן אישי</td><td>המשתמש/ת מוריד/ה את היומן שלו/ה כ-PDF — ה-AI לא מעורב בשום שלב</td><td>₪400–₪700</td></tr>
+        <tr><td>🔗 גשר Clinical Thinking Partner</td><td>מעבר חלק בין כלי ה-Supervision לכלי הרווחה האישית — <code>ctp_user_id</code> שמור</td><td>לפי אפיון</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== שירותים נלווים ===== -->
+  <div class="section">
+    <div class="section-title">שירותים נלווים (מחוץ לקוד)</div>
+    <table>
+      <thead>
+        <tr><th>שירות</th><th>תיאור</th><th>טווח מחיר</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🌐 דומיין מותאם</td><td>חיבור דומיין הלקוח/ה + SSL + עדכון Auth URLs ב-Supabase</td><td>₪350–₪600</td></tr>
+        <tr><td>✉️ מיתוג מיילים</td><td>SMTP מותאם (Resend וכד׳) + SPF/DKIM — מיילי המערכת יוצאים מהדומיין של הלקוח/ה</td><td>₪250–₪500</td></tr>
+        <tr><td>📖 מדריך משתמש ממותג</td><td>אתר מדריך נפרד בסגנון הלקוח/ה — למשתמשות ולמשתמשים</td><td>₪800–₪1,500</td></tr>
+        <tr><td>📥 הזנת תוכן ראשוני</td><td>בניית ספריית פתיחה: 15-20 תכני הפוגה + חומרים מקצועיים מותאמים לגישת הלקוח/ה</td><td>₪600–₪1,200</td></tr>
+        <tr><td>🎙️ ליווי ניסוח זהות ה-AI</td><td>סדנת שעה לניסוח ה-Tone וזהות העמית/ה + כיול על תוצאות אמיתיות ראשונות</td><td>₪400–₪800</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== אינטגרציות ===== -->
+  <div class="section">
+    <div class="section-title">אינטגרציות (דרך Make / Webhook)</div>
+    <p style="font-size:0.87rem;color:#475569;"><strong>עיקרון ברזל:</strong> אף אינטגרציה לא נוגעת בתכנים אישיים של המשתמש/ת — מטא-דאטה בלבד (מועד הצטרפות, מספר שימושים, תשלום).</p>
+    <table>
+      <thead>
+        <tr><th>אינטגרציה</th><th>שימוש עיקרי</th><th>טווח מחיר</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>📧 דיוור (Rav Messer / Smoove / Mailchimp)</td><td>ניוזלטר "תוכן השבוע", מייל קבלת פנים אישי</td><td>₪500–₪1,000</td></tr>
+        <tr><td>💳 תשלומים (Grow / Cardcom / PayPlus)</td><td>מנוי חודשי — פתיחת / סגירת גישה אוטומטית</td><td>₪1,000–₪2,000</td></tr>
+        <tr><td>💬 וואטסאפ (Green API / Twilio)</td><td>תזכורת עדינה, הודעת קליטה</td><td>₪800–₪1,500</td></tr>
+        <tr><td>📋 CRM (Fireberry / monday / Airtable)</td><td>סנכרון מנויים ומעקב אחרי מחזור חיי הלקוח/ה</td><td>₪800–₪1,500</td></tr>
+        <tr><td>📝 טפסים (Fillout)</td><td>שאלון קליטה, טופס משוב תקופתי, שאלון הצטרפות</td><td>₪0–₪300</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== מה מותאם ללקוח ===== -->
+  <div class="section">
+    <div class="section-title">מה מותאם אישית בכל התקנה (White Label)</div>
+    <table>
+      <thead>
+        <tr><th>רכיב</th><th>התאמה</th><th>איפה</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>שם המוצר ולוגו</strong></td><td>שם ה"מרחב", לוגו, favicon</td><td>brand.ts + public/brand/</td></tr>
+        <tr><td><strong>צבעי מותג</strong></td><td>פלטת צבעים מלאה בהמרה ל-oklch</td><td>app/globals.css</td></tr>
+        <tr><td><strong>זהות ה-AI</strong></td><td>שם העמית/ה, שורת זהות, הנחיית טון, גוף ברירת מחדל</td><td>brand.ts → ai block</td></tr>
+        <tr><td><strong>ניסוח כרטיסי צ׳ק-אין</strong></td><td>תוויות ואימוג׳ים — מפתחות DB קבועים</td><td>brand.ts → checkinStates</td></tr>
+        <tr><td><strong>כתב ויתור קליני</strong></td><td>ניסוח מחדש אפשרי, הסרה — אסורה</td><td>brand.ts → clinicalDisclaimer</td></tr>
+        <tr><td><strong>מודולים פעילים</strong></td><td>הדלקה / כיבוי לפי חבילה שנרכשה</td><td>config/modules.ts</td></tr>
+        <tr><td><strong>תוכן הספרייה</strong></td><td>ציטוטים, תרגילים, מחשבות — לפי גישת הלקוח/ה</td><td>לוח ניהול / CSV</td></tr>
+        <tr><td><strong>דומיין</strong></td><td>סאב-דומיין ייעודי או דומיין הלקוח/ה</td><td>Vercel + Supabase Auth</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== ארכיטקטורה ===== -->
+  <div class="section">
+    <div class="section-title">ארכיטקטורה טכנית</div>
+    <table>
+      <tbody>
+        <tr><td><strong>Frontend</strong></td><td>Next.js 16 App Router, React 19, Tailwind CSS 4, shadcn/ui על @base-ui/react, TypeScript strict</td></tr>
+        <tr><td><strong>Backend / DB</strong></td><td>Supabase PostgreSQL עם RLS, מפתחות 2026 (publishable + secret)</td></tr>
+        <tr><td><strong>Auth</strong></td><td>Supabase Auth — email + password</td></tr>
+        <tr><td><strong>AI</strong></td><td>Claude API (@anthropic-ai/sdk) — מודל קבוע ב-env, קריאות server-side בלבד (server-only)</td></tr>
+        <tr><td><strong>RTL</strong></td><td>dir="rtl" lang="he" ב-root layout, פונט Assistant (Hebrew subset)</td></tr>
+        <tr><td><strong>Hosting</strong></td><td>Vercel Fluid Compute, CI/CD אוטומטי</td></tr>
+        <tr><td><strong>Auth Middleware</strong></td><td>proxy.ts עם named export (לא middleware.ts)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>מבנה DB עיקרי</h3>
+    <ul>
+      <li><code>profiles</code> — פרופיל מקצועי מלא כולל <code>ctp_user_id</code> לגשר עתידי</li>
+      <li><code>checkins</code> — צ׳ק-אינים עם constraint על 6 מצבים</li>
+      <li><code>library_items</code> — תוכן הספרייה (respite + professional)</li>
+      <li><code>ai_responses</code> — הפוגות שנוצרו כולל דירוג</li>
+      <li><code>saved_content</code> — הפוגות ותכנים שנשמרו</li>
+      <li><code>journal_entries</code> — יומן, מוגן בשלוש שכבות</li>
+      <li><code>chat_sessions + chat_messages</code> — מודול miniChat</li>
+      <li><code>get_admin_stats()</code> — RPC (security definer) שמחזיר מספרים בלבד לאדמין</li>
+    </ul>
+
+    <div class="tip"><strong>יתרון תשתיתי:</strong> התבנית בנויה מגרעין מוכח (LMS White Label) — Auth, RLS, components/ui, proxy.ts — עם שינויים מינימליים. הפיתוח הוא מוצר חדש, לא בנייה מאפס.</div>
+  </div>
+
+  <!-- ===== עלויות שוטפות ===== -->
+  <div class="section">
+    <div class="section-title">עלויות שוטפות (לשקף ללקוח/ה)</div>
+    <table>
+      <thead>
+        <tr><th>רכיב</th><th>סדר גודל</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Claude API</td><td>הפוגה אחת ≈ אגורות בודדות; לקבוצה של 30 אנשים ~ ₪20–₪150/חודש</td></tr>
+        <tr><td>Supabase</td><td>Free tier מספיק לפתיחה; Pro $25/חודש בצמיחה</td></tr>
+        <tr><td>Vercel</td><td>Hobby חינם; Pro $20/חודש אם נדרש</td></tr>
+        <tr><td>אחזקה חודשית (מתודה)</td><td>ריטיינר מומלץ ₪200–₪500/חודש</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== שלבי הקמה ===== -->
+  <div class="section">
+    <div class="section-title">שלבי ההקמה ללקוח/ה חדש/ה</div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text"><strong>פגישת אפיון קצרה</strong> — שם המוצר, זהות ה-AI (ה׳עמית/ה׳), גישות טיפוליות, מודולים, מיתוג</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><strong>הקמת סביבה ייעודית</strong> — Supabase פרויקט חדש + הרצת schema.sql + Vercel deployment</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><strong>מיתוג וקונפיגורציה</strong> — brand.ts (שם, AI, ניסוחים), modules.ts, צבעים, לוגו, favicon</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text"><strong>הזנת תוכן ראשוני</strong> — ספריית פתיחה (15-20 פריטים) לפי גישת הלקוח/ה</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text"><strong>QA</strong> — צ׳ק-אין, הפוגה, יומן, אדמין, בדיקת פרטיות יומן (חובה!), מובייל</div></div>
+      <div class="step"><div class="step-num">6</div><div class="step-text"><strong>מסירה</strong> — שיחת הדרכה לבעל/ת הרישיון: ניהול תוכן, משתמשים, מה האדמין <em>לא</em> רואה</div></div>
+    </div>
+  </div>
+
+  <!-- ===== הערות למכירה ===== -->
+  <div class="section">
+    <div class="section-title">הערות למכירה</div>
+
+    <div class="info-box">
+      <strong>טיפ לשיחת מכירה:</strong> לפתוח ב"מי מחזיק/ה אותך?" — זה המשפט שמטפלות/ים מרגישות/ים בבטן. לאחר מכן להציג את ה-30 שניות + ההפוגה. הדמו עובד גם בלי שהם מילאו פרופיל — ה-AI עובד על ברירות מחדל.
+    </div>
+
+    <ul>
+      <li><strong>המבדל הראשי מכלים גנריים</strong> — שפת עמית/ה, שמכיר/ה את הגישה המקצועית. לא "נשום עמוק" — אלא "כעמית/ה שעובד/ת גם עם ACT, שמתי לב ש..."</li>
+      <li><strong>פרטיות היומן</strong> — הסבירו שזה לא רק הבטחה, זה מוצר ב-DB. המנחה לא יוכל/ת לראות גם אם ירצה/תרצה.</li>
+      <li><strong>Supervision groups</strong> — להדגיש שכל משתתפ/ת מקבל/ת חוויה מותאמת לפרופיל שלו/ה, לא הפוגה גנרית לקבוצה.</li>
+      <li><strong>מכונים / קליניקות</strong> — להוביל לשיחה על הזנת תוכן ראשוני + ליווי ניסוח זהות AI (הכי משפיעים על עומק החוויה).</li>
+    </ul>
+
+    <table>
+      <tbody>
+        <tr><td><strong>הוכן על ידי</strong></td><td>נירה טל | מתודה פתרונות AI</td><td><strong>תאריך:</strong> יולי 2026</td></tr>
+        <tr><td><strong>גרסה</strong></td><td>1.0</td><td><span class="badge badge-amber">מסמך פנימי</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <div class="footer-name">נירה טל | מתודה פתרונות AI</div>
+  <div class="footer-links">
+    <span>© כל הזכויות שמורות</span>
+    <span class="footer-sep">|</span>
+    <a href="tel:0542215222">054-2215222</a>
+    <span class="footer-sep">|</span>
+    <a href="mailto:nira@metoda.ai">nira@metoda.ai</a>
+  </div>
+</div>
+
+</body>
+</html>

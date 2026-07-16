@@ -388,6 +388,82 @@
     </table>
   </div>
 
+  <!-- ===== מה הלקוח/ה צריכ/ה לספק ===== -->
+  <div class="section">
+    <div class="section-title">מה הלקוח/ה צריכ/ה לספק לפני ההקמה</div>
+
+    <h3>🎨 תוכן ויזואל ומיתוג</h3>
+    <table>
+      <thead>
+        <tr><th>נכס</th><th>מפרט</th><th>הכרחי?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>לוגו — רקע בהיר</strong></td><td>PNG / SVG, רקע שקוף, לפחות 400px רוחב</td><td><span class="badge badge-red">חובה</span></td></tr>
+        <tr><td><strong>לוגו — רקע כהה</strong></td><td>גרסה בהירה של הלוגו לכותרת כהה (אם קיים)</td><td><span class="badge badge-amber">מומלץ</span></td></tr>
+        <tr><td><strong>פאביקון</strong></td><td>PNG 512×512 או SVG — מה שמופיע בטאב הדפדפן</td><td><span class="badge badge-red">חובה</span></td></tr>
+        <tr><td><strong>צבעי המותג</strong></td><td>צבע ראשי + צבע רקע + צבע הדגשה (hex או "מהלוגו")</td><td><span class="badge badge-red">חובה</span></td></tr>
+        <tr><td><strong>תמונת Hero לדף הנחיתה</strong></td><td>תמונה / איור לדף הבית (רוחב 1920px מינימום)</td><td><span class="badge badge-gray">אופציונלי</span></td></tr>
+        <tr><td><strong>תמונות קורסים</strong></td><td>Thumbnail לכל קורס — 16:9 מינימום 800×450px</td><td><span class="badge badge-gray">אופציונלי</span></td></tr>
+        <tr><td><strong>טקסט דף הנחיתה</strong></td><td>כותרת ראשית, תת-כותרת, תיאור קצר, CTA — אפשר לגבש ביחד</td><td><span class="badge badge-amber">מומלץ</span></td></tr>
+      </tbody>
+    </table>
+
+    <h3>📚 תוכן הלמידה</h3>
+    <table>
+      <thead>
+        <tr><th>נכס</th><th>מפרט</th><th>הכרחי?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>שמות קורסים + שיעורים</strong></td><td>מבנה הקורס: שם, תיאור, רשימת שיעורים מסודרת</td><td><span class="badge badge-red">חובה</span></td></tr>
+        <tr><td><strong>קישורי וידאו</strong></td><td>YouTube / Vimeo / URL ישיר לכל שיעור</td><td><span class="badge badge-red">חובה</span></td></tr>
+        <tr><td><strong>תמלולים לשיעורים</strong></td><td>קובץ .txt / .docx לכל שיעור — נדרש לעוזר ה-AI</td><td><span class="badge badge-amber">אם AI נרכש</span></td></tr>
+        <tr><td><strong>מאגר ידע ל-AI</strong></td><td>FAQ, שיטת עבודה, ביוגרפיה — מה שה-AI יכיר בכל שיחה</td><td><span class="badge badge-amber">אם AI נרכש</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="tip"><strong>טיפ לשיחת הקמה:</strong> כדאי לשלוח ללקוח/ה רשימת "מה להכין לפני הפגישה" — זה חוסך עיכובים ומראה מקצועיות.</div>
+  </div>
+
+  <!-- ===== פלטפורמות וכלים לחיבור ===== -->
+  <div class="section">
+    <div class="section-title">פלטפורמות וכלים טכנולוגיים — מה צריך לחבר</div>
+    <p>חלק מהכלים <strong>נפתחים על ידינו</strong> ומועברים ללקוח/ה; חלק <strong>שייכים ללקוח/ה מראש</strong> ונדרש API Key או גישה.</p>
+
+    <h3>כלי ליבה — תמיד נדרשים</h3>
+    <table>
+      <thead>
+        <tr><th>כלי / פלטפורמה</th><th>מה נדרש מהלקוח/ה</th><th>מי פותח</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🌐 <strong>דומיין</strong></td><td>גישה לרשם הדומיינים (GoDaddy / Namecheap / IsraelDomain וכד') + שם הדומיין הרצוי לפלטפורמה (למשל: <code>learn.shם-לקוח.co.il</code>)</td><td>הלקוח/ה בעלי הדומיין — נבצע את הגדרת CNAME</td></tr>
+        <tr><td>📧 <strong>כתובת מייל אדמין</strong></td><td>כתובת Gmail / מייל עסקי לחשבון הניהול הראשי</td><td>הלקוח/ה</td></tr>
+        <tr><td>🗄️ <strong>Supabase</strong></td><td>אין — נפתח חשבון חדש ומעבירים גישת Admin</td><td>מתודה</td></tr>
+        <tr><td>🚀 <strong>Vercel</strong></td><td>אין — נפתח פרויקט ומעבירים גישת Admin</td><td>מתודה</td></tr>
+        <tr><td>💻 <strong>GitHub</strong></td><td>אין — נפתח Repo פרטי ומעבירים גישת Collaborator</td><td>מתודה</td></tr>
+      </tbody>
+    </table>
+
+    <h3>כלים לפי מודולים שנרכשו</h3>
+    <table>
+      <thead>
+        <tr><th>כלי / פלטפורמה</th><th>מה נדרש מהלקוח/ה</th><th>מתי נדרש</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🤖 <strong>Anthropic API</strong></td><td>אין — Key נרכש על ידינו ומוזן בסביבה</td><td>מודול AI</td></tr>
+        <tr><td>✉️ <strong>Resend (SMTP מותאם)</strong></td><td>אין — חשבון Resend שלנו + אימות הדומיין שלהם (SPF/DKIM)</td><td>מיתוג מיילים</td></tr>
+        <tr><td>💬 <strong>Green API / Twilio</strong></td><td>מספר טלפון WhatsApp Business ייעודי + חשבון Green API / Twilio</td><td>אינטגרציית וואטסאפ</td></tr>
+        <tr><td>📧 <strong>ספק דיוור</strong> (Rav Messer / Smoove / Mailchimp)</td><td>חשבון קיים + API Key</td><td>אינטגרציית דיוור</td></tr>
+        <tr><td>💳 <strong>ספק תשלומים</strong> (Grow / Cardcom / PayPlus)</td><td>חשבון עסקי קיים + API Key / Webhook Secret</td><td>אינטגרציית תשלומים</td></tr>
+        <tr><td>🎥 <strong>Zoom</strong></td><td>חשבון Zoom Pro + הרשאות OAuth App (Client ID + Secret)</td><td>אינטגרציית Zoom</td></tr>
+        <tr><td>📅 <strong>Google Calendar / Calendly</strong></td><td>חשבון Google (עם הרשאות Calendar API) או Calendly Pro + API Key</td><td>אינטגרציית יומן</td></tr>
+        <tr><td>🗂️ <strong>CRM</strong> (Fireberry / monday / Airtable)</td><td>חשבון קיים + API Key + מבנה ה-Board / הטבלה</td><td>אינטגרציית CRM</td></tr>
+        <tr><td>⚙️ <strong>Make (Integromat)</strong></td><td>אין — חשבון Make שלנו; הלקוח/ה מקבל/ת גישת Viewer אופציונלי</td><td>כל אינטגרציה</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note"><strong>כלל אצבע:</strong> כל כלי שהלקוח/ה כבר משתמש/ת בו — נחבר אליו ולא נחליף. כל כלי שאין להם — נמליץ ונפתח.</div>
+  </div>
+
   <!-- ===== שלבי הקמה ===== -->
   <div class="section">
     <div class="section-title">שלבי ההקמה ללקוח/ה חדש/ה</div>

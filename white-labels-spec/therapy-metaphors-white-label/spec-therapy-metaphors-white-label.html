@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אפיון — Metaphor Engine White Label</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="shared-styles.css" />
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <img src="logo.png" alt="לוגו" class="cover-logo" />
+  <div class="cover-badge">מסמך אפיון — White Label</div>
+  <h1>Metaphor Engine — מנוע מטאפורות ודימויים</h1>
+  <div class="cover-sub">מנוע AI שמתרגם מושגים טיפוליים לעולם התוכן של המטופל/ת — ובונה ספרייה אישית של מטאפורות שעבדו</div>
+  <div class="cover-meta">הוכן על ידי נירה טל | מתודה פתרונות AI | יולי 2026 | גרסה 1.0</div>
+</div>
+
+<div class="doc-wrapper">
+
+  <!-- ===== סיכום מנהלים ===== -->
+  <div class="section">
+    <div class="section-title">סיכום מנהלים</div>
+    <p>
+      מטפלים/ות ותיקים/ות יודעים/ות את התיאוריה — אבל מתקשים/ות להנגיש מושגים מופשטים
+      ("ויסות רגשי", "חשיבה דיכוטומית") לעולם התוכן של המטופל/ת. Metaphor Engine הופך
+      מושג טיפולי + עולם תוכן לחמש מטאפורות מוכנות לשימוש בפגישה — בשלוש שניות, מהטלפון.
+    </p>
+    <div class="info-box">
+      <strong>מטרת המוצר:</strong> שהמטפל/ת לעולם לא תעצור בפגישה בלי דימוי — ושכל דימוי שעבד יישמר לפעם הבאה.
+    </div>
+  </div>
+
+  <!-- ===== פרטי הפרויקט ===== -->
+  <div class="section">
+    <div class="section-title">פרטי התבנית</div>
+    <table>
+      <tbody>
+        <tr><td><strong>סוג</strong></td><td>תבנית White Label (master template)</td></tr>
+        <tr><td><strong>תיקיית קוד</strong></td><td>Projects_New\metaphor-engine-white-label</td></tr>
+        <tr><td><strong>מגישת האפיון</strong></td><td>נירה טל | מתודה פתרונות AI</td></tr>
+        <tr><td><strong>תאריך</strong></td><td>יולי 2026</td></tr>
+        <tr><td><strong>גרסה</strong></td><td>1.0</td></tr>
+        <tr><td><strong>סטטוס</strong></td><td><span class="badge badge-amber">תבנית פעילה</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== קהל יעד ===== -->
+  <div class="section">
+    <div class="section-title">קהל יעד</div>
+    <h3>משתמש/ת ראשי/ת — המטפל/ת</h3>
+    <p>
+      פסיכולוגים/יות, עו"סים/ות קליניים/ות ומטפלים/ות רגשיים/ות. משתמשים/ות במוצר
+      תוך כדי פגישה או בהפסקה של 2 דקות בין פגישות — לרוב מהטלפון. כל מסך חייב
+      לעבוד ב-30 שניות: שני שדות + כפתור → תוצאה.
+    </p>
+    <h3>משתמש/ת משני/ת — האדמין (בעל/ת הרישיון)</h3>
+    <p>
+      מנהל/ת המכון או בעל/ת המותג: מנהל/ת משתמשים, מגדיר/ה את עולמות התוכן,
+      מעלה חבילות מטאפורות מוכנות ורואה סטטיסטיקות שימוש — ללא גישה לתוכן.
+    </p>
+    <div class="tip">
+      <strong>כאב מרכזי:</strong> ברגע קריטי בפגישה המטפל/ת צריכה דימוי מהיר בשפת
+      המטופל/ת — ורוב הזמן אין לה. היא מסבירה מחדש בשפה טיפולית שאינה שפת אמו/ה של המטופל/ת.
+    </div>
+  </div>
+
+  <!-- ===== מסכים ===== -->
+  <div class="section">
+    <div class="section-title">מסכים ופונקציונליות</div>
+
+    <h3>1. מסך היצירה (הליבה)</h3>
+    <p>שני שדות + כפתור. Mobile-first.</p>
+    <ul>
+      <li>מושג טיפולי — טקסט חופשי קצר</li>
+      <li>עולם תוכן — צ'יפים מהרשימה המהירה + הזנה חופשית</li>
+      <li>תוצאה: 5 כרטיסי מטאפורה — דימוי, הסבר קצר, "אפשר לשאול: ___", דגל זהירות/גיל</li>
+      <li>פעולות על כרטיס: העתקה ללוח, עריכה חופשית + שמירה לספרייה עם תיוגים</li>
+      <li>"5 אחרות" — regenerate שלא חוזר על מה שכבר בספרייה</li>
+    </ul>
+
+    <hr class="divider" />
+
+    <h3>2. הספרייה האישית</h3>
+    <ul>
+      <li>כל מה שנשמר, מתויג לפי מטופל/ת, נושא וגישה טיפולית</li>
+      <li>חיפוש חופשי ("מה שמור לי על ויסות רגשי?") + סינון לפי עולם</li>
+      <li>סימוני "השתמשתי" (מונה) ו"עבד טוב"</li>
+      <li>ייבוא חבילות מוכנות שהאדמין העלה</li>
+      <li>ייצוא: CSV + PDF (עמוד הדפסה נקי)</li>
+    </ul>
+
+    <hr class="divider" />
+
+    <h3>3. פרופיל מקצועי</h3>
+    <ul>
+      <li>גישות טיפוליות (CBT / ACT / נרטיבית ועוד + חופשי), גיל קהל, שפת עבודה, הגבלות ורגישויות</li>
+      <li>מזין את ה-AI — מטפל/ת CBT מקבל/ת מטאפורות שונות ממטפל/ת ACT</li>
+    </ul>
+
+    <hr class="divider" />
+
+    <h3>4. מסכי ניהול (אדמין)</h3>
+    <ul>
+      <li>משתמשים/ות — הוספה עם סיסמה זמנית, הרשאות, מחיקה</li>
+      <li>עולמות תוכן — הוספה/כיבוי/מחיקה של הרשימה המהירה</li>
+      <li>חבילות מטאפורות — העלאת ספריות מוכנות (JSON) שמשתמשים/ות מייבאים/ות</li>
+      <li>סטטיסטיקות — מושגים ועולמות פופולריים ב-90 יום, מקור (אפליקציה/API) — ללא תוכן</li>
+    </ul>
+
+    <hr class="divider" />
+
+    <h3>5. הזדהות</h3>
+    <ul>
+      <li>התחברות, כניסה ראשונה, שחזור ועדכון סיסמה (Supabase Auth)</li>
+    </ul>
+  </div>
+
+  <!-- ===== ארכיטקטורה ומסלולי מכירה ===== -->
+  <div class="section">
+    <div class="section-title">שני מסלולי מכירה — עיקרון ארכיטקטוני מחייב</div>
+    <p><strong>מסלול א — עצמאי:</strong> מטפל/ת רוכש/ת ומפעיל/ה את המוצר בפני עצמו. אין תלות בשום מוצר אחר של מתודה.</p>
+    <p><strong>מסלול ב — מודול של Clinical Thinking Partner:</strong> מתוך מסך המקרה ב-CTP, כפתור "מצאי מטאפורה" קורא ל-API של המנוע עם פרופיל המטופל/ת.</p>
+    <div class="info-box">
+      <strong>החיבור ל-CTP הוא REST API בלבד:</strong> POST /api/generate-metaphor עם אימות
+      API key. אין שיתוף קוד, אין שיתוף DB, אין FK בין המסדים. therapistProfile מגיע
+      כ-payload — המנוע לא יודע ולא צריך לדעת מי קורא לו. כל מימוש אחר — נדחה.
+    </div>
+  </div>
+
+  <!-- ===== דרישות טכניות ===== -->
+  <div class="section">
+    <div class="section-title">דרישות טכניות</div>
+    <table>
+      <thead>
+        <tr><th>רכיב</th><th>טכנולוגיה</th><th>הערות</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Frontend</td><td>Next.js 16 + React 19 + TypeScript Strict</td><td>RTL מלא, mobile-first, Server Components</td></tr>
+        <tr><td>Backend / DB</td><td>Supabase (PostgreSQL + Auth + RLS)</td><td>הספרייה פרטית למשתמש/ת — גם מול אדמין</td></tr>
+        <tr><td>AI</td><td>Claude API (claude-sonnet-4-6)</td><td>קובץ מנוע יחיד — lib/metaphor-engine.ts</td></tr>
+        <tr><td>UI</td><td>Tailwind CSS 4 + shadcn/ui</td><td>מיתוג דרך brand.ts + BRAND PALETTE</td></tr>
+        <tr><td>Hosting</td><td>Vercel</td><td>Deploy אוטומטי מ-GitHub</td></tr>
+        <tr><td>API חיצוני</td><td>POST /api/generate-metaphor</td><td>אימות API key (EXTERNAL_API_KEYS)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== מודולים ===== -->
+  <div class="section">
+    <div class="section-title">מודולים ותמחור</div>
+    <p>כל מודול הוא מתג ב-config/modules.ts. פירוט מחירים — PRICING.md (פנימי).</p>
+    <table>
+      <thead>
+        <tr><th>מודול</th><th>מתג</th><th>תיאור</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>חבילת בסיס</td><td>—</td><td>מנוע הייצור, הזדהות, ניהול משתמשים, 11 עולמות מובנים</td></tr>
+        <tr><td>ספרייה אישית</td><td>personalLibrary</td><td>שמירה, תיוג, חיפוש, סימוני שימוש</td></tr>
+        <tr><td>פרופיל מקצועי</td><td>professionalProfile</td><td>פרופיל שמור שמזין את ה-AI</td></tr>
+        <tr><td>חבילות מטאפורות</td><td>metaphorPacks</td><td>ספריות מוכנות לייבוא</td></tr>
+        <tr><td>עולמות מותאמים</td><td>customWorlds</td><td>ניהול הרשימה המהירה ע"י אדמין</td></tr>
+        <tr><td>סטטיסטיקות</td><td>adminStats</td><td>שימוש ללא תוכן</td></tr>
+        <tr><td>ייצוא</td><td>exportData</td><td>PDF + CSV</td></tr>
+        <tr><td>גשר CTP</td><td>ctpBridge</td><td>ה-API החיצוני</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== לא בסקופ ===== -->
+  <div class="section">
+    <div class="section-title">מה לא כלול (Out of Scope)</div>
+    <ul>
+      <li>שיחה פתוחה עם AI — רק קלט מובנה ותוצאה מובנית</li>
+      <li>מאגר מטאפורות גלובלי או שיתוף בין מטפלים/ות — כל ספרייה פרטית</li>
+      <li>ייבוא אוטומטי מ-CTP — רק API call חד-כיווני ביוזמת CTP</li>
+      <li>גמיפיקציה</li>
+      <li>חיבור Smart Referrals — עתידי, ה-schema לא נערך לכך בכוונה</li>
+    </ul>
+  </div>
+
+  <!-- ===== שלבי הקמה ===== -->
+  <div class="section">
+    <div class="section-title">הקמת לקוח/ה מהתבנית</div>
+    <div class="step"><div class="step-num">1</div><div class="step-text"><strong>שכפול ותשתית:</strong> שכפול התבנית, פרויקט Supabase, הרצת schema.sql — כשעה</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text"><strong>מיתוג ומודולים:</strong> brand.ts, לוגו, פלטה, כיבוי מודולים שלא נרכשו — כשעה</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text"><strong>בדיקות, Deploy ומסירה:</strong> בדיקה מהטלפון, Vercel, דומיין, פגישת מסירה — 1–2 שעות</div></div>
+    <p>פלייבוק מלא: NEW-CLIENT.md בתיקיית הקוד.</p>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <img src="logo.png" alt="מתודה AI" class="footer-logo" onerror="this.style.display='none'" />
+  <div class="footer-name">נירה טל | מתודה פתרונות AI</div>
+  <div class="footer-links">
+    <span>© כל הזכויות שמורות</span>
+    <span class="footer-sep">|</span>
+    <a href="tel:0542215222">054-2215222</a>
+    <span class="footer-sep">|</span>
+    <a href="mailto:nira.tal@metoda.ai">nira.tal@metoda.ai</a>
+  </div>
+</div>
+
+</body>
+</html>

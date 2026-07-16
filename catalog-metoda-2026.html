@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>קטלוג שירותים ופתרונות — מתודה AI 2026</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="shared-styles.css" />
+  <style>
+    .cat-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 9px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .cat-available   { background: var(--green-light); color: var(--green); }
+    .cat-preorder    { background: var(--amber-light);  color: var(--amber); }
+    .price-col       { text-align: center; white-space: nowrap; }
+    .price-main      { font-weight: 700; color: var(--primary); font-size: 15px; }
+    .price-launch    { font-weight: 700; color: var(--green);   font-size: 15px; }
+    .price-label     { font-size: 11px; color: var(--text-muted); display: block; }
+    .id-col          { font-size: 12px; color: var(--text-muted); font-weight: 600; }
+    .section-icon    { margin-left: 6px; }
+    .policy-grid     { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 14px; }
+    .policy-card     { background: var(--primary-light); border-radius: 8px; padding: 12px 14px; }
+    .policy-card h4  { font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+    .policy-card p   { font-size: 13px; color: #444; margin: 0; }
+    .multiplier-row  { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+    .multiplier      { background: var(--bg); border-radius: 8px; padding: 8px 14px; font-size: 13px; }
+    .multiplier strong { color: var(--primary); }
+    td.name-col      { font-weight: 500; }
+    .note-small      { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+    @media print {
+      .policy-grid { grid-template-columns: 1fr 1fr 1fr; }
+      .section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <img src="logo.png" alt="לוגו" class="cover-logo" />
+  <div class="cover-badge">קטלוג מוצרים ושירותים</div>
+  <h1>מתודה פתרונות AI</h1>
+  <div class="cover-sub">שירותים, מוצרי White Label ופתרונות AI לאנשי מקצוע בתחום הנפש</div>
+  <div class="cover-meta">נירה טל | עדכון: יולי 2026 | כל המחירים כוללים מע"מ</div>
+</div>
+
+<div class="doc-wrapper">
+
+  <!-- ===== מדיניות תמחור ===== -->
+  <div class="section">
+    <div class="section-title">מדיניות תמחור</div>
+    <div class="policy-grid">
+      <div class="policy-card">
+        <h4>מחיר מחירון</h4>
+        <p>השווי הריאלי של המוצר. הבסיס לחישוב הצעות מחיר.</p>
+      </div>
+      <div class="policy-card">
+        <h4>מחיר השקה</h4>
+        <p>מחיר מיוחד לתקופת ההשקה (2026). המחיר שנגבה בפועל ללקוחות חדשים כעת.</p>
+      </div>
+      <div class="policy-card">
+        <h4>מחירים כוללים מע"מ</h4>
+        <p>כל המחירים בקטלוג זה כוללים מע"מ (18%). החלטה 09.07.2026.</p>
+      </div>
+    </div>
+    <h3>מקדמי גודל</h3>
+    <div class="multiplier-row">
+      <div class="multiplier"><strong>×1.0</strong> — עצמאי/ת (1 משתמש/ת)</div>
+      <div class="multiplier"><strong>×1.25</strong> — מכון / קליניקה (2–10 משתמשים)</div>
+      <div class="multiplier"><strong>×1.5</strong> — ארגון / אקדמיה (10+ משתמשים)</div>
+    </div>
+    <p class="note-small">לקוחות קיימים — grandfathering: לא מעלים מחיר ללקוח/ה קיימ/ת שנמצא/ת בתחזוקה.</p>
+  </div>
+
+  <!-- ===== יומנים טיפוליים ===== -->
+  <div class="section">
+    <div class="section-title"><span class="section-icon">📓</span>יומנים טיפוליים — White Label</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:70px">מזהה</th>
+          <th>שם המוצר</th>
+          <th class="price-col" style="width:110px">מחירון ₪</th>
+          <th class="price-col" style="width:110px">השקה ₪</th>
+          <th style="width:120px">תחזוקה</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="id-col">WL-01</td>
+          <td class="name-col">יומן רגשות לילדים</td>
+          <td class="price-col"><span class="price-main">5,300</span></td>
+          <td class="price-col"><span class="price-launch">3,500</span></td>
+          <td>בסיסית</td>
+        </tr>
+        <tr>
+          <td class="id-col">WL-02</td>
+          <td class="name-col">יומן CBT למבוגרים</td>
+          <td class="price-col"><span class="price-main">6,400</span></td>
+          <td class="price-col"><span class="price-launch">4,300</span></td>
+          <td>בסיסית</td>
+        </tr>
+        <tr>
+          <td class="id-col">WL-03</td>
+          <td class="name-col">יומן מלווה טיפול (Therapy Bridge)</td>
+          <td class="price-col"><span class="price-main">11,000</span></td>
+          <td class="price-col"><span class="price-launch">7,400</span></td>
+          <td>בסיסית</td>
+        </tr>
+        <tr>
+          <td class="id-col">WL-BND</td>
+          <td class="name-col">חבילת 3 היומנים <span class="badge badge-green" style="font-size:11px">חיסכון 15%</span></td>
+          <td class="price-col"><span class="price-main">19,300</span></td>
+          <td class="price-col"><span class="price-launch">12,900</span></td>
+          <td>בסיסית</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note-small">חבילת 3 היומנים: חיסכון ~15% מול רכישה בנפרד (3 יומנים בנפרד: מחירון 22,700 ₪ / השקה 15,200 ₪).</p>
+  </div>
+
+  <!-- ===== למידה והדרכה ===== -->
+  <div class="section">
+    <div class="section-title"><span class="section-icon">🎓</span>למידה והדרכה — White Label</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:70px">מזהה</th>
+          <th>שם המוצר</th>
+          <th class="price-col" style="width:110px">מחירון ₪</th>
+          <th class="price-col" style="width:110px">השקה ₪</th>
+          <th style="width:120px">תחזוקה</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="id-col">WL-04</td>
+          <td class="name-col">LMS — פלטפורמת למידה</td>
+          <td class="price-col"><span class="price-main">9,000</span></td>
+          <td class="price-col"><span class="price-launch">6,000</span></td>
+          <td>מורחבת</td>
+        </tr>
+        <tr>
+          <td class="id-col">WL-05</td>
+          <td class="name-col">Workshop Planner</td>
+          <td class="price-col"><span class="price-main">8,500</span></td>
+          <td class="price-col"><span class="price-launch">5,500</span></td>
+          <td>בסיסית</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== רווחת מטפלים ===== -->
+  <div class="section">
+    <div class="section-title"><span class="section-icon">🌿</span>רווחת מטפלים — White Label</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:70px">מזהה</th>
+          <th>שם המוצר</th>
+          <th class="price-col" style="width:110px">מחירון ₪</th>
+          <th class="price-col" style="width:110px">השקה ₪</th>
+          <th style="width:120px">תחזוקה</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="id-col">WL-06</td>
+          <td class="name-col">Therapist Self-Care</td>
+          <td class="price-col"><span class="price-main">6,500</span></td>
+          <td class="price-col"><span class="price-launch">4,300</span></td>
+          <td>בסיסית</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== חשיבה קלינית ===== -->
+  <div class="section">
+    <div class="section-title"><span class="section-icon">🧠</span>חשיבה קלינית — White Label</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:70px">מזהה</th>
+          <th>שם המוצר</th>
+          <th class="price-col" style="width:110px">מחירון ₪</th>
+          <th class="price-col" style="width:110px">השקה ₪</th>
+          <th style="width:150px">תחזוקה / הערות</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="id-col">WL-07A</td>
+          <td class="name-col">Clinical Thinking Partner — מסלול A (סוכן בחשבון הלקוח/ה)</td>
+          <td class="price-col"><span class="price-main">5,800</span></td>
+          <td class="price-col"><span class="price-launch">4,000</span></td>
+          <td>תמיכת פרומפט 350 ₪</td>
+        </tr>
+        <tr>
+          <td class="id-col">WL-07B</td>
+          <td class="name-col">Clinical Thinking Partner — מסלול B (מערכת מלאה)</td>
+          <td class="price-col"><span class="price-main">14,500</span></td>
+          <td class="price-col"><span class="price-launch">9,500</span></td>
+          <td>פרימיום (850/700)</td>
+        </tr>
+        <tr>
+          <td class="id-col">WL-07U</td>
+          <td class="name-col">שדרוג CTP A ← B</td>
+          <td class="price-col"><span class="price-main">6,500</span></td>
+          <td class="price-col"><span class="price-launch">4,000</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td class="id-col">WL-08</td>
+          <td class="name-col">Metaphor Engine (מטאפורות)</td>
+          <td class="price-col"><span class="price-main">9,600</span></td>
+          <td class="price-col"><span class="price-launch">6,500</span></td>
+          <td>לפי נפח (290/450/700)</td>
+        </tr>
+        <tr>
+          <td class="id-col">WL-08F</td>
+          <td class="name-col">Metaphor Engine — חבילה מלאה (בסיס + כל 7 המודולים) <span class="badge badge-green" style="font-size:11px">חיסכון 10%</span></td>
+          <td class="price-col"><span class="price-main">22,600</span></td>
+          <td class="price-col"><span class="price-launch">15,000</span></td>
+          <td>לפי נפח</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note-small">CTP A+שדרוג = מחיר השקה 8,000 ₪ | CTP B ישיר = 9,500 ₪ (סולם כניסה מכוון). Metaphor מלאה: חיסכון ~10% מול בסיס + מודולים בנפרד.</p>
+  </div>
+
+  <!-- ===== גל 2 ===== -->
+  <div class="section">
+    <div class="section-title"><span class="section-icon">🚀</span>גל 2 — בפיתוח | הזמנה מראש</div>
+    <div class="tip"><strong>מחיר מזמינים ראשונים:</strong> לקוחות שמזמינים/ות בשלב הפיתוח זוכים/ות למחיר השקה מיוחד ולכניסה ראשונה.</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:70px">מזהה</th>
+          <th>שם המוצר</th>
+          <th class="price-col" style="width:110px">מחירון ₪</th>
+          <th class="price-col" style="width:110px">השקה ₪</th>
+          <th style="width:120px">סטטוס</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="id-col">G2-01</td>
+          <td class="name-col">Audio to Text &amp; Multi-Report</td>
+          <td class="price-col"><span class="price-main">11,600</span></td>
+          <td class="price-col"><span class="price-launch">7,800</span></td>
+          <td><span class="cat-badge cat-preorder">בפיתוח</span></td>
+        </tr>
+        <tr>
+          <td class="id-col">G2-02</td>
+          <td class="name-col">פילטר ידע לקישור מאמרים</td>
+          <td class="price-col"><span class="price-main">8,000</span></td>
+          <td class="price-col"><span class="price-launch">5,500</span></td>
+          <td><span class="cat-badge cat-preorder">בפיתוח</span></td>
+        </tr>
+        <tr>
+          <td class="id-col">G2-03</td>
+          <td class="name-col">פורטפוליו חזותי למטפל/ת</td>
+          <td class="price-col"><span class="price-main">6,500</span></td>
+          <td class="price-col"><span class="price-launch">4,500</span></td>
+          <td><span class="cat-badge cat-preorder">בפיתוח</span></td>
+        </tr>
+        <tr>
+          <td class="id-col">G2-04</td>
+          <td class="name-col">מחולל חומרים לסדנאות</td>
+          <td class="price-col"><span class="price-main">7,500</span></td>
+          <td class="price-col"><span class="price-launch">5,000</span></td>
+          <td><span class="cat-badge cat-preorder">בפיתוח</span></td>
+        </tr>
+        <tr>
+          <td class="id-col">G2-05</td>
+          <td class="name-col">כלי ניהול עסקי למטפלים</td>
+          <td class="price-col"><span class="price-main">9,000</span></td>
+          <td class="price-col"><span class="price-launch">6,000</span></td>
+          <td><span class="cat-badge cat-preorder">בפיתוח</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== שירותים נלווים ===== -->
+  <div class="section">
+    <div class="section-title"><span class="section-icon">🔧</span>שירותים נלווים</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:70px">מזהה</th>
+          <th>שירות</th>
+          <th class="price-col" style="width:130px">מחיר ₪</th>
+          <th>הערות</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="id-col">SRV-01</td>
+          <td class="name-col">דומיין מותאם (חיבור + SSL)</td>
+          <td class="price-col"><span class="price-main">450</span></td>
+          <td>+ עלות הדומיין עצמו (לפי רישום)</td>
+        </tr>
+        <tr>
+          <td class="id-col">SRV-02</td>
+          <td class="name-col">מיתוג מיילים (SMTP + SPF/DKIM)</td>
+          <td class="price-col"><span class="price-main">350</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="id-col">SRV-03</td>
+          <td class="name-col">מדריך משתמש ממותג</td>
+          <td class="price-col"><span class="price-main">1,200</span></td>
+          <td>אתר מדריך נפרד</td>
+        </tr>
+        <tr>
+          <td class="id-col">SRV-04</td>
+          <td class="name-col">הזנת תוכן / ספריית ידע ראשונית</td>
+          <td class="price-col"><span class="price-main">800</span></td>
+          <td>בסיס — מחיר מדויק לפי היקף</td>
+        </tr>
+        <tr>
+          <td class="id-col">SRV-05</td>
+          <td class="name-col">ליווי בניית פרופיל AI / DNA (סדנת כיול)</td>
+          <td class="price-col"><span class="price-main">800</span></td>
+          <td>סדנת שעה + כיול על תוצאות</td>
+        </tr>
+        <tr>
+          <td class="id-col">SRV-06</td>
+          <td class="name-col">החלפת מיתוג ללקוח/ה קיימ/ת</td>
+          <td class="price-col"><span class="price-main">500</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="id-col">SRV-07</td>
+          <td class="name-col">ישות ידע נוספת (CTP)</td>
+          <td class="price-col"><span class="price-main">150</span></td>
+          <td>לישות (מעל 23 הישויות הכלולות)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note-small">מחירי שירותים נלווים הם מחירים אחידים (כולל מע"מ), ללא הנחת השקה.</p>
+  </div>
+
+  <!-- ===== אינטגרציות ===== -->
+  <div class="section">
+    <div class="section-title"><span class="section-icon">🔗</span>אינטגרציות (דרך Make / Webhook)</div>
+    <p style="font-size:14px; color:#555; margin-bottom:8px;">כל אינטגרציה כוללת הקמה, תרחיש Make ובדיקות. מחיר אחיד, כולל מע"מ.</p>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:70px">מזהה</th>
+          <th>אינטגרציה</th>
+          <th class="price-col" style="width:130px">מחיר ₪</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="id-col">INT-01</td><td class="name-col">וואטסאפ (Green API / Twilio)</td><td class="price-col"><span class="price-main">1,200</span></td></tr>
+        <tr><td class="id-col">INT-02</td><td class="name-col">תשלומים (Grow / Cardcom / PayPlus)</td><td class="price-col"><span class="price-main">1,500</span></td></tr>
+        <tr><td class="id-col">INT-03</td><td class="name-col">CRM (Fireberry / monday / Airtable)</td><td class="price-col"><span class="price-main">1,200</span></td></tr>
+        <tr><td class="id-col">INT-04</td><td class="name-col">דיוור (Rav Messer / Smoove / Mailchimp)</td><td class="price-col"><span class="price-main">750</span></td></tr>
+        <tr><td class="id-col">INT-05</td><td class="name-col">Zoom</td><td class="price-col"><span class="price-main">800</span></td></tr>
+        <tr><td class="id-col">INT-06</td><td class="name-col">יומן (Google Calendar / Calendly)</td><td class="price-col"><span class="price-main">650</span></td></tr>
+        <tr><td class="id-col">INT-07</td><td class="name-col">קבוצות חברתיות (פייסבוק / וואטסאפ)</td><td class="price-col"><span class="price-main">450</span></td></tr>
+        <tr><td class="id-col">INT-08</td><td class="name-col">טפסים (Fillout)</td><td class="price-col"><span class="price-main">150</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== תחזוקה חודשית ===== -->
+  <div class="section">
+    <div class="section-title"><span class="section-icon">🛡️</span>תחזוקה חודשית</div>
+    <p style="font-size:14px; color:#555; margin-bottom:8px;">כולל תשתית (Vercel + Supabase + Claude API עד שימוש סביר), עדכוני ידע, ותמיכה עדיפות.</p>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:70px">מזהה</th>
+          <th>מסלול</th>
+          <th class="price-col" style="width:110px">מחירון ₪/חודש</th>
+          <th class="price-col" style="width:110px">השקה ₪/חודש</th>
+          <th>הערות</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="id-col">MNT-01</td>
+          <td class="name-col">בסיסית — עצמאי/ת, שימוש רגיל</td>
+          <td class="price-col"><span class="price-main">390</span></td>
+          <td class="price-col"><span class="price-launch">290</span></td>
+          <td>תשתית + API עד שימוש סביר + שעת תמיכה</td>
+        </tr>
+        <tr>
+          <td class="id-col">MNT-02</td>
+          <td class="name-col">מורחבת — שימוש AI כבד / כמה מודולים</td>
+          <td class="price-col"><span class="price-main">590</span></td>
+          <td class="price-col"><span class="price-launch">450</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="id-col">MNT-03</td>
+          <td class="name-col">פרימיום — מערכת מלאה אינטנסיבית (CTP B)</td>
+          <td class="price-col"><span class="price-main">850</span></td>
+          <td class="price-col"><span class="price-launch">700</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="id-col">MNT-04</td>
+          <td class="name-col">ארגונית — מכון / צוות</td>
+          <td class="price-col"><span class="price-main">850</span></td>
+          <td class="price-col">—</td>
+          <td>+ 60 ₪ למשתמש/ת פעיל/ה</td>
+        </tr>
+        <tr>
+          <td class="id-col">MNT-05</td>
+          <td class="name-col">CTP מסלול A — תמיכת פרומפט בלבד</td>
+          <td class="price-col"><span class="price-main">350</span></td>
+          <td class="price-col">—</td>
+          <td>אין תשתית שלנו (הסוכן בחשבון הלקוח/ה)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note-small">לקוחות קיימים ב-grandfathering אינם מועברים למחירון — מחיר ההשקה נשמר כל עוד התחזוקה רצה.</p>
+  </div>
+
+  <!-- ===== ייעוץ ===== -->
+  <div class="section">
+    <div class="section-title"><span class="section-icon">💬</span>ייעוץ ופרויקטים מותאמים</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:70px">מזהה</th>
+          <th>שירות</th>
+          <th class="price-col" style="width:110px">מחירון ₪</th>
+          <th class="price-col" style="width:110px">השקה ₪</th>
+          <th>הערות</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="id-col">CON-01</td>
+          <td class="name-col">שעת ייעוץ / פיתוח</td>
+          <td class="price-col"><span class="price-main">450</span></td>
+          <td class="price-col"><span class="price-launch">350</span></td>
+          <td>לשעה, תמחור בפרויקטים מיוחדים</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== הערת סיום ===== -->
+  <div class="info-box" style="margin-top: 0;">
+    <strong>מקור אמת:</strong> מחירי הקטלוג מסונכרנים אוטומטית מ-Google Sheet (pricing-model-il-2026) ל-Notion קטלוג שירותים, פעם ביום בשעה 07:00. עדכון מחיר ב-Sheet → מחרת, Notion מתעדכן.
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <img src="logo.png" alt="מתודה AI" class="footer-logo" onerror="this.style.display='none'" />
+  <div class="footer-name">נירה טל | מתודה פתרונות AI</div>
+  <div class="footer-links">
+    <span>© כל הזכויות שמורות 2026</span>
+    <span class="footer-sep">|</span>
+    <a href="tel:0542215222">054-2215222</a>
+    <span class="footer-sep">|</span>
+    <a href="mailto:nira.tal@metoda.ai">nira.tal@metoda.ai</a>
+  </div>
+</div>
+
+</body>
+</html>
