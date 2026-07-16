@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>מערכת CRM לניהול קליניקה — מורן מילר | מתודה פתרונות AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Heebo', Arial, sans-serif; font-size: 15px; line-height: 1.85; color: #1e1e2e; background: #f7f7fb; }
+    a { color: #4361EE; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ===== LAYOUT ===== */
+    .wrapper { max-width: 860px; margin: 0 auto; padding: 0 0 64px; }
+
+    /* ===== COVER ===== */
+    .cover {
+      background: linear-gradient(135deg, #4361EE 0%, #7c3aed 100%);
+      color: #fff;
+      padding: 56px 48px 48px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .cover .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 4px 16px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .cover h1 { font-size: 28px; font-weight: 800; margin-bottom: 10px; }
+    .cover .subtitle { font-size: 15px; opacity: 0.85; margin-bottom: 28px; }
+    .cover .meta-pills { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .cover .pill {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      font-size: 12px;
+      padding: 4px 14px;
+    }
+    /* placeholder style — red in cover */
+    .cover .ph { color: #ffd6d6; font-weight: 700; }
+
+    /* ===== CONTENT WRAPPER ===== */
+    .content { padding: 0 32px; }
+
+    /* ===== SECTION ===== */
+    .section { background: #fff; border-radius: 14px; border: 1px solid #e8e8f0; padding: 32px 32px 28px; margin-bottom: 24px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .section-icon { font-size: 22px; width: 44px; height: 44px; border-radius: 12px; background: #f0f3ff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .section-title { font-size: 17px; font-weight: 700; color: #1e1e2e; }
+    .section-desc { font-size: 13px; color: #888; margin-top: 2px; }
+
+    /* ===== FEATURE GRID ===== */
+    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .feature-card { background: #f9f9fc; border: 1px solid #ebebf5; border-radius: 10px; padding: 16px 18px; }
+    .feature-card h4 { font-size: 14px; font-weight: 600; color: #4361EE; margin-bottom: 6px; }
+    .feature-card ul { padding-right: 16px; font-size: 13.5px; color: #444; }
+    .feature-card li { margin-bottom: 4px; }
+
+    /* ===== SYSTEMS LIST ===== */
+    .system-item { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid #f0f0f7; }
+    .system-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .system-logo { width: 44px; height: 44px; border-radius: 10px; background: #f0f3ff; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .system-body { flex: 1; }
+    .system-name { font-size: 14px; font-weight: 700; color: #1e1e2e; margin-bottom: 3px; }
+    .system-why { font-size: 13px; color: #555; }
+    .system-cost { font-size: 12px; font-weight: 600; margin-top: 5px; }
+    .cost-free { color: #16a34a; }
+    .cost-paid { color: #d97706; }
+
+    /* ===== DOCS LIST ===== */
+    .doc-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #f0f0f7; }
+    .doc-item:last-child { border-bottom: none; }
+    .doc-icon { font-size: 18px; margin-top: 1px; flex-shrink: 0; }
+    .doc-name { font-size: 14px; font-weight: 600; color: #1e1e2e; margin-bottom: 3px; }
+    .doc-desc { font-size: 13px; color: #555; }
+
+    /* ===== PRICING TABLE ===== */
+    .price-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .price-table th { background: #f5f5fa; padding: 10px 14px; text-align: right; font-weight: 600; border: 1px solid #e8e8f0; }
+    .price-table td { padding: 10px 14px; border: 1px solid #e8e8f0; }
+    .price-table tr:last-child td { font-weight: 700; background: #f0f3ff; }
+    .price-free { color: #16a34a; font-weight: 600; }
+    .price-paid { color: #374151; }
+
+    /* ===== STEPS ===== */
+    .steps { counter-reset: step; }
+    .step-item { display: flex; gap: 16px; margin-bottom: 18px; align-items: flex-start; }
+    .step-num {
+      counter-increment: step;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4361EE, #7c3aed);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .step-body h4 { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+    .step-body p { font-size: 13px; color: #555; }
+
+    /* ===== SECURITY ITEMS ===== */
+    .security-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .security-card { background: #f9f9fc; border: 1px solid #ebebf5; border-radius: 10px; padding: 16px 18px; }
+    .security-card h4 { font-size: 13px; font-weight: 700; color: #374151; margin-bottom: 6px; }
+    .security-card p { font-size: 13px; color: #555; }
+
+    .law-item { padding: 12px 0; border-bottom: 1px solid #f0f0f7; font-size: 13.5px; }
+    .law-item:last-child { border-bottom: none; }
+    .law-name { font-weight: 600; color: #4361EE; }
+
+    /* ===== ALERTS ===== */
+    .alert-note { background: #fffbeb; border-right: 4px solid #f59e0b; border-radius: 8px; padding: 14px 18px; font-size: 13.5px; color: #78350f; margin-top: 16px; }
+    .alert-info { background: #eff6ff; border-right: 4px solid #3b82f6; border-radius: 8px; padding: 14px 18px; font-size: 13.5px; color: #1e40af; margin-top: 16px; }
+    .alert-tip { background: #f0fdf4; border-right: 4px solid #22c55e; border-radius: 8px; padding: 14px 18px; font-size: 13.5px; color: #14532d; margin-top: 16px; }
+
+    /* ===== PLACEHOLDERS ===== */
+    .ph { color: #c00; font-weight: 700; }
+
+    /* ===== FOOTER ===== */
+    .footer { text-align: center; padding: 32px 32px 0; font-size: 12px; color: #aaa; }
+    .footer strong { color: #4361EE; }
+
+    /* ===== PRINT ===== */
+    @media print {
+      body { background: #fff; font-size: 13px; }
+      .wrapper { max-width: 100%; }
+      .cover { page-break-after: avoid; }
+      .section { border: 1px solid #ddd; page-break-inside: avoid; }
+      .feature-grid, .security-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 620px) {
+      .cover { padding: 36px 24px 32px; }
+      .content { padding: 0 16px; }
+      .section { padding: 22px 18px; }
+      .feature-grid, .security-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <div class="badge">מתודה פתרונות AI</div>
+  <h1>מערכת CRM לניהול קליניקה</h1>
+  <div class="subtitle">מה המערכת כוללת ומה צריך להכין — מסמך ללקוחה</div>
+  <div class="meta-pills">
+    <span class="pill">הוכן עבור: מורן מילר</span>
+    <span class="pill">תאריך: יולי 2026</span>
+    <span class="pill">גרסה 1.0</span>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ===== FEATURES ===== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon">✨</div>
+    <div>
+      <div class="section-title">מה המערכת תאפשר לך</div>
+      <div class="section-desc">כל הפיצ'רים הכלולים במערכת</div>
+    </div>
+  </div>
+
+  <div class="feature-grid">
+
+    <div class="feature-card">
+      <h4>📋 ניהול מטופלים</h4>
+      <ul>
+        <li>כרטיס מטופל מלא: פרטים אישיים, מי משלם, סיבת פנייה, אבחנות, רקע, מקור הפניה</li>
+        <li>גישה מהירה להיסטוריית מפגשים ותשלומים</li>
+        <li>ניהול אנשי קשר (הורים / מוסד / קופה)</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <h4>📅 יומן מפגשים</h4>
+      <ul>
+        <li>תצוגה יומית, שבועית וחודשית</li>
+        <li>סנכרון עם Google Calendar</li>
+        <li>יצירת מפגש בלחיצה: תאריך, משך, סוג, מחיר</li>
+        <li>פעולות מהירות מהיומן: תזכורת, שולם, נוכחות</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <h4>💰 גבייה ותשלומים</h4>
+      <ul>
+        <li>סטטוס לכל מפגש: שולם / לא שולם / מוסדי / חבילה</li>
+        <li>ניהול חבילות מפגשים וטפסי 17</li>
+        <li>הפקת חשבוניות וקבלות</li>
+        <li>דשבורד: הכנסות חודש, חובות פתוחים</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <h4>💬 תקשורת בוואטסאפ</h4>
+      <ul>
+        <li>תזכורות אוטומטיות לפני מפגש</li>
+        <li>הודעות על יתרת חוב</li>
+        <li>ניהול תבניות הודעות</li>
+        <li>אפשרות לאשר כל הודעה לפני שליחה</li>
+        <li>היסטוריית הודעות מלאה</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <h4>✅ נוכחות וביטולים</h4>
+      <ul>
+        <li>סימון: הגיע / לא הגיע / בוטל בזמן / בוטל מאוחר</li>
+        <li>מעקב לפי מדיניות הביטולים שלך</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <h4>🤖 AI — אפשרות עתידית</h4>
+      <ul>
+        <li>סיוע בניסוח הודעות</li>
+        <li>כל נתון עובר פילטר פרטיות לפני יציאה מהמערכת — שום פרט מזהה לא מגיע לשירות חיצוני</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== MAINTENANCE ===== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon">🔧</div>
+    <div>
+      <div class="section-title">תחזוקה חודשית</div>
+    </div>
+  </div>
+  <p>לאחר שהמערכת עולה לאוויר, תכלול התחזוקה החודשית:</p>
+  <ul style="margin: 12px 0 8px 0; padding-right: 20px; font-size: 14px;">
+    <li>זמינות ותמיכה שוטפת</li>
+    <li>עדכוני מערכת ושיפורים</li>
+  </ul>
+  <div class="alert-info" style="margin-bottom: 14px;">
+    תשתית הענן (Supabase, Vercel) ושימוש ב-API הם בחשבונות הלקוחה ישירות — ואינם כלולים בעלות זו.
+  </div>
+  <p style="font-size: 15px; font-weight: 700; color: #4361EE;">
+    עלות: 280 ₪/חודש <span style="font-size:12px; font-weight:400; color:#888;">(מחיר השקה)</span>
+  </p>
+</div>
+
+<!-- ===== DOCUMENTS ===== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon">📝</div>
+    <div>
+      <div class="section-title">מסמכים לחתימה לפני תחילת העבודה</div>
+      <div class="section-desc">כולם יישלחו כקבצים מוכנים לחתימה</div>
+    </div>
+  </div>
+
+  <div class="doc-item">
+    <div class="doc-icon">🤝</div>
+    <div>
+      <div class="doc-name">הסכם שירות</div>
+      <div class="doc-desc">תנאי ההתקשרות, תמחור, אחריות ולוחות זמנים</div>
+    </div>
+  </div>
+
+  <div class="doc-item">
+    <div class="doc-icon">🔒</div>
+    <div>
+      <div class="doc-name">הסכם עיבוד נתונים (DPA)</div>
+      <div class="doc-desc">מגדיר שנתוני המטופלים שייכים לך בלבד, ושמתודה מעבדת אותם רק לצורך הפעלת המערכת — בהתאם לחוק הגנת הפרטיות הישראלי</div>
+    </div>
+  </div>
+
+  <div class="doc-item">
+    <div class="doc-icon">🤐</div>
+    <div>
+      <div class="doc-name">הסכם סודיות (NDA)</div>
+      <div class="doc-desc">מתודה מחויבת לסודיות מלאה לגבי כל מידע שנחשפת אליו במסגרת הניהול הטכני</div>
+    </div>
+  </div>
+
+  <div class="alert-note">
+    <strong>לתשומת לבך:</strong> תצטרכי לוודא שטפסי ההסכמה שלך מול מטופלים / הורים כוללים התייחסות לשמירת מידע במערכת דיגיטלית. נוכל לספק נוסח מומלץ.
+  </div>
+</div>
+
+<!-- ===== SYSTEMS ===== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon">⚙️</div>
+    <div>
+      <div class="section-title">המערכות הדרושות</div>
+      <div class="section-desc">לא תצטרכי להבין טכנולוגיה — רק לפתוח חשבונות חינמיים</div>
+    </div>
+  </div>
+
+  <div class="system-item">
+    <div class="system-logo">📧</div>
+    <div class="system-body">
+      <div class="system-name">חשבון Google</div>
+      <div class="system-why">המערכת מסתנכרנת עם Google Calendar שלך — מפגשים עוברים בין השניים אוטומטית. אם כבר יש חשבון גוגל, אין צורך לפתוח חדש.</div>
+      <div class="system-cost cost-free">✓ חינם לחלוטין</div>
+    </div>
+  </div>
+
+  <div class="system-item">
+    <div class="system-logo">🗄️</div>
+    <div class="system-body">
+      <div class="system-name">Supabase</div>
+      <div class="system-why">כאן מאוחסנים כל הנתונים שלך — מטופלים, מפגשים, תשלומים. החשבון <strong>על שמך</strong>, הנתונים <strong>שייכים לך</strong>, ניתן לייצא הכל בכל עת. פתיחה: supabase.com עם כתובת המייל שלך.</div>
+      <div class="system-cost cost-free">✓ חינם עד מאות מטופלים ואלפי מפגשים</div>
+    </div>
+  </div>
+
+  <div class="system-item">
+    <div class="system-logo">🚀</div>
+    <div class="system-body">
+      <div class="system-name">Vercel</div>
+      <div class="system-why">השירות שמריץ את האפליקציה שלך — הכתובת שממנה תיכנסי למערכת כל יום. מבטיח זמינות 24/7, מהירות ואבטחה. גם חשבון זה <strong>על שמך</strong>. פתיחה: vercel.com עם חשבון הגוגל שלך.</div>
+      <div class="system-cost cost-free">✓ חינם לקליניקה פרטית</div>
+    </div>
+  </div>
+
+  <div class="system-item">
+    <div class="system-logo">💬</div>
+    <div class="system-body">
+      <div class="system-name">WhatsApp Business</div>
+      <div class="system-why">מאפשר לשלוח תזכורות אוטומטיות בצורה חוקית ומסודרת. האוטומציה עובדת רק עם מספר עסקי נפרד — לא עם הוואטסאפ האישי. אם כרגע את מתקשרת מהמספר האישי — נדון יחד איך לעשות את המעבר בצורה חלקה.</div>
+      <div class="system-cost cost-paid">⬥ האפליקציה חינמית | שליחת הודעות: כ-20–50 ₪/חודש בממוצע</div>
+    </div>
+  </div>
+
+  <div class="alert-info">
+    <strong>מה מנוהל על ידי מתודה (לא דורש פעולה מצדך):</strong> GitHub (מאגר הקוד של המוצר) + כל הגדרות הטכניות, עדכונים ותחזוקה שוטפת.
+  </div>
+</div>
+
+<!-- ===== PRICING ===== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon">💳</div>
+    <div>
+      <div class="section-title">עלויות חודשיות — סיכום</div>
+    </div>
+  </div>
+
+  <table class="price-table">
+    <thead>
+      <tr>
+        <th>שירות</th>
+        <th>עלות חודשית</th>
+        <th>הערה</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Supabase</td>
+        <td class="price-free">חינם</td>
+        <td>Free Tier — בחשבון הלקוחה</td>
+      </tr>
+      <tr>
+        <td>Vercel</td>
+        <td class="price-free">חינם</td>
+        <td>Hobby Plan — בחשבון הלקוחה</td>
+      </tr>
+      <tr>
+        <td>Google Calendar</td>
+        <td class="price-free">חינם</td>
+        <td>עם חשבון Google קיים</td>
+      </tr>
+      <tr>
+        <td>WhatsApp Business</td>
+        <td class="price-paid">כ-20–50 ₪</td>
+        <td>לפי נפח שליחה — בחשבון הלקוחה</td>
+      </tr>
+      <tr>
+        <td>תחזוקה ותמיכה (מתודה)</td>
+        <td class="price-paid">280 ₪</td>
+        <td>מחיר השקה</td>
+      </tr>
+      <tr>
+        <td><strong>סה"כ משוער</strong></td>
+        <td><strong>כ-300–330 ₪/חודש</strong></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== SECURITY ===== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon">🛡️</div>
+    <div>
+      <div class="section-title">אבטחת מידע ופרטיות</div>
+    </div>
+  </div>
+
+  <div class="security-grid">
+
+    <div class="security-card">
+      <h4>🗂️ בעלות על הנתונים</h4>
+      <p>הנתונים מאוחסנים בחשבון Supabase שעל שמך. הנתונים שייכים לך — לא למתודה.</p>
+    </div>
+
+    <div class="security-card">
+      <h4>👥 מי יכולה לגשת</h4>
+      <p>את — גישה מלאה. מתודה — גישת אדמין לתחזוקה ותמיכה בלבד, כמוגדר ב-DPA. כל גורם אחר — ללא גישה.</p>
+    </div>
+
+    <div class="security-card">
+      <h4>🔐 הצפנה ואבטחה</h4>
+      <p>כל החיבורים מוצפנים (HTTPS). הנתונים מוצפנים גם באחסון. גיבויים יומיים אוטומטיים. כל גישה מתועדת.</p>
+    </div>
+
+    <div class="security-card">
+      <h4>🤖 AI ופרטיות</h4>
+      <p>בכל שימוש ב-AI: שמות, תאריכים ופרטים מזהים מוחלפים אוטומטית לפני שהטקסט יוצא מהמערכת. שום פרט מזהה לא מגיע לשירות חיצוני.</p>
+    </div>
+
+    <div class="security-card">
+      <h4>📤 יציאה חופשית</h4>
+      <p>בכל עת: ייצוא מלא של כל הנתונים ל-Excel, או מחיקה מלאה. אין נעילת ספק.</p>
+    </div>
+
+    <div class="security-card">
+      <h4>📋 ציות לרגולציה</h4>
+      <p>בהתאם לחוק הגנת הפרטיות תשמ"א-1981 ותקנות אבטחת מידע תשע"ז-2017.</p>
+    </div>
+
+  </div>
+
+  <!-- LAWS -->
+  <div style="margin-top: 24px;">
+    <p style="font-size: 14px; font-weight: 600; margin-bottom: 14px; color: #374151;">עמידה בדרישות משרד הבריאות והרגולציה המקצועית</p>
+
+    <div class="law-item">
+      <span class="law-name">חוק זכויות החולה תשנ"ו-1996 —</span>
+      זכות המטופל לעיין ברשומותיו. המערכת מאפשרת ייצוא נתוני מטופל בכל עת לפי בקשה.
+    </div>
+
+    <div class="law-item">
+      <span class="law-name">תקנות שמירת רשומות רפואיות —</span>
+      רשומות נשמרות לפחות 7 שנים (מבוגרים) ועד גיל 25 לפחות עבור ילדים ובני נוער. המערכת לא מוחקת נתונים ללא הוראה מפורשת שלך.
+    </div>
+
+    <div class="law-item">
+      <span class="law-name">חוק הפסיכולוגים תשל"ז-1977 / חוק העובדים הסוציאליים תשנ"ו-1996 —</span>
+      גישה לנתונים מוגבלת למינימום הנדרש, בהתאם לחובת הסודיות המקצועית.
+    </div>
+
+    <div class="law-item">
+      <span class="law-name">חוק הגנת הפרטיות תשמ"א-1981 (תיקון 13) —</span>
+      במקרה של פרצת אבטחה: מתודה מודיעה לך תוך 72 שעות. האחריות על דיווח לרשות הגנת הפרטיות ולמטופלים חלה עלייך כבעלת מסד הנתונים.
+    </div>
+
+    <div class="alert-note" style="margin-top: 16px;">
+      <strong>חשוב:</strong> האחריות על הרשומות הקליניות עצמן ועל קיום חובות הדיווח (כגון דיווח לרשויות לפי חוק) נשארת עלייך כמטפלת מורשית. המערכת היא כלי ניהולי — לא תחליף לשיקול הדעת המקצועי שלך.
+    </div>
+  </div>
+</div>
+
+<!-- ===== NEXT STEPS ===== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon">🗺️</div>
+    <div>
+      <div class="section-title">שלבים הבאים</div>
+    </div>
+  </div>
+
+  <div class="steps">
+
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>מילוי שאלון תהליך העבודה</h4>
+        <p>שאלון שישלח בנפרד — פרטי גבייה, יומן, וואטסאפ ומדיניות ביטולים.</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>חתימה על המסמכים</h4>
+        <p>הסכם שירות, הסכם עיבוד נתונים (DPA), הסכם סודיות (NDA).</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>פתיחת חשבונות</h4>
+        <p>Supabase + Vercel — עם כתובת המייל שלך. פעולה פשוטה שאורכת כמה דקות.</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h4>בניית המערכת</h4>
+        <p>מתודה בונה ומגדירה את המערכת עבורך על בסיס המידע שמילאת בשאלון.</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <h4>פגישת כיול</h4>
+        <p>חיבור יומן גוגל, הגדרת מחירים ומדיניות ביטולים, הכנת תבניות וואטסאפ — יחד.</p>
+      </div>
+    </div>
+
+    <div class="step-item" style="margin-bottom: 0;">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <h4>המערכת עולה לאוויר 🎉</h4>
+        <p>את מתחילה לעבוד עם המערכת — אנחנו כאן לכל שאלה.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <p>הוכן על ידי <strong>מתודה פתרונות AI</strong> | nira@metoda.ai</p>
+  <p style="margin-top: 4px; color: #ccc;">מסמך זה נועד למורן מילר בלבד</p>
+</div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
